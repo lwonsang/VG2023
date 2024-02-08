@@ -21,3 +21,12 @@ MonoBehaviour:
   - folder: {fileID: 102900000, guid: 6ff79b724fb6dc348aa40919085c81b7, type: 3}
     folderIcon: {fileID: 2800000, guid: df1b86aae1fb01f4aa26da07cc6469ad, type: 3}
     overlayIcon: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+  - folder: {fileID: 102900000, guid: 81eef7fc2480a1242811d65096af7847, type: 3}
+    folderIcon: {fileID: 2800000, guid: 263241c0c3859a14f9458b1f1861416d, type: 3}
+    overlayIcon: {fileID: 0}
+  - folder: {fileID: 102900000, guid: 13984c681043ed142ab532b9dc50b136, type: 3}
+    folderIcon: {fileID: 2800000, guid: 36a49ce24d9944f41b9951850a45fd47, type: 3}
+    overlayIcon: {fileID: 0}
+  - folder: {fileID: 102900000, guid: c9a16a56ebe49f0478c1c6442ee8ac0c, type: 3}
+    folderIcon: {fileID: 2800000, guid: 5ab2034844b13054aaaea6528545d2e7, type: 3}
+    overlayIcon: {fileID: 0}
