@@ -1,0 +1,3251 @@
+fileFormatVersion: 2
+guid: 6a71944a9ee361f4795ab1241c531ce3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 859
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ade623081ac1e4aac5035a52062d41
+      internalID: -622131664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 858
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b03d3ac463e1149921a7a8830d63d4
+      internalID: -1182873057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 859
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500289c9c8120e849afd2d28a377381c
+      internalID: -1441166086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_3
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 858
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5651bbfcf641e92438c316493b270f00
+      internalID: 1711489346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_4
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 859
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de177e7f6dd663d40b08ed244c90c907
+      internalID: -149665341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_5
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 859
+        width: 62
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee48d371ca1b07438ef64c4d0a2faf1
+      internalID: 1122830556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_6
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 867
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3097e28bb6e2f49a9f6eca77ecaea4
+      internalID: 1116164288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_7
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 867
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13229848718986945b12b60912356552
+      internalID: -967298102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_8
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 867
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc63f4d7bcba85488d3fabf8fc5ffb3
+      internalID: -298239185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_9
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 867
+        width: 55
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6fc4ba7784bb94aa548e86ed4d1357
+      internalID: -301336209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_10
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 867
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f674318a90b1e48a375cc441382045
+      internalID: -1225239730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_11
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 867
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489c6a66e63da604e9c01f8c1fef57f7
+      internalID: 1694660589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_12
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 859
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcca8a12b47b8ea4989c457323f68b14
+      internalID: 1335099819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_13
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 839
+        width: 46
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3313951235c626f49a014d4aad6608ef
+      internalID: 606174563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 815
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0520c6789eb2294c8c4fe1944eec628
+      internalID: -1640167373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_15
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 815
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc184287042372340813c72ad1ef1721
+      internalID: 2041694118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_16
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 814
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2af2cd86ac7b84987f08e068e96cb3
+      internalID: -706390013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_17
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 720
+        width: 65
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d844690e7e71d9940a262e11b77bb31b
+      internalID: -1997656283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_18
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 735
+        width: 60
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526552e304ade6f4c84d474ab31eee6d
+      internalID: -923713386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_19
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 822
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f49c2e8204fcf4fab8a8d50a78336f
+      internalID: -1391977726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_20
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 824
+        width: 45
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9883019819e624caef419bea285ec8
+      internalID: -101603915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_21
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 822
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a883bcc91a31218448a98027624b1f53
+      internalID: 1313447617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_22
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 822
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7858c6d8449ae9346b1c62c8c7232f0e
+      internalID: -1968101475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_23
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 779
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a9edfde3980134f85740c78d89022a
+      internalID: -225510948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_24
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 779
+        width: 62
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3be2b91419f6e4585dad702ea094be
+      internalID: -838154587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_25
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 763
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900c6311871848c448ca1eb7fc6ad0e8
+      internalID: 781791494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_26
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 762
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8df2b29f7c8bc419085a7335bd0e02
+      internalID: 1256378626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_27
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 770
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ddc95485e8c044a870524010a5acbe
+      internalID: 1855070614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_28
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 779
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6fe4bab496e1d44b9a97f788c879c4
+      internalID: -1349032969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_29
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 779
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da62a8712d744c4f93bc365ee42aaf1
+      internalID: -939599913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_30
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 779
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 534e13ef0631e3241aaf485c801df817
+      internalID: 475148292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_31
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 781
+        width: 6
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4f9366f6dd50244b699dd0ea33e0ea
+      internalID: 1945227406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_32
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 775
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0404f61b8e9c3444490a91d5c465359c
+      internalID: 1505062688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_33
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 779
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d5a83b57a210e4996e631cea4b129b
+      internalID: -1266752194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_34
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 675
+        width: 66
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226420c6ca9bde04598279781a425874
+      internalID: -424695762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_35
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 631
+        width: 64
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e206f0ac8a9f51c4b9c6b95854669be6
+      internalID: 1278996124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_36
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 711
+        width: 79
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebd40f79ef530a4a8fa0a41915bd009
+      internalID: 1646132409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_37
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 735
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7334e34c71a37ac4083c16e2227104c0
+      internalID: -1662828514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_38
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 735
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5193b2283a599a542aca3c7242af232f
+      internalID: 1299988780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_39
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 731
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1647905871277d0419a66f716b0fcf51
+      internalID: 1044418417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_40
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 735
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc22f5632bee5fe4e9d4f8b5cb4a2f90
+      internalID: 1880216251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_41
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 735
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38247bf8076adca49a2d25d89727b33a
+      internalID: -612750557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_42
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 718
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c77cf61aadfa547a2683e117479623
+      internalID: -2131727330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_43
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 718
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c36476e01507f84594cbef9882d443e
+      internalID: 1048174341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_44
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 718
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ff9152226d66b47a8509f7a3767e1f
+      internalID: 367863239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_45
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 718
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb53f1cd11a48dd49970872c0a199e3f
+      internalID: 65037287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_46
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 691
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2458c31defc62149991ad0e1ba89c16
+      internalID: -826028027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_47
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 691
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea023cdb53f5094da0c6220cd279a29
+      internalID: -1585658899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_48
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 683
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254be3cf4614f8e4b85fe720d466ac8a
+      internalID: -2132542828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_49
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 683
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a344138f848a94191dba24f6c10ac6
+      internalID: 1835210046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_50
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 675
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64fb75ea7c8e2c841ae166d012d34951
+      internalID: 744645285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_51
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 675
+        width: 47
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf746e2bd27271945ab82a2472451e0f
+      internalID: -207321180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_52
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 676
+        width: 64
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301f2918e98d0a34db35af49ffdf65ad
+      internalID: 1502394631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_53
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 676
+        width: 54
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4292e6f699dfca34aaa1e20e7380aab0
+      internalID: -1126904752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_54
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 676
+        width: 55
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca33a3cb70a3af4f965e775c88e0d48
+      internalID: 154282611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_55
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 627
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25204cbaf3a3d0343b60a19329e47390
+      internalID: -2051641560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_56
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 642
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9305bd05dd8132846ab147ba7be85b55
+      internalID: 86174033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_57
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 642
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1be346686b92874a96381b1fa1affaf
+      internalID: -1521447730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_58
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 642
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f070f04fd122e34b8e771399f608d53
+      internalID: -2068474199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_59
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 622
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1210481a030234749b5281c66ff3c4c8
+      internalID: -669038666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_60
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 619
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba482e685959bc547a27624148749b87
+      internalID: -1948476459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_61
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 618
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9370c58f71e7df04e9a597374dedd174
+      internalID: 1431484304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_62
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 615
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1f8cff69324ed43802d2110607345f
+      internalID: 155499620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_63
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 637
+        width: 47
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7feef88149ae67444ae02a87e19ea57e
+      internalID: 893811029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_64
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 614
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac71276ed6394942ada7d2415a6175d
+      internalID: -92690710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_65
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 614
+        width: 55
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0239a2f66ee16fa46b614dfacd387f3c
+      internalID: -677715708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_66
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 579
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7de2d12cec84f746bd931bf87893698
+      internalID: -1008351335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_67
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 579
+        width: 47
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad8ec9712b63cd4994d3f11cb279ef2
+      internalID: -1614802179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_68
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 579
+        width: 45
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8204023210cc441a4b846e50d40a4a
+      internalID: 1420861110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_69
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 590
+        width: 46
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133423089a1338f4c811d4a554c7e4fc
+      internalID: 1104507501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_70
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 579
+        width: 45
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa68eefcc2e0534c89bcdd84f3f8ca2
+      internalID: -1036325281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_71
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 579
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac320acf1c41c249b280a8ed7802e3c
+      internalID: -274716472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_72
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 579
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb884348c0857c418f07382ae9d3dbc
+      internalID: 1099738088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_73
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 562
+        width: 55
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20dab029275cdb45a561ecf2cae6e00
+      internalID: -275128218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_74
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 602
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15a23a7c7ae0ee4495ec999c3e4a8b5
+      internalID: 56598519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_75
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 527
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba8ff67a9e54ea04fb23df5dcca4a2a7
+      internalID: 728254897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_76
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 527
+        width: 56
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b70eb8a91c6de459b86c7597a22f9c
+      internalID: -1374494178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_77
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 527
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc7e6915453f0d42aa38842db8eca88
+      internalID: -46163824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_78
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 527
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc2318f0d753494caa980c78956ab4b
+      internalID: 1494302130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_79
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 531
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e208937ed8d83f46aa086f972dc49af
+      internalID: -691227274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_80
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 538
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a066899ef36684bb219eb15a61b0e3
+      internalID: 604291237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_81
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 555
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5336a0fe4a320d469eea0a68f04df2b
+      internalID: -90285321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_82
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 554
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f96d9233545fc248a6da07a239b620c
+      internalID: 1568026207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_83
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 503
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0499833c8c545ad4b956b9d2565ab9e6
+      internalID: 364150066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_84
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 554
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a2d8d68116b6645b658418f9bd2d89
+      internalID: -2084157089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_85
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 555
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f018f8a058f3f4a4da58a4f2794b0086
+      internalID: 901550928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_86
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 555
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983733bfff2859b4bbd990565bd8e79b
+      internalID: -1783197360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_87
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 518
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c19c9ab0a1658d42b13c555b8604ce2
+      internalID: -1622197218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_88
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 518
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176068c46b275f14ab1ddd7cf283918d
+      internalID: 594319646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_89
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 518
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f615ec0eb69a504897afdfbcc8648c0
+      internalID: -888390656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_90
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 490
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3258e03fd9b3f74fa51c5219e8f70fd
+      internalID: 1239812843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_91
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 494
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974fe6f810965a04fafd17e1754e9450
+      internalID: -1634719640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_92
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 490
+        width: 55
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08816e4b069d5b47b75bdce0a5203e4
+      internalID: 1612465289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_93
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 466
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a582d94a4e6f746a75d767a38cb119
+      internalID: -1367938368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_94
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 466
+        width: 48
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c31caf6e73008429e10e35dffaaae0
+      internalID: 1234137650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_95
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 462
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2d8fc419eec8e48bce5cb71c15fd7b
+      internalID: 1682172876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_96
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 467
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4ea656277a75e46bf605d4ba6153c6
+      internalID: -1732377248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_97
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 462
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63760263c467cba46bc477ac1d109b0d
+      internalID: 1558637597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_98
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 462
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac9498d574c44349b952b3dd6759414
+      internalID: 216108974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_99
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 466
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d691df1343d7fd4490331fdbb7d5a65
+      internalID: 1566305876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_100
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 466
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c8472b6f40b8449ae964794c413877
+      internalID: 328461218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_101
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 466
+        width: 55
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfae66c1c3c60684ea8ca0af0cdd4afd
+      internalID: -1122694013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_102
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 457
+        width: 64
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34b302c091206a46b47716baec6cab5
+      internalID: 1535355958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_103
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 451
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e0a5ee9cb3c834d9fcbc083944e86e
+      internalID: 725396694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_104
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 451
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3821b046f343f54cbbe0833135ae8ec
+      internalID: -284725372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_105
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 406
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f73cc70988c744d946abedd770a156
+      internalID: 1076235705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_106
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 406
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ac3dd0c7476fc4b86d8622d9ddfea4
+      internalID: -1766450924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_107
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 402
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9ce15c6c467574583aed01ee2eff12
+      internalID: -1557806959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_108
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 407
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e308d35c5467a49a89a838b19ccf83
+      internalID: 111352830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_109
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 403
+        width: 66
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88caab9a0634b0344bc69050f8850dc8
+      internalID: 61776163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_110
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 407
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a040119ed2bfbb42936ffda9c72689a
+      internalID: 888249735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_111
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 410
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac6b2080ebda834b956db68444c2b3c
+      internalID: -605205745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_112
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 414
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c319b1dc470214da93b4d2b939b3d5
+      internalID: -1772363512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_113
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 414
+        width: 56
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d67f902f3039d344be73420b056e148
+      internalID: 31146555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_114
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 414
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332353f8e526db84b839a5945fa12946
+      internalID: 285882195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_115
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 414
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f67c446284ffec4ca634c507925fdb5
+      internalID: -999087538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_116
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 414
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4293573b73c4fbe499fd3845fcd797b7
+      internalID: -2141542967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_117
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 414
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf4a8ae3a83fe4429751d849dc4274f
+      internalID: -1010262600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_118
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 414
+        width: 51
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f171c165a0788b43ba00c90fefaf184
+      internalID: 1820692181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_119
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 233
+        width: 64
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67dabb8d204b4e841ad4c6bc637ad6b2
+      internalID: -1967274433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_120
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 234
+        width: 44
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ebc8b3a9a747740bd2b28bf0f4cb6a
+      internalID: 821426976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_121
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 234
+        width: 80
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d143d0290a25e644780ac09771c52bad
+      internalID: 96477581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_122
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 341
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae11a20ce216d243bb25ff76e715e1e
+      internalID: 1988224308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_123
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 327
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59361a5261d8af14ea82d7e1fcf16556
+      internalID: 1373308350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_124
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 294
+        width: 108
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19684c951d66bca44bb5d8bbabe09f7e
+      internalID: -1929140814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_125
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 338
+        width: 99
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a272680ca29054ebbe1f12be4b3a6c
+      internalID: 629850408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_126
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 234
+        width: 124
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2022efbb268ed17429f6defa94308dc1
+      internalID: 2008312139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_127
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 243
+        width: 144
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a789cfd6ba38c5a41baffce05023d696
+      internalID: 2146854241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_128
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 214
+        width: 83
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c6464bd4f81fb47ab116e7e80342cb
+      internalID: -486956534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_129
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 214
+        width: 99
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe45880de292114bb0008373e703389
+      internalID: -196187743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_130
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 267
+        width: 99
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6022b4c1787d84e98c8e76daacccaa
+      internalID: 1650902209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_131
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 126
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b7d02f42851d54eaac1c4a20262185
+      internalID: 240723747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_132
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 138
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0128f94c26e634b47afc88d24584f344
+      internalID: -302741731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_133
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 130
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fddede2600d6764b8482bfd4f6e2a67
+      internalID: 1268813736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_134
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 138
+        width: 81
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e443a7aa360e81e48acbcfe7dc2495e5
+      internalID: -969727192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_135
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 138
+        width: 125
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81036987cb2d6ff4a801944f9c72138b
+      internalID: -1616294673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_136
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 137
+        width: 96
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069476323a6a58f40a50965eb21e0c15
+      internalID: -1515794384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_137
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 130
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0559599b2ad75f448be2ce6e095822e
+      internalID: 1961430739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_138
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 33
+        width: 116
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d900bc47a3a934a86358ebdb0e776c
+      internalID: 926424745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_139
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 34
+        width: 89
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10c84fc05896bb4faa8e4007df08779
+      internalID: -591720539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_140
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 18
+        width: 79
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793c3e0a6a45db34e81e0b4af07b7c42
+      internalID: -352331404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buildings_16x16_by_ruurule_de17f9t-pre_141
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 26
+        width: 83
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e397185c5630fd54ab2e863081acc762
+      internalID: -1300844255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      buildings_16x16_by_ruurule_de17f9t-pre_0: -622131664
+      buildings_16x16_by_ruurule_de17f9t-pre_1: -1182873057
+      buildings_16x16_by_ruurule_de17f9t-pre_10: -1225239730
+      buildings_16x16_by_ruurule_de17f9t-pre_100: 328461218
+      buildings_16x16_by_ruurule_de17f9t-pre_101: -1122694013
+      buildings_16x16_by_ruurule_de17f9t-pre_102: 1535355958
+      buildings_16x16_by_ruurule_de17f9t-pre_103: 725396694
+      buildings_16x16_by_ruurule_de17f9t-pre_104: -284725372
+      buildings_16x16_by_ruurule_de17f9t-pre_105: 1076235705
+      buildings_16x16_by_ruurule_de17f9t-pre_106: -1766450924
+      buildings_16x16_by_ruurule_de17f9t-pre_107: -1557806959
+      buildings_16x16_by_ruurule_de17f9t-pre_108: 111352830
+      buildings_16x16_by_ruurule_de17f9t-pre_109: 61776163
+      buildings_16x16_by_ruurule_de17f9t-pre_11: 1694660589
+      buildings_16x16_by_ruurule_de17f9t-pre_110: 888249735
+      buildings_16x16_by_ruurule_de17f9t-pre_111: -605205745
+      buildings_16x16_by_ruurule_de17f9t-pre_112: -1772363512
+      buildings_16x16_by_ruurule_de17f9t-pre_113: 31146555
+      buildings_16x16_by_ruurule_de17f9t-pre_114: 285882195
+      buildings_16x16_by_ruurule_de17f9t-pre_115: -999087538
+      buildings_16x16_by_ruurule_de17f9t-pre_116: -2141542967
+      buildings_16x16_by_ruurule_de17f9t-pre_117: -1010262600
+      buildings_16x16_by_ruurule_de17f9t-pre_118: 1820692181
+      buildings_16x16_by_ruurule_de17f9t-pre_119: -1967274433
+      buildings_16x16_by_ruurule_de17f9t-pre_12: 1335099819
+      buildings_16x16_by_ruurule_de17f9t-pre_120: 821426976
+      buildings_16x16_by_ruurule_de17f9t-pre_121: 96477581
+      buildings_16x16_by_ruurule_de17f9t-pre_122: 1988224308
+      buildings_16x16_by_ruurule_de17f9t-pre_123: 1373308350
+      buildings_16x16_by_ruurule_de17f9t-pre_124: -1929140814
+      buildings_16x16_by_ruurule_de17f9t-pre_125: 629850408
+      buildings_16x16_by_ruurule_de17f9t-pre_126: 2008312139
+      buildings_16x16_by_ruurule_de17f9t-pre_127: 2146854241
+      buildings_16x16_by_ruurule_de17f9t-pre_128: -486956534
+      buildings_16x16_by_ruurule_de17f9t-pre_129: -196187743
+      buildings_16x16_by_ruurule_de17f9t-pre_13: 606174563
+      buildings_16x16_by_ruurule_de17f9t-pre_130: 1650902209
+      buildings_16x16_by_ruurule_de17f9t-pre_131: 240723747
+      buildings_16x16_by_ruurule_de17f9t-pre_132: -302741731
+      buildings_16x16_by_ruurule_de17f9t-pre_133: 1268813736
+      buildings_16x16_by_ruurule_de17f9t-pre_134: -969727192
+      buildings_16x16_by_ruurule_de17f9t-pre_135: -1616294673
+      buildings_16x16_by_ruurule_de17f9t-pre_136: -1515794384
+      buildings_16x16_by_ruurule_de17f9t-pre_137: 1961430739
+      buildings_16x16_by_ruurule_de17f9t-pre_138: 926424745
+      buildings_16x16_by_ruurule_de17f9t-pre_139: -591720539
+      buildings_16x16_by_ruurule_de17f9t-pre_14: -1640167373
+      buildings_16x16_by_ruurule_de17f9t-pre_140: -352331404
+      buildings_16x16_by_ruurule_de17f9t-pre_141: -1300844255
+      buildings_16x16_by_ruurule_de17f9t-pre_15: 2041694118
+      buildings_16x16_by_ruurule_de17f9t-pre_16: -706390013
+      buildings_16x16_by_ruurule_de17f9t-pre_17: -1997656283
+      buildings_16x16_by_ruurule_de17f9t-pre_18: -923713386
+      buildings_16x16_by_ruurule_de17f9t-pre_19: -1391977726
+      buildings_16x16_by_ruurule_de17f9t-pre_2: -1441166086
+      buildings_16x16_by_ruurule_de17f9t-pre_20: -101603915
+      buildings_16x16_by_ruurule_de17f9t-pre_21: 1313447617
+      buildings_16x16_by_ruurule_de17f9t-pre_22: -1968101475
+      buildings_16x16_by_ruurule_de17f9t-pre_23: -225510948
+      buildings_16x16_by_ruurule_de17f9t-pre_24: -838154587
+      buildings_16x16_by_ruurule_de17f9t-pre_25: 781791494
+      buildings_16x16_by_ruurule_de17f9t-pre_26: 1256378626
+      buildings_16x16_by_ruurule_de17f9t-pre_27: 1855070614
+      buildings_16x16_by_ruurule_de17f9t-pre_28: -1349032969
+      buildings_16x16_by_ruurule_de17f9t-pre_29: -939599913
+      buildings_16x16_by_ruurule_de17f9t-pre_3: 1711489346
+      buildings_16x16_by_ruurule_de17f9t-pre_30: 475148292
+      buildings_16x16_by_ruurule_de17f9t-pre_31: 1945227406
+      buildings_16x16_by_ruurule_de17f9t-pre_32: 1505062688
+      buildings_16x16_by_ruurule_de17f9t-pre_33: -1266752194
+      buildings_16x16_by_ruurule_de17f9t-pre_34: -424695762
+      buildings_16x16_by_ruurule_de17f9t-pre_35: 1278996124
+      buildings_16x16_by_ruurule_de17f9t-pre_36: 1646132409
+      buildings_16x16_by_ruurule_de17f9t-pre_37: -1662828514
+      buildings_16x16_by_ruurule_de17f9t-pre_38: 1299988780
+      buildings_16x16_by_ruurule_de17f9t-pre_39: 1044418417
+      buildings_16x16_by_ruurule_de17f9t-pre_4: -149665341
+      buildings_16x16_by_ruurule_de17f9t-pre_40: 1880216251
+      buildings_16x16_by_ruurule_de17f9t-pre_41: -612750557
+      buildings_16x16_by_ruurule_de17f9t-pre_42: -2131727330
+      buildings_16x16_by_ruurule_de17f9t-pre_43: 1048174341
+      buildings_16x16_by_ruurule_de17f9t-pre_44: 367863239
+      buildings_16x16_by_ruurule_de17f9t-pre_45: 65037287
+      buildings_16x16_by_ruurule_de17f9t-pre_46: -826028027
+      buildings_16x16_by_ruurule_de17f9t-pre_47: -1585658899
+      buildings_16x16_by_ruurule_de17f9t-pre_48: -2132542828
+      buildings_16x16_by_ruurule_de17f9t-pre_49: 1835210046
+      buildings_16x16_by_ruurule_de17f9t-pre_5: 1122830556
+      buildings_16x16_by_ruurule_de17f9t-pre_50: 744645285
+      buildings_16x16_by_ruurule_de17f9t-pre_51: -207321180
+      buildings_16x16_by_ruurule_de17f9t-pre_52: 1502394631
+      buildings_16x16_by_ruurule_de17f9t-pre_53: -1126904752
+      buildings_16x16_by_ruurule_de17f9t-pre_54: 154282611
+      buildings_16x16_by_ruurule_de17f9t-pre_55: -2051641560
+      buildings_16x16_by_ruurule_de17f9t-pre_56: 86174033
+      buildings_16x16_by_ruurule_de17f9t-pre_57: -1521447730
+      buildings_16x16_by_ruurule_de17f9t-pre_58: -2068474199
+      buildings_16x16_by_ruurule_de17f9t-pre_59: -669038666
+      buildings_16x16_by_ruurule_de17f9t-pre_6: 1116164288
+      buildings_16x16_by_ruurule_de17f9t-pre_60: -1948476459
+      buildings_16x16_by_ruurule_de17f9t-pre_61: 1431484304
+      buildings_16x16_by_ruurule_de17f9t-pre_62: 155499620
+      buildings_16x16_by_ruurule_de17f9t-pre_63: 893811029
+      buildings_16x16_by_ruurule_de17f9t-pre_64: -92690710
+      buildings_16x16_by_ruurule_de17f9t-pre_65: -677715708
+      buildings_16x16_by_ruurule_de17f9t-pre_66: -1008351335
+      buildings_16x16_by_ruurule_de17f9t-pre_67: -1614802179
+      buildings_16x16_by_ruurule_de17f9t-pre_68: 1420861110
+      buildings_16x16_by_ruurule_de17f9t-pre_69: 1104507501
+      buildings_16x16_by_ruurule_de17f9t-pre_7: -967298102
+      buildings_16x16_by_ruurule_de17f9t-pre_70: -1036325281
+      buildings_16x16_by_ruurule_de17f9t-pre_71: -274716472
+      buildings_16x16_by_ruurule_de17f9t-pre_72: 1099738088
+      buildings_16x16_by_ruurule_de17f9t-pre_73: -275128218
+      buildings_16x16_by_ruurule_de17f9t-pre_74: 56598519
+      buildings_16x16_by_ruurule_de17f9t-pre_75: 728254897
+      buildings_16x16_by_ruurule_de17f9t-pre_76: -1374494178
+      buildings_16x16_by_ruurule_de17f9t-pre_77: -46163824
+      buildings_16x16_by_ruurule_de17f9t-pre_78: 1494302130
+      buildings_16x16_by_ruurule_de17f9t-pre_79: -691227274
+      buildings_16x16_by_ruurule_de17f9t-pre_8: -298239185
+      buildings_16x16_by_ruurule_de17f9t-pre_80: 604291237
+      buildings_16x16_by_ruurule_de17f9t-pre_81: -90285321
+      buildings_16x16_by_ruurule_de17f9t-pre_82: 1568026207
+      buildings_16x16_by_ruurule_de17f9t-pre_83: 364150066
+      buildings_16x16_by_ruurule_de17f9t-pre_84: -2084157089
+      buildings_16x16_by_ruurule_de17f9t-pre_85: 901550928
+      buildings_16x16_by_ruurule_de17f9t-pre_86: -1783197360
+      buildings_16x16_by_ruurule_de17f9t-pre_87: -1622197218
+      buildings_16x16_by_ruurule_de17f9t-pre_88: 594319646
+      buildings_16x16_by_ruurule_de17f9t-pre_89: -888390656
+      buildings_16x16_by_ruurule_de17f9t-pre_9: -301336209
+      buildings_16x16_by_ruurule_de17f9t-pre_90: 1239812843
+      buildings_16x16_by_ruurule_de17f9t-pre_91: -1634719640
+      buildings_16x16_by_ruurule_de17f9t-pre_92: 1612465289
+      buildings_16x16_by_ruurule_de17f9t-pre_93: -1367938368
+      buildings_16x16_by_ruurule_de17f9t-pre_94: 1234137650
+      buildings_16x16_by_ruurule_de17f9t-pre_95: 1682172876
+      buildings_16x16_by_ruurule_de17f9t-pre_96: -1732377248
+      buildings_16x16_by_ruurule_de17f9t-pre_97: 1558637597
+      buildings_16x16_by_ruurule_de17f9t-pre_98: 216108974
+      buildings_16x16_by_ruurule_de17f9t-pre_99: 1566305876
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
