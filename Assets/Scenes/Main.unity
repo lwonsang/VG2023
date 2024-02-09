@@ -135,11 +135,11 @@ GameObject:
   - component: {fileID: 196497908}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &196497907
 Transform:
   m_ObjectHideFlags: 0
@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 467159609}
   - component: {fileID: 467159612}
   - component: {fileID: 467159613}
+  - component: {fileID: 467159614}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -646,6 +647,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daea74f756d9f514f9fb876a42a99cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  maxY: 0
+  target: {fileID: 0}
+--- !u!50 &467159614
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467159608}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 688020214855111180, guid: 3af480ba92d58b64cb931091cb7bc1d7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1145555659041961317, guid: 3af480ba92d58b64cb931091cb7bc1d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -879,6 +914,10 @@ PrefabInstance:
     - target: {fileID: 1145555659041961317, guid: 3af480ba92d58b64cb931091cb7bc1d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244531564526573006, guid: 3af480ba92d58b64cb931091cb7bc1d7, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -965,6 +1004,48 @@ PolygonCollider2D:
       - {x: 0.65539443, y: -0.3584614}
       - {x: 0.47957027, y: -0.3584614}
   m_UseDelaunayMesh: 0
+--- !u!114 &846510781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846510772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd780a0d748940c495ca711742b9303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  target: {fileID: 0}
+  minY: 2
+--- !u!50 &846510782
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846510772}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &868478364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1342,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3034285077853990328, guid: 7e84f2af202877145807e394f5ceb736, type: 3}
       insertIndex: -1
       addedObject: {fileID: 846510778}
+    - targetCorrespondingSourceObject: {fileID: 3034285077853990328, guid: 7e84f2af202877145807e394f5ceb736, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 846510782}
+    - targetCorrespondingSourceObject: {fileID: 3034285077853990328, guid: 7e84f2af202877145807e394f5ceb736, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 846510781}
   m_SourcePrefab: {fileID: 100100000, guid: 7e84f2af202877145807e394f5ceb736, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
