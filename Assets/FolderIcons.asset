@@ -33,3 +33,9 @@ MonoBehaviour:
   - folder: {fileID: 102900000, guid: 0dc80636936bb6044a6584362cb562eb, type: 3}
     folderIcon: {fileID: 2800000, guid: d3cddc2e9c829cd4ab3df4b44656c1cb, type: 3}
     overlayIcon: {fileID: 2800000, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  - folder: {fileID: 102900000, guid: a652dd08c1f6b63408be04d36be18851, type: 3}
+    folderIcon: {fileID: 2800000, guid: 36a49ce24d9944f41b9951850a45fd47, type: 3}
+    overlayIcon: {fileID: 10900, guid: 0000000000000000f000000000000000, type: 0}
+  - folder: {fileID: 102900000, guid: 38da31187a141ed4ebe484f38025d839, type: 3}
+    folderIcon: {fileID: 2800000, guid: 7d8bf8acd397c2e4f8f5df91a116cc21, type: 3}
+    overlayIcon: {fileID: 2800000, guid: df1b86aae1fb01f4aa26da07cc6469ad, type: 3}

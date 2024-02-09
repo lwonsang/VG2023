@@ -13,22 +13,26 @@ public class PlayerOverhead : MonoBehaviour
 
     #endregion
 
+    public InputAction inputsys;
+
     void Start()
     {
         if(is_player_one)
         {
 
         }
+        //inputsys.Enable();
     }
 
     void FixedUpdate()
     {
-        
+            //Debug.Log(inputsys.ReadValue<Vector2>() + " " + Time.deltaTime);
     }
 
     public void Movement(InputAction.CallbackContext value)
     {
         MovementVector = value.ReadValue<Vector2>();
+        //Debug.Log(MovementVector);
     }
 
 
