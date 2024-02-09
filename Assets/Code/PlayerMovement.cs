@@ -2,35 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+namespace s1{
+    public class PlayerMovement : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Move Up
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            transform.position += new Vector3(0, 0.2f, 0);
+        // Start is called before the first frame update
+        void Start()
+        {
+            
         }
 
-        //Move Down
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            transform.position += new Vector3(0, -0.2f, 0);
-        }
+        // Update is called once per frame
+        void Update()
+        {
 
-        //Move Left
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            transform.position += new Vector3(-0.2f, 0, 0);
-        }
+            //Slowed down movement from 0.2f
+            //Move Up
+            if (Input.GetKey(KeyCode.UpArrow)) {
+                transform.position += new Vector3(0, 0.05f, 0);
+            }
 
-        //Move Right
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            transform.position += new Vector3(0.2f, 0, 0);
+            //Move Down
+            if (Input.GetKey(KeyCode.DownArrow)) {
+                transform.position += new Vector3(0, -0.05f, 0);
+            }
+
+            //Move Left
+            if (Input.GetKey(KeyCode.LeftArrow)) {
+                transform.position += new Vector3(-0.05f, 0, 0);
+            }
+
+            //Move Right
+            if (Input.GetKey(KeyCode.RightArrow)) {
+                transform.position += new Vector3(0.05f, 0, 0);
+            }
         }
     }
 }
