@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace s1{
+namespace Main{
     public class PlayerMovement : MonoBehaviour
     {
         // Start is called before the first frame update
@@ -19,6 +19,7 @@ namespace s1{
             //Move Up
             if (Input.GetKey(KeyCode.UpArrow)) {
                 transform.position += new Vector3(0, 0.05f, 0);
+                // print("MOVING UP");
             }
 
             //Move Down

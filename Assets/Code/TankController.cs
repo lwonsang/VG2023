@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace s1 {
-    public class Tank : MonoBehaviour
+namespace Main{
+    public class TankController : MonoBehaviour
     {
 
         void OnCollisionEnter2D(Collision2D other){
             //reload scene
-            if(other.gameObject.GetComponent<PlayerMovement>()){
+            
+            if(other.gameObject.GetComponentInChildren<PlayerMovement>()){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -24,7 +25,7 @@ namespace s1 {
         // Update is called once per frame
         void Update()
         {
-            
+
         }
     }
 }
