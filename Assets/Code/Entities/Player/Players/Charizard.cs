@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Charizard : CharacterBase
 {
-    void Start()
+    void Awake()
     {
-        currenthealth = totalhealth;
+        player_overhead.Characters.Add(gameObject);
+        Debug.Log(Quaternion.identity);
+        Hit_Enemies = new List<GameObject>();
+        damage_taken = 0;
         player_overhead = transform.parent.gameObject.GetComponent<PlayerOverhead>();
         if(player_overhead == null )
         {
@@ -22,13 +25,13 @@ public class Charizard : CharacterBase
         switch(action)
         {
             case actions_list.IDLE:
-                idle();
+                Idle();
                 break;
             case actions_list.ATTACKING:
-                attacking();
+                Attacking();
                 break;
             case actions_list.WALKING:
-                walking();
+                Walking();
                 break;
 
             default: 
@@ -36,18 +39,25 @@ public class Charizard : CharacterBase
         }
     }
 
-    public void idle()
+    public void Idle()
     {
         //idle as in idle animation
         action = actions_list.WALKING;
+        subaction = subactions_list.Idle;
     }
 
-    public void attacking()
+    public void Attacking()
     {
+        if(subaction == subactions_list.Claw_Swipe)
+        {
+            return;
+        }
+        subaction = subactions_list.Claw_Swipe;
+        MyAttacks[0].SetActive(true);
         return;
     }
 
-    public void walking()
+    public void Walking()
     {
         Vector2 newspeed = (_rigidbody2D.velocity + player_overhead.MovementVector * speed) * drag * Time.deltaTime;
         _rigidbody2D.velocity = newspeed;
@@ -74,6 +84,7 @@ public class Charizard : CharacterBase
                 break;
             default:
                 action = actions_list.IDLE;
+                subaction = subactions_list.Idle;
                 break;
         }
 

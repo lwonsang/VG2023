@@ -10,31 +10,36 @@ public class PlayerOverhead : MonoBehaviour
     public bool is_player_one;
 
     public Vector2 MovementVector;
+    //I will change this later to be called differently
+    public bool attacking;
+
+    public List<GameObject> Characters;
 
     #endregion
 
-    public InputAction inputsys;
-
-    void Start()
+    public void Start()
     {
-        if(is_player_one)
+        //sets the first character as active
+        foreach(GameObject character in Characters)
         {
-
+            character.gameObject.SetActive(false);
         }
-        //inputsys.Enable();
+        Characters[0].SetActive(true);
     }
 
-    void FixedUpdate()
-    {
-            //Debug.Log(inputsys.ReadValue<Vector2>() + " " + Time.deltaTime);
-    }
 
+    #region InputSystem
     public void Movement(InputAction.CallbackContext value)
     {
         MovementVector = value.ReadValue<Vector2>();
-        //Debug.Log(MovementVector);
     }
 
+    public void Attack(InputAction.CallbackContext value)
+    {
+        attacking = value.ReadValue<bool>();
+    }
+
+    #endregion
 
 
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1145555659041961317}
   - component: {fileID: 356065375985772402}
   - component: {fileID: 977366389035964423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,47 +101,7 @@ MonoBehaviour:
     m_Id: 970727c4-1167-4f54-8ce0-0aa4b3ba3ecb
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: bef22d62-0ace-42aa-ac58-222f81aa5ee1
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Inputsys
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 3cbc4351-f36c-405a-a2a2-981650da6310
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Inputsys
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 7d8ab12a-3c16-4b86-9a3b-bb1ee1c4a9fb
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Inputsys
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 9495a1cf-df32-41f4-8114-243558c5fa3c
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Inputsys
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 4ea9c9a5-7344-4136-8613-9063220591f3
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Inputsys
-      m_Flags: 8
+    m_SingletonActionBindings: []
     m_Flags: 0
 --- !u!1 &8244531564526573006
 GameObject:
@@ -157,7 +117,7 @@ GameObject:
   - component: {fileID: 2372654212578059805}
   - component: {fileID: 8301801182576960682}
   - component: {fileID: 1814621399911511546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Charizard
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -271,6 +231,9 @@ MonoBehaviour:
   _spriterenderer: {fileID: 4355080408415575211}
   drag: 35
   speed: 5
+  totalhealth: 0
+  currenthealth: 0
+  attacked_entities: []
   action: 0
 --- !u!50 &8301801182576960682
 Rigidbody2D:
@@ -328,7 +291,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
