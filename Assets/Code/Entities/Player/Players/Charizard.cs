@@ -7,6 +7,7 @@ public class Charizard : CharacterBase
 {
     void Start()
     {
+        currenthealth = totalhealth;
         player_overhead = transform.parent.gameObject.GetComponent<PlayerOverhead>();
         if(player_overhead == null )
         {
@@ -72,6 +73,7 @@ public class Charizard : CharacterBase
                 animator.SetInteger("Turn", 0);
                 break;
             default:
+                action = actions_list.IDLE;
                 break;
         }
 

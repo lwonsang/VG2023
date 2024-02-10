@@ -18,6 +18,11 @@ public class CharacterBase : MonoBehaviour
     public float drag;
     public float speed;
 
+
+    [Header("Health Properties")]
+    public float totalhealth;
+    public float currenthealth;
+
     public enum actions_list {
         IDLE,
         WALKING,
@@ -31,7 +36,7 @@ public class CharacterBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currenthealth = totalhealth;
     }
 
     // Update is called once per frame
