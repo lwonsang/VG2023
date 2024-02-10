@@ -19,13 +19,13 @@ namespace Main{
         public GameObject projectile;
         
 
-        void OnCollisionEnter2D(Collision2D other){
+        /*void OnCollisionEnter2D(Collision2D other){
             //reload scene
             
             if(other.gameObject.CompareTag("Player")){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-        }
+        }*/
 
 
         // Start is called before the first frame update

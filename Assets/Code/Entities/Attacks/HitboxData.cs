@@ -20,19 +20,20 @@ public class HitboxData : MonoBehaviour
     {
         Owner = transform.parent.gameObject;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == Owner)
+        
+        if (collision.gameObject == Owner)
         {
             return;
         }
-        else if(collision.gameObject.CompareTag("Enemy_Hitbox"))
+        else if (collision.gameObject.CompareTag("Enemy_Hitbox"))
         {
+            Debug.Log("hi");
             Opponent = collision.gameObject;
             CharacterBase opponent_script = collision.gameObject.GetComponent<CharacterBase>();
 
-            if(opponent_script.Hit_Enemies.Contains(Opponent))
+            if (opponent_script.Hit_Enemies.Contains(Opponent))
             {
                 return;
             }
@@ -45,8 +46,8 @@ public class HitboxData : MonoBehaviour
             Vector2 facing = Vector2.one;
 
             CharacterBase owner_script = Owner.GetComponent<CharacterBase>();
-            
-            if(owner_script != null)
+
+            if (owner_script != null)
             {
                 facing = owner_script.player_overhead.MovementVector.normalized;
 
@@ -55,8 +56,17 @@ public class HitboxData : MonoBehaviour
 
             opponent_script.damage_taken += damage;
             Debug.Log(opponent_script.damage_taken);
-            float total_knockback = knockback + Mathf.Pow(opponent_script.damage_taken, 2) * knockbackgrowth;
-            opponent_script._rigidbody2D.AddForce(total_knockback*facing);
+            float total_knockback = knockback + Mathf.Log(opponent_script.damage_taken, 2) * knockbackgrowth;
+            opponent_script._rigidbody2D.AddForce(total_knockback * facing);
         }
+        else
+        {
+            Debug.Log(collision.name);
+            Debug.Log(collision.gameObject.tag);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }

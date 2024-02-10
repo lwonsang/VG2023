@@ -12,9 +12,9 @@ public class PlayerOverhead : MonoBehaviour
 
     public Vector2 MovementVector;
     //I will change this later to be called differently
-    public bool attacking;
 
     public List<GameObject> Characters;
+    public CharacterBase activecharacter;
 
     #endregion
 
@@ -26,6 +26,7 @@ public class PlayerOverhead : MonoBehaviour
             character.gameObject.SetActive(false);
         }
         Characters[0].SetActive(true);
+        activecharacter = Characters[0].GetComponent<CharacterBase>();
     }
 
 
@@ -37,7 +38,7 @@ public class PlayerOverhead : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext value)
     {
-        attacking = value.ReadValue<Boolean>();
+        activecharacter.action = CharacterBase.actions_list.ATTACKING;
     }
 
     #endregion

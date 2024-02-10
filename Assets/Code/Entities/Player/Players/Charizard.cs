@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Charizard : CharacterBase
@@ -45,16 +46,48 @@ public class Charizard : CharacterBase
         action = actions_list.WALKING;
         subaction = subactions_list.Idle;
     }
-
     public void Attacking()
     {
         if(subaction == subactions_list.Claw_Swipe)
         {
+            attack_time_counter++;
+            switch(attack_time_counter)
+            {
+                case < 5:
+                    break;
+                case 7:
+                    //_rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime + attackdirection * 10;
+                    break;
+
+            }
+            if(attack_time_counter > attack_time_total)
+            {
+                action = actions_list.IDLE;
+                subaction = subactions_list.Idle;
+                foreach (GameObject obj in CharacterAttacks[0].objects)
+                {
+                    obj.SetActive(false);
+                    obj.transform.rotation = Quaternion.identity;
+                }
+                return;
+            }
+        }
+        else
+        {
+            subaction = subactions_list.Claw_Swipe;
+            print(MathF.Atan2(facing.y, facing.x));
+            foreach (GameObject obj in CharacterAttacks[0].objects)
+            {
+                obj.transform.LeanRotateZ(MathF.Atan2(facing.y,facing.x)*Mathf.Rad2Deg + 45, 0);
+                obj.SetActive(true);
+                obj.LeanRotateZ(MathF.Atan2(facing.y, facing.x) * Mathf.Rad2Deg + 135, .28f).setEaseOutExpo();
+            }
+            _rigidbody2D.velocity = Vector2.zero;
+            //_rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - attackdirection*2;*/
+            attack_time_total = CharacterAttacks[0].attack_length;
+            attack_time_counter = 0;
             return;
         }
-        subaction = subactions_list.Claw_Swipe;
-        MyAttacks[0].SetActive(true);
-        return;
     }
 
     public void Walking()
@@ -62,7 +95,17 @@ public class Charizard : CharacterBase
         Vector2 newspeed = (_rigidbody2D.velocity + player_overhead.MovementVector * speed) * drag * Time.deltaTime;
         _rigidbody2D.velocity = newspeed;
 
-        switch(player_overhead.MovementVector)
+        if(!findTurnDirection())
+        {
+            action = actions_list.IDLE;
+            subaction = subactions_list.Idle;
+        }
+    }
+
+    public bool findTurnDirection()
+    {
+        facing = player_overhead.MovementVector;
+        switch (player_overhead.MovementVector)
         {
             //side view left
             case Vector2 vector when vector.x < 0 && Mathf.Abs(vector.y) < .4f:
@@ -83,11 +126,9 @@ public class Charizard : CharacterBase
                 animator.SetInteger("Turn", 0);
                 break;
             default:
-                action = actions_list.IDLE;
-                subaction = subactions_list.Idle;
-                break;
+                return false;
         }
-
+        return true;
     }
 
 }

@@ -43,12 +43,12 @@ public class EnemyProjectile : MonoBehaviour
         }
     }
     
-    void OnTriggerEnter2D(Collider2D other){
+    /*void OnTriggerEnter2D(Collider2D other){
         //reload scene
             
         if(other.gameObject.CompareTag("Player")){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
         }
-    }
+    }*/
 }

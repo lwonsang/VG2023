@@ -17,16 +17,17 @@ public class CharacterBase : MonoBehaviour
     [Header("Physics")]
     public float drag;
     public float speed;
-
+    public Vector2 facing;
 
     [Header("Health Properties")]
     public float totalhealth;
     public float damage_taken;
 
     [Header("Attack Logic")]
-    public List<GameObject> MyAttacks;
+    public List<Attackdata> CharacterAttacks;
     public List<GameObject> Hit_Enemies;
-    private IEnumerator attack;                 //this starts a coroutine of the attack
+    public float attack_time_total;
+    public float attack_time_counter;
 
 
     [Header("Hit Logic")]
@@ -42,7 +43,12 @@ public class CharacterBase : MonoBehaviour
     }
 
     public actions_list action;
-
+    [System.Serializable]
+    public struct Attackdata
+    {
+        public List<GameObject> objects;
+        public float attack_length;
+    }
     public enum subactions_list
     {
         Idle,
