@@ -3,16 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 using UnityEngine.U2D;
 
 namespace Main{
-    public class TankController : MonoBehaviour
+    public class TankController : CharacterBase
     {
-        [SerializeField] float speed = 1.0f;
+        
         [SerializeField] private float maxY;
         private Rigidbody2D rb;
         public Transform target;
         private Vector2 moveDirection;
+        private float timeBtwShots;
+        public float startTimeBtwShots;
+        public GameObject projectile;
         
 
         void OnCollisionEnter2D(Collision2D other){
@@ -29,6 +33,7 @@ namespace Main{
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
             rb = GetComponent<Rigidbody2D>();
+            timeBtwShots = startTimeBtwShots;
         }
 
         // Update is called once per frame
@@ -48,6 +53,17 @@ namespace Main{
                 else
                 {
                     transform.localScale = new Vector3(1, 1, 1);
+                }
+
+                if (timeBtwShots <= 0)
+                {
+                    Vector3 offset = new Vector3(-.1f, 0.5f, 0.0f);
+                    Instantiate(projectile, transform.position + offset, Quaternion.identity);
+                    timeBtwShots = startTimeBtwShots;
+                }
+                else
+                {
+                    timeBtwShots -= Time.deltaTime;
                 }
 
             }

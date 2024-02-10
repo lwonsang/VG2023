@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HelicopterController : MonoBehaviour
+public class HelicopterController : CharacterBase
 {
-    [SerializeField] float speed = 5.0f;
+    
     private Rigidbody2D rb;
     public Transform target;
     private Vector2 moveDirection;
     [SerializeField] private float minY;
+    private float timeBtwShots;
+    public float startTimeBtwShots;
+    public GameObject projectile;
         
 
     void OnCollisionEnter2D(Collision2D other){
@@ -18,6 +21,8 @@ public class HelicopterController : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        startTimeBtwShots = 2;
     }
 
 
@@ -26,6 +31,7 @@ public class HelicopterController : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
+        timeBtwShots = startTimeBtwShots;
     }
 
     // Update is called once per frame
@@ -45,6 +51,17 @@ public class HelicopterController : MonoBehaviour
             else
             {
                 transform.localScale = new Vector3(1, 1, 1);
+            }
+            
+            if (timeBtwShots <= 0)
+            {
+                Vector3 offset = new Vector3(0.0f, -0.5f, 0.0f);
+                Instantiate(projectile, transform.position + offset, Quaternion.identity);
+                timeBtwShots = startTimeBtwShots;
+            }
+            else
+            {
+                timeBtwShots -= Time.deltaTime;
             }
         }
     }
