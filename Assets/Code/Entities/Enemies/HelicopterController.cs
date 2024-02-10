@@ -68,10 +68,10 @@ public class HelicopterController : CharacterBase
 
     private void FixedUpdate()
     {
-        rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
-        if (transform.position.y < minY) //could set it so that the helicopter cannot go below a certain point
-        {
-            transform.position = new Vector3(transform.position.x, minY, transform.position.z);
-        }
+        Vector2 newposition = (Vector2)transform.position + (speed * Time.deltaTime * moveDirection);
+        if (newposition.y < minY) //could set it so that the helicopter cannot go below a certain point
+            newposition = new Vector2(newposition.x,transform.position.y);
+        rb.MovePosition(newposition);
+        
     }
 }

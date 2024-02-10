@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,7 +37,7 @@ public class PlayerOverhead : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext value)
     {
-        attacking = value.ReadValue<bool>();
+        attacking = value.ReadValue<Boolean>();
     }
 
     #endregion

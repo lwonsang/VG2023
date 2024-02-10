@@ -7889,63 +7889,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &474437063
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.048774824
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5214754038544083663, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6769224213577372329, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
-      propertyPath: m_Name
-      value: Tank
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bfdb5a8bab468a047b18be692552ed4d, type: 3}
 --- !u!1 &506784279
 GameObject:
   m_ObjectHideFlags: 0
@@ -28698,4 +28641,3 @@ SceneRoots:
   - {fileID: 1764435180}
   - {fileID: 2043874492}
   - {fileID: 1373756024}
-  - {fileID: 474437063}
