@@ -19,6 +19,7 @@ public class Charizard : CharacterBase
             return;
         }
         action = actions_list.IDLE;
+        actionable = true;
     }
 
     void FixedUpdate()
@@ -48,7 +49,35 @@ public class Charizard : CharacterBase
     }
     public void Attacking()
     {
-        if(subaction == subactions_list.Claw_Swipe)
+        if(actionable)
+        {
+            //this is where you'd call moves
+            animator.Play("Claw Swipe");
+            subaction = subactions_list.Claw_Swipe;
+            actionable = false;
+            attack_time_total = CharacterAttacks[0].attack_length;
+            attack_time_counter = 0;
+        }
+        else
+        {
+            //attack specifics such as movement during attacks
+            switch(subaction)
+            {
+                case subactions_list.Claw_Swipe:
+                    
+                    break;
+            }
+            attack_time_counter++;
+
+            //check if the move is over here
+            if (attack_time_counter > attack_time_total)
+            {
+                action = actions_list.IDLE;
+                subaction = subactions_list.Idle;
+                actionable = true;
+            }
+        }
+        /*if(subaction == subactions_list.Claw_Swipe)
         {
             attack_time_counter++;
             switch(attack_time_counter)
@@ -83,11 +112,12 @@ public class Charizard : CharacterBase
                 obj.LeanRotateZ(MathF.Atan2(facing.y, facing.x) * Mathf.Rad2Deg + 135, .28f).setEaseOutExpo();
             }
             _rigidbody2D.velocity = Vector2.zero;
-            //_rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - attackdirection*2;*/
+            //_rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - attackdirection*2;
             attack_time_total = CharacterAttacks[0].attack_length;
             attack_time_counter = 0;
             return;
-        }
+        }*/
+        
     }
 
     public void Walking()

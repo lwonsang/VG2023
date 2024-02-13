@@ -28,6 +28,7 @@ public class CharacterBase : MonoBehaviour
     public List<GameObject> Hit_Enemies;
     public float attack_time_total;
     public float attack_time_counter;
+    public bool actionable;
 
 
     [Header("Hit Logic")]
@@ -87,6 +88,7 @@ public class CharacterBase : MonoBehaviour
         if (hitstun <= 0)
         {
             action = actions_list.IDLE;
+            actionable = true;
             return;
         }
         else if (hitstun > 0)
