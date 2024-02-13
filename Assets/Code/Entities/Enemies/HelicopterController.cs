@@ -15,15 +15,13 @@ public class HelicopterController : CharacterBase
     public GameObject projectile;
         
 
-    void OnCollisionEnter2D(Collision2D other){
-        //reload scene
-            
-        if(other.gameObject.CompareTag("Player")){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
-        startTimeBtwShots = 2;
-    }
+    // void OnCollisionEnter2D(Collision2D other){
+    //     
+    //         
+    //    
+    //
+    //     startTimeBtwShots = 2;
+    // }
 
 
     // Start is called before the first frame update
@@ -69,8 +67,6 @@ public class HelicopterController : CharacterBase
     private void FixedUpdate()
     {
         Vector2 newposition = (Vector2)transform.position + (speed * Time.deltaTime * moveDirection);
-        if (newposition.y < minY) //could set it so that the helicopter cannot go below a certain point
-            newposition = new Vector2(newposition.x,transform.position.y);
         rb.MovePosition(newposition);
         
     }
