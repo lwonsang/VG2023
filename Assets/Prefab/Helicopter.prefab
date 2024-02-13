@@ -10,9 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3863443104613739319}
   - component: {fileID: 3535558681779492052}
-  m_Layer: 0
+  - component: {fileID: 3096617254029931203}
+  - component: {fileID: 1516620368349718427}
+  - component: {fileID: 7756373594442879405}
+  m_Layer: 9
   m_Name: Helicopter
-  m_TagString: Untagged
+  m_TagString: Enemy_Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +87,139 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &3096617254029931203
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034285077853990328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1805325, y: 1}
+    newSize: {x: 2.1805325, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.91326994, y: 0.30967048}
+      - {x: 0.9953212, y: 0.38000014}
+      - {x: 1.0187644, y: 0.40344337}
+      - {x: 1.0187644, y: 0.48549464}
+      - {x: 0.9953212, y: 0.5089379}
+      - {x: -0.036180656, y: 0.5089379}
+      - {x: -0.059623882, y: 0.48549464}
+      - {x: -0.059623882, y: 0.41516498}
+      - {x: -0.024459045, y: 0.38000014}
+      - {x: 0.0107057905, y: 0.19245435}
+      - {x: -0.7394774, y: 0.18073274}
+      - {x: -0.7394774, y: 0.40344337}
+      - {x: -0.7629206, y: 0.4268866}
+      - {x: -0.8449719, y: 0.4503298}
+      - {x: -1.0911257, y: 0.20417596}
+      - {x: -1.0911257, y: 0.086959854}
+      - {x: -0.8684151, y: -0.159194}
+      - {x: -0.7394774, y: -0.20608045}
+      - {x: -0.4464371, y: -0.12402917}
+      - {x: 0.10447869, y: -0.08886433}
+      - {x: 0.06931385, y: -0.159194}
+      - {x: 0.19825158, y: -0.49912074}
+      - {x: 1.0187644, y: -0.49912074}
+      - {x: 1.0539292, y: -0.32329658}
+      - {x: 1.1008157, y: -0.20608045}
+      - {x: 1.1008157, y: 0.110403076}
+    - - {x: 0.47957027, y: -0.3467398}
+      - {x: 0.65539443, y: -0.3467398}
+      - {x: 0.65539443, y: -0.3584614}
+      - {x: 0.47957027, y: -0.3584614}
+  m_UseDelaunayMesh: 0
+--- !u!50 &1516620368349718427
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034285077853990328}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &7756373594442879405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034285077853990328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd780a0d748940c495ca711742b9303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_overhead: {fileID: 0}
+  _rigidbody2D: {fileID: 0}
+  hitbox: {fileID: 0}
+  animator: {fileID: 0}
+  _spriterenderer: {fileID: 0}
+  drag: 0
+  speed: 5
+  facing: {x: 0, y: 0}
+  totalhealth: 0
+  damage_taken: 0
+  CharacterAttacks: []
+  Hit_Enemies: []
+  attack_time_total: 0
+  attack_time_counter: 0
+  freezeframes: 0
+  hitstun: 0
+  action: 0
+  subaction: 0
+  target: {fileID: 0}
+  minY: 2
+  startTimeBtwShots: 2
+  projectile: {fileID: 4005685655194788086, guid: a5ec720c527854447b8e6b156c4788c8, type: 3}
