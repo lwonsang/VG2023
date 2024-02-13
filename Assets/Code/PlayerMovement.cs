@@ -13,19 +13,15 @@ namespace Main{
 
 
 
-        //broken code: wont print when there is a collision????
         void OnTriggerEnter2D(Collider2D other){
-            if (other.gameObject.GetComponent<TankController>()){
-                print("Collision with Enemy");
-                // currentHealth -= 1;
+            if (other.gameObject.layer == 9){
+                print("Collision with Enemy!!!!!!!!!!!!!!!!!!");
+                currentHealth -= 1;
 
-                // print("Current Health:" + currentHealth);
-                // healthBar.UpdateHealthBar(currentHealth, maxHealth);
+                print("Current Health:" + currentHealth);
+                healthBar.UpdateHealthBar(currentHealth, maxHealth);
             }
             
-        }
-        void OnTriggerExit2D(Collider2D other) {
-            print("Exit Collision with " + other.gameObject.name);
         }
 
         // Start is called before the first frame update
@@ -40,13 +36,13 @@ namespace Main{
         {
 
             //temp
-            if (Input.GetMouseButtonDown(0)) {
-                print("Space pressed");
-                currentHealth -= 1;
+            // if (Input.GetMouseButtonDown(0)) {
+            //     print("Space pressed");
+            //     currentHealth -= 1;
 
-                print("Current Health:" + currentHealth);
-                healthBar.UpdateHealthBar(currentHealth, maxHealth);
-            }
+            //     print("Current Health:" + currentHealth);
+            //     healthBar.UpdateHealthBar(currentHealth, maxHealth);
+            // }
 
             //Slowed down movement from 0.2f
             //Move Up

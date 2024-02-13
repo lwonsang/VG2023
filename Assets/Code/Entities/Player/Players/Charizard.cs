@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class Charizard : CharacterBase
 {
+    [SerializeField] FloatingHealthBar healthBar;
     void Awake()
     {
         player_overhead.Characters.Add(gameObject);
         Debug.Log(Quaternion.identity);
         Hit_Enemies = new List<GameObject>();
         damage_taken = 0;
+        totalhealth = 15;
         player_overhead = transform.parent.gameObject.GetComponent<PlayerOverhead>();
         if(player_overhead == null )
         {
@@ -20,6 +22,17 @@ public class Charizard : CharacterBase
         }
         action = actions_list.IDLE;
         actionable = true;
+
+        healthBar = GameObject.Find("HealthBar").GetComponentInChildren<FloatingHealthBar>();
+    }
+
+    void OnTriggerEnter2D(Collider2D other){        
+        if (other.gameObject.GetComponent<EnemyProjectile>()){
+            damage_taken += 1;
+
+            print("Current Health:" + totalhealth);
+            healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
+        }  
     }
 
     void FixedUpdate()
