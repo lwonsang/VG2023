@@ -9,20 +9,19 @@ using UnityEngine.UIElements;
 public class Charizard : CharacterBase
 {
     [SerializeField] FloatingHealthBar healthBar;
-    public struct attacktimes
+    public new enum subactions_list
     {
-        public float clawswipe;
+        Idle,
+        Claw_Swipe1,
+        Claw_Swipe2
     }
-
-    public attacktimes _attacktimes;
+    public new subactions_list subaction;
 
     void Awake()
     {
         player_overhead.Characters.Add(gameObject);
         Debug.Log(Quaternion.identity);
         Hit_Enemies = new List<GameObject>();
-        damage_taken = 0;
-        totalhealth = 15;
         player_overhead = transform.parent.gameObject.GetComponent<PlayerOverhead>();
         if(player_overhead == null )
         {
@@ -73,17 +72,12 @@ public class Charizard : CharacterBase
     {
         if(actionable)
         {
+            player_overhead.pressAttack = false;
             findTurnDirection();
             //this is where you'd call moves
             //animator.Play("Claw_swipe");
-            subaction = subactions_list.Claw_Swipe;
+            subaction = subactions_list.Claw_Swipe1;
             //print(MathF.Atan2(facing.y, facing.x));
-            foreach (GameObject obj in CharacterAttacks[0].objects)
-            {
-                
-                
-                Debug.Log(obj);
-            }
             transform.LeanRotateZ(-45, .1f);
             _rigidbody2D.velocity = Vector2.zero;
             _rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - facing.normalized*8;
@@ -97,7 +91,7 @@ public class Charizard : CharacterBase
             //attack specifics such as movement during attacks
             switch(subaction)
             {
-                case subactions_list.Claw_Swipe:
+                case subactions_list.Claw_Swipe1:
                     switch (attack_time_counter)
                     {
                         case < 5:
@@ -118,6 +112,13 @@ public class Charizard : CharacterBase
                             break;
                         case > 7:
                             _rigidbody2D.velocity = (_rigidbody2D.velocity) * drag * Time.deltaTime;
+                            if(attack_time_counter > 11)
+                            {
+                                if(player_overhead.pressAttack)
+                                {
+
+                                }
+                            }
                             break;
 
                     }

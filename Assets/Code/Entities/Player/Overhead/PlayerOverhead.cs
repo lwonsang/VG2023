@@ -9,6 +9,7 @@ public class PlayerOverhead : MonoBehaviour
     #region Variables
     [Header("Define whether this is first player or not")]
     public bool is_player_one;
+    public bool pressAttack;
 
     public Vector2 MovementVector;
     //I will change this later to be called differently
@@ -38,6 +39,7 @@ public class PlayerOverhead : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext value)
     {
+        pressAttack = value.ReadValue<Boolean>();
         activecharacter.action = CharacterBase.actions_list.ATTACKING;
     }
 
