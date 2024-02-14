@@ -57,7 +57,7 @@ public class HitboxData : MonoBehaviour
             opponent_script.damage_taken += damage;
             Debug.Log(opponent_script.damage_taken);
             float total_knockback = knockback + Mathf.Log(opponent_script.damage_taken, 2) * knockbackgrowth;
-            opponent_script._rigidbody2D.AddForce(total_knockback * facing);
+            opponent_script._rigidbody2D.AddForce(total_knockback * facing, ForceMode2D.Impulse);
         }
         else
         {

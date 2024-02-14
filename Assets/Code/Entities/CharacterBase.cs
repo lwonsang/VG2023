@@ -12,6 +12,7 @@ public class CharacterBase : MonoBehaviour
     public Rigidbody2D _rigidbody2D;
     public Collider2D hitbox;
     public Animator animator;
+    public AnimationClip[] clips;
     public SpriteRenderer _spriterenderer;
 
     [Header("Physics")]
