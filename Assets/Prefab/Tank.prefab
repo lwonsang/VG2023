@@ -163,18 +163,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_overhead: {fileID: 0}
-  _rigidbody2D: {fileID: 0}
-  hitbox: {fileID: 0}
+  _rigidbody2D: {fileID: 3646605883990339146}
+  hitbox: {fileID: 3866049385886947619}
   animator: {fileID: 0}
-  _spriterenderer: {fileID: 0}
+  clips: []
+  _spriterenderer: {fileID: 885992274070026106}
   drag: 0
   speed: 1
+  facing: {x: 0, y: 0}
   totalhealth: 0
   damage_taken: 0
   CharacterAttacks: []
   Hit_Enemies: []
   attack_time_total: 0
   attack_time_counter: 0
+  actionable: 0
   freezeframes: 0
   hitstun: 0
   action: 0
@@ -182,7 +185,11 @@ MonoBehaviour:
   maxY: 0
   target: {fileID: 0}
   startTimeBtwShots: 2
-  projectile: {fileID: 4005685655194788086, guid: a5ec720c527854447b8e6b156c4788c8, type: 3}
+  enemyProjectile: {fileID: 4005685655194788086, guid: a5ec720c527854447b8e6b156c4788c8, type: 3}
+  turnLeft: {fileID: -916880048, guid: 97016739c034d44288074e88130601fa, type: 3}
+  turnRight: {fileID: -1779360111, guid: 97016739c034d44288074e88130601fa, type: 3}
+  turnUp: {fileID: 417341582, guid: 97016739c034d44288074e88130601fa, type: 3}
+  turnDown: {fileID: 2021438923, guid: 97016739c034d44288074e88130601fa, type: 3}
 --- !u!50 &3646605883990339146
 Rigidbody2D:
   serializedVersion: 4

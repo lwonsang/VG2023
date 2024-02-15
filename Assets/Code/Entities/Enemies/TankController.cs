@@ -16,7 +16,11 @@ namespace Main{
         private Vector2 moveDirection;
         private float timeBtwShots;
         public float startTimeBtwShots;
-        public GameObject projectile;
+        public GameObject enemyProjectile;
+        public Sprite turnLeft;
+        public Sprite turnRight;
+        public Sprite turnUp;
+        public Sprite turnDown;
         
 
         /*void OnCollisionEnter2D(Collision2D other){
@@ -42,9 +46,22 @@ namespace Main{
             if (target)
             {
                 Vector3 direction = (target.position - transform.position).normalized;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
                 rb.rotation = angle + 180;
                 moveDirection = direction;
+                
+                Sprite newSprite = null;
+                if (angle >= -45 && angle < 45)
+                    newSprite = turnLeft; // Left sprite
+                else if (angle >= 45 && angle < 135)
+                    newSprite = turnUp; // Up sprite
+                else if (angle >= 135 && angle < 225)
+                    newSprite = turnRight; // Right sprite
+                else
+                    newSprite = turnDown; // Down sprite
+
+                // Set the new sprite
+                _spriterenderer.sprite = newSprite;
                 
                 if (direction.x > 0)
                 {
@@ -58,7 +75,7 @@ namespace Main{
                 if (timeBtwShots <= 0)
                 {
                     Vector3 offset = new Vector3(-.1f, 0.5f, 0.0f);
-                    Instantiate(projectile, transform.position + offset, Quaternion.identity);
+                    Instantiate(enemyProjectile, transform.position + offset, Quaternion.identity);
                     timeBtwShots = startTimeBtwShots;
                 }
                 else
@@ -73,10 +90,7 @@ namespace Main{
         {
             rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
             
-            if (transform.position.y > maxY) //could set it so that the tank cannot go above a certain point
-            {
-                transform.position = new Vector3(transform.position.x, maxY, transform.position.z);
-            }
+
         }
     }
 }
