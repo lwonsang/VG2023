@@ -153,11 +153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7495836713240345035, guid: 2a4ba967a1fc5416081ce91060596bec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7495836713240345035, guid: 2a4ba967a1fc5416081ce91060596bec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7495836713240345035, guid: 2a4ba967a1fc5416081ce91060596bec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9027,7 +9027,7 @@ PrefabInstance:
     - target: {fileID: 885992274070026106, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 125539283, guid: 411280cc387a7e94e8de1053f0de438b, type: 3}
+      objectReference: {fileID: -916880048, guid: 97016739c034d44288074e88130601fa, type: 3}
     - target: {fileID: 3646605883990339146, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
       propertyPath: m_Simulated
       value: 1
@@ -9044,6 +9044,10 @@ PrefabInstance:
       propertyPath: hitbox
       value: 
       objectReference: {fileID: 222504035}
+    - target: {fileID: 4042034319102100562, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
+      propertyPath: destroyed
+      value: 
+      objectReference: {fileID: 1973778375, guid: 0e969ea99237a894fb472704745784d4, type: 3}
     - target: {fileID: 4042034319102100562, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
       propertyPath: _rigidbody2D
       value: 
@@ -9106,6 +9110,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229424340390310547, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619743412021534159, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619743412021534159, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

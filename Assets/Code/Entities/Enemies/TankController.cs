@@ -22,6 +22,7 @@ namespace Main{
         public Sprite turnRight;
         public Sprite turnUp;
         public Sprite turnDown;
+        public Sprite destroyed;
         
                 
         
@@ -49,11 +50,11 @@ namespace Main{
                 
                 Sprite newSprite = null;
                 if (angle >= -45 && angle < 45)
-                    newSprite = turnLeft; // Left sprite
+                    newSprite = turnRight; // Left sprite
                 else if (angle >= 45 && angle < 135)
                     newSprite = turnUp; // Up sprite
                 else if (angle >= 135 && angle < 225)
-                    newSprite = turnRight; // Right sprite
+                    newSprite = turnLeft; // Right sprite
                 else
                     newSprite = turnDown; // Down sprite
 
@@ -88,7 +89,10 @@ namespace Main{
 
                 print("Tank Current Health:" + (totalhealth-damage_taken));
                 healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
-                if(totalhealth <= damage_taken){
+                if(totalhealth <= damage_taken)
+                {
+                    _spriterenderer.sprite = destroyed;
+                    
                     Destroy(gameObject);
                 }
                 
