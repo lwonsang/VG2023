@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 806ae5f28e93f5c4ea5a64ae98f2d3a1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player_overhead: {instanceID: 0}
+  - _rigidbody2D: {instanceID: 0}
+  - hitbox: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - _spriterenderer: {instanceID: 0}
+  - turnLeft: {fileID: -877420465, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  - turnRight: {fileID: 128321920, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  - turnUp: {fileID: 1942025904, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  - turnDown: {fileID: 48874381, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  - turnLeftEvolved: {fileID: -1616236851, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  - turnRightEvolved: {fileID: -1794289876, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  - turnUpEvolved: {fileID: -1820522834, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  - turnDownEvolved: {fileID: 932728139, guid: 5a1caa7e1b52e424193b343c39361e6f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

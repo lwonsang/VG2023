@@ -23,6 +23,9 @@ namespace Main{
         public Sprite turnUp;
         public Sprite turnDown;
         public Sprite destroyed;
+
+        // If the target is too far from the enemy, move closer. False by default, set during update.
+        private Boolean TooFarAwayFromEnemy = false;
         
                 
         
@@ -45,7 +48,7 @@ namespace Main{
             {
                 Vector3 direction = (target.position - transform.position).normalized;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
-                rb.rotation = angle + 180;
+                // rb.rotation = angle + 180;
                 moveDirection = direction;
                 
                 Sprite newSprite = null;
@@ -101,7 +104,10 @@ namespace Main{
 
         private void FixedUpdate()
         {
-            rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
+            if(TooFarAwayFromEnemy){
+                rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
+            }
+            
             
 
         }

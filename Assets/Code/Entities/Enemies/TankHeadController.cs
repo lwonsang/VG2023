@@ -6,6 +6,7 @@ public class TankHeadController :  CharacterBase
 {
     private Rigidbody2D rb;
     public Transform target;
+    public Transform aimPivot;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,17 +19,32 @@ public class TankHeadController :  CharacterBase
     {
         if (target)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
-            rb.MoveRotation(Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) ;
+            // Vector3 mousePosition = Input.mousePosition;
+            // Vector3 mousePositionInWord = Camera.main.ScreenToWorldPoint(mousePosition);
+            // Vector3 directionFromPlayerToMouse = mousePositionInWord - transform.position;
             
-            if (direction.x > 0)
-            {
-                transform.localScale = new Vector3(1, -1, 1);
-            }
-            else
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-            }
+            // float radiansToMouse = Mathf.Atan2(directionFromPlayerToMouse.y, directionFromPlayerToMouse.x);
+            // float angleToMouse = radiansToMouse * Mathf.Rad2Deg + 180f;
+
+            // aimPivot.rotation = Quaternion.Euler(0,0, angleToMouse);
+
+
+
+            Vector3 direction = (target.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 180f;
+            aimPivot.rotation = Quaternion.Euler(0,0, angle);
+
+
+
+            // rb.rotation = angle + 180;
+            // if (direction.x > 0)
+            // {
+            //     transform.localScale = new Vector3(1, -1, 1);
+            // }
+            // else
+            // {
+            //     transform.localScale = new Vector3(1, 1, 1);
+            // }
         }
     }
 }

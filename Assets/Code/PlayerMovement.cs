@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace Main{
 
         public float currentHealth = 10f;
         public float maxHealth = 10f;
+
+        
 
         [SerializeField] FloatingHealthBar healthBar;
 
@@ -48,6 +51,7 @@ namespace Main{
             //Move Up
             if (Input.GetKey(KeyCode.UpArrow)) {
                 transform.position += new Vector3(0, 0.05f, 0);
+                
                 // print("MOVING UP");
             }
 
@@ -65,6 +69,8 @@ namespace Main{
             if (Input.GetKey(KeyCode.RightArrow)) {
                 transform.position += new Vector3(0.05f, 0, 0);
             }
+
+            
         }
     }
 }
