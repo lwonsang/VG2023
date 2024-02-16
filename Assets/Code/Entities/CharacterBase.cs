@@ -18,6 +18,7 @@ public class CharacterBase : MonoBehaviour
     [Header("Physics")]
     public float drag;
     public float speed;
+    public bool gettinghit;
     public Vector2 facing;
 
     [Header("Health Properties")]
@@ -71,11 +72,16 @@ public class CharacterBase : MonoBehaviour
         if (freezeframes <= 0)
         {
             action = actions_list.HITSTUN;
+            gettinghit = true;
             Hitstun();
             return;
         }
         else if (freezeframes > 0)
+        {
             freezeframes--;
+            gettinghit = false;
+        }
+            
         else
         {
             //this should theoretically never happen but its an edge case just in case

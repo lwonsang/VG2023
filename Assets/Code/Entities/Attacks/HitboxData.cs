@@ -39,7 +39,9 @@ public class HitboxData : MonoBehaviour
             }
 
             opponent_script.action = CharacterBase.actions_list.GETTING_HIT;
-
+            opponent_script.gettinghit = true;
+            // Debug.Log(opponent_script.damage_taken);
+            
             //angle and direction calculation
             opponent_script.transform.rotation = Quaternion.identity;
 

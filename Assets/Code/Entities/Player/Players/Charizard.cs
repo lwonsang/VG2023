@@ -38,7 +38,7 @@ public class Charizard : CharacterBase
         if (other.gameObject.GetComponent<EnemyProjectile>()){
             damage_taken += 1;
 
-            print("Current Health:" + totalhealth);
+            print("Current Health:" + (totalhealth-damage_taken));
             healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
         }  
     }

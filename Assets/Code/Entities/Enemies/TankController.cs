@@ -9,6 +9,7 @@ using UnityEngine.U2D;
 namespace Main{
     public class TankController : CharacterBase
     {
+        [SerializeField] FloatingHealthBar healthBar;
         
         [SerializeField] private float maxY;
         private Rigidbody2D rb;
@@ -22,22 +23,18 @@ namespace Main{
         public Sprite turnUp;
         public Sprite turnDown;
         
-
-        /*void OnCollisionEnter2D(Collision2D other){
-            //reload scene
-            
-            if(other.gameObject.CompareTag("Player")){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-        }*/
-
-
+                
+        
+        
+        
         // Start is called before the first frame update
         void Start()
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
             rb = GetComponent<Rigidbody2D>();
             timeBtwShots = startTimeBtwShots;
+            healthBar = GameObject.Find("TankHealthBar").GetComponentInChildren<FloatingHealthBar>();
+
         }
 
         // Update is called once per frame
@@ -84,6 +81,18 @@ namespace Main{
                 }
 
             }
+            if (gettinghit){
+                gettinghit = false;
+                print("tank being hit");
+                damage_taken += 1;
+
+                print("Tank Current Health:" + (totalhealth-damage_taken));
+                healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
+                if(totalhealth <= damage_taken){
+                    Destroy(gameObject);
+                }
+                
+            } 
         }
 
         private void FixedUpdate()

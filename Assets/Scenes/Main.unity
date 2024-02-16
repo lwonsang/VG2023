@@ -1083,6 +1083,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 0}
   hitbox: {fileID: 0}
   animator: {fileID: 0}
+  clips: []
   _spriterenderer: {fileID: 0}
   drag: 0
   speed: 5
@@ -1595,6 +1596,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4042034319102100562, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
+      propertyPath: totalhealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7229424340390310547, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.77
@@ -1633,6 +1638,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229424340390310547, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619743412021534159, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619743412021534159, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
