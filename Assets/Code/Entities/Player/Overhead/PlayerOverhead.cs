@@ -39,8 +39,11 @@ public class PlayerOverhead : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext value)
     {
-        pressAttack = value.ReadValue<Boolean>();
-        activecharacter.action = CharacterBase.actions_list.ATTACKING;
+        pressAttack = value.ReadValueAsButton();
+        if (pressAttack)
+        {
+            activecharacter.action = CharacterBase.actions_list.ATTACKING;
+        }
     }
 
     #endregion
