@@ -119,6 +119,7 @@ public class Charizard : CharacterBase
                         case > 11:
                             if(player_overhead.pressAttack)
                             {
+                                Hit_Enemies = new List<GameObject>();
                                 subaction = subactions_list.Claw_Swipe2;
                                 foreach (GameObject obj in CharacterAttacks[0].objects)
                                 {
@@ -161,6 +162,7 @@ public class Charizard : CharacterBase
                         case > 11:
                             if (player_overhead.pressAttack)
                             {
+                                Hit_Enemies = new List<GameObject>();
                                 subaction = subactions_list.Claw_Swipe3;
                                 foreach (GameObject obj in CharacterAttacks[1].objects)
                                 {

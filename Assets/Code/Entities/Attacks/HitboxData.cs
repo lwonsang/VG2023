@@ -68,13 +68,14 @@ public class HitboxData : MonoBehaviour
             if (owner_script != null)
             {
                 facing = owner_script.player_overhead.MovementVector.normalized;
-
+                owner_script.Hit_Enemies.Add(collision.gameObject);
             }
 
             Opponent.LeanCancel();
             opponent_script.damage_taken += damage;
             Debug.Log(opponent_script.damage_taken);
             float total_knockback = knockback + Mathf.Log(opponent_script.damage_taken, 2) * knockbackgrowth;
+            CameraShakeManager.Instance.ShakeCamera(total_knockback/20, freezeframes);
             opponent_script._rigidbody2D.velocity = total_knockback * facing * 1/((100+opponent_script.weight)/200)/15;
         }
         else

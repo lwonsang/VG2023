@@ -39,7 +39,7 @@ namespace Main{
             target = GameObject.FindGameObjectWithTag("Player").transform;
             rb = GetComponent<Rigidbody2D>();
             timeBtwShots = startTimeBtwShots;
-            healthBar = GameObject.Find("TankHealthBar").GetComponentInChildren<FloatingHealthBar>();
+            //healthBar = GameObject.Find("TankHealthBar").GetComponentInChildren<FloatingHealthBar>();
 
         }
 

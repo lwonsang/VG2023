@@ -162,7 +162,8 @@ MonoBehaviour:
   gettinghit: 0
   facing: {x: 0, y: 0}
   weight: 40
-  totalhealth: 120
+  currentVelocity: {x: 0, y: 0}
+  totalhealth: 40
   damage_taken: 0
   CharacterAttacks: []
   Hit_Enemies: []
@@ -425,6 +426,7 @@ MonoBehaviour:
   gettinghit: 0
   facing: {x: 0, y: 0}
   weight: 0
+  currentVelocity: {x: 0, y: 0}
   totalhealth: 0
   damage_taken: 0
   CharacterAttacks: []
