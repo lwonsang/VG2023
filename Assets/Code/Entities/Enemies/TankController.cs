@@ -23,9 +23,10 @@ namespace Main{
         public Sprite turnUp;
         public Sprite turnDown;
         public Sprite destroyed;
+        private bool defeated = false;
 
         // If the target is too far from the enemy, move closer. False by default, set during update.
-        private Boolean TooFarAwayFromEnemy = false;
+        private Boolean TooFarAwayFromEnemy = true;
         
                 
         
@@ -42,9 +43,9 @@ namespace Main{
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-            if (target)
+            if (target && !defeated)
             {
                 Vector3 direction = (target.position - transform.position).normalized;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
@@ -95,21 +96,24 @@ namespace Main{
                 if(totalhealth <= damage_taken)
                 {
                     _spriterenderer.sprite = destroyed;
-                    
-                    Destroy(gameObject);
+                    speed = 0;
+                    defeated = true;
+                    gameObject.layer = 0;
+                    rb.angularVelocity = 0f;
+                    foreach (Transform child in transform)
+                    {
+                        Destroy(child.gameObject);
+                    }
+                    //Destroy(gameObject);
                 }
                 
             } 
-        }
-
-        private void FixedUpdate()
-        {
+            
             if(TooFarAwayFromEnemy){
                 rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
             }
-            
-            
-
         }
+
+
     }
 }
