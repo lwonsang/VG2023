@@ -34,6 +34,7 @@ public class CameraShakeManager : MonoBehaviour
     {
         for(int i = 0; i < shakeTimer; i++)
         {
+            Mathf.Lerp(shake.m_AmplitudeGain, 0, i);
             yield return null;
         }
         shake.m_AmplitudeGain = 0f;
