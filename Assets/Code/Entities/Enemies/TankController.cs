@@ -26,6 +26,7 @@ namespace Main{
         private bool defeated = false;
 
         // If the target is too far from the enemy, move closer. False by default, set during update.
+        // until we actually implement this mechanic, it will be set to true always
         private Boolean TooFarAwayFromEnemy = true;
         
                 
