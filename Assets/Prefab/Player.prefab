@@ -2705,6 +2705,7 @@ MonoBehaviour:
   speed: 2
   gettinghit: 0
   facing: {x: 0, y: 0}
+  weight: 100
   totalhealth: 35
   damage_taken: 0
   CharacterAttacks:

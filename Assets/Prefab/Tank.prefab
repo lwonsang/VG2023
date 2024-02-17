@@ -157,11 +157,12 @@ MonoBehaviour:
   animator: {fileID: 0}
   clips: []
   _spriterenderer: {fileID: 885992274070026106}
-  drag: 0
+  drag: 40
   speed: 1
   gettinghit: 0
   facing: {x: 0, y: 0}
-  totalhealth: 0
+  weight: 40
+  totalhealth: 120
   damage_taken: 0
   CharacterAttacks: []
   Hit_Enemies: []
@@ -170,8 +171,8 @@ MonoBehaviour:
   actionable: 0
   freezeframes: 0
   hitstun: 0
+  facing_enum: 0
   action: 0
-  subaction: 0
   healthBar: {fileID: 6701749618145552813}
   maxY: 0
   target: {fileID: 0}
@@ -194,7 +195,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.05
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -423,6 +424,7 @@ MonoBehaviour:
   speed: 0
   gettinghit: 0
   facing: {x: 0, y: 0}
+  weight: 0
   totalhealth: 0
   damage_taken: 0
   CharacterAttacks: []
@@ -432,8 +434,8 @@ MonoBehaviour:
   actionable: 0
   freezeframes: 0
   hitstun: 0
+  facing_enum: 0
   action: 0
-  subaction: 0
   target: {fileID: 0}
   aimPivot: {fileID: 3231735789549022162}
 --- !u!1 &2754919031162363254
@@ -709,7 +711,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 130058191
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &8881312537402714454

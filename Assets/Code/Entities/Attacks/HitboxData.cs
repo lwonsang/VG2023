@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -52,6 +53,8 @@ public class HitboxData : MonoBehaviour
             }*/
 
             opponent_script.action = CharacterBase.actions_list.GETTING_HIT;
+            opponent_script.freezeframes = freezeframes;
+            opponent_script.hitstun = hitstun;
             opponent_script.gettinghit = true;
             // Debug.Log(opponent_script.damage_taken);
             
@@ -72,7 +75,7 @@ public class HitboxData : MonoBehaviour
             opponent_script.damage_taken += damage;
             Debug.Log(opponent_script.damage_taken);
             float total_knockback = knockback + Mathf.Log(opponent_script.damage_taken, 2) * knockbackgrowth;
-            opponent_script._rigidbody2D.AddForce(total_knockback * facing);
+            opponent_script._rigidbody2D.velocity = total_knockback * facing * 1/((100+opponent_script.weight)/200)/15;
         }
         else
         {

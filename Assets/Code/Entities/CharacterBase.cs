@@ -20,6 +20,9 @@ public class CharacterBase : MonoBehaviour
     public float speed;
     public bool gettinghit;
     public Vector2 facing;
+    public float weight;
+    public Vector2 currentVelocity;
+
 
     [Header("Health Properties")]
     public float totalhealth;
@@ -172,6 +175,7 @@ public class CharacterBase : MonoBehaviour
         {
             action = actions_list.HITSTUN;
             gettinghit = true;
+            _rigidbody2D.velocity = Vector2.zero;
             Hitstun();
             return;
         }
@@ -199,8 +203,8 @@ public class CharacterBase : MonoBehaviour
         }
         else if (hitstun > 0)
         {
-            _rigidbody2D.velocity = (_rigidbody2D.velocity) * drag * Time.deltaTime;
-            freezeframes--;
+            _rigidbody2D.velocity = currentVelocity * .95f;
+            hitstun--;
         }
         else
         {

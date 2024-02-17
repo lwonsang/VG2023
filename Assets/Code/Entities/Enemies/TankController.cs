@@ -46,6 +46,7 @@ namespace Main{
         // Update is called once per frame
         void FixedUpdate()
         {
+            
             if (target && !defeated)
             {
                 Vector3 direction = (target.position - transform.position).normalized;
@@ -105,13 +106,26 @@ namespace Main{
                     {
                         Destroy(child.gameObject);
                     }
-                    //Destroy(gameObject);
+                    Destroy(gameObject, 10f);
                 }
                 
             } 
             
             if(TooFarAwayFromEnemy){
-                rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
+                switch(action)
+                {
+                    case actions_list.GETTING_HIT:
+                        Freezeframes();
+                        break;
+                    case actions_list.HITSTUN:
+                        Hitstun();
+                        break;
+                    default:
+                        currentVelocity = rb.velocity;
+                        rb.velocity = (currentVelocity + moveDirection * speed) * drag * Time.deltaTime;
+                        break;
+                }
+                //rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
             }
         }
 
