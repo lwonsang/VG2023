@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Diagnostics;
 
-public class GridMap
+public class Grid<TGridObject>
 {
-    
+    public event EventHandler<OnGridValueChangedEventArgs> OnGridValueChanged;
+    public class OnGridValueChangedEventArgs : EventArgs {
+        public int x;
+        public int y;
+    }
     private int width;
     private int height;
     private int[,] gridArray;
@@ -17,7 +22,7 @@ public class GridMap
 
     Vector3 originPosition;
     
-    public GridMap(int width, int height, float cellSize, Vector3 originPosition){
+    public Grid(int width, int height, float cellSize, Vector3 originPosition){
         this.width = width;
         this.height = height;
         this.cellSize = cellSize;
@@ -37,7 +42,9 @@ public class GridMap
             }
             Debug.DrawLine(GetWorldPosition(0,height), GetWorldPosition(width, height), Color.white, 100f);
             Debug.DrawLine(GetWorldPosition(width,0), GetWorldPosition(width, height), Color.white, 100f);
-            SetValue(0, 0, 54);
+            OnGridValueChanged += (object sender, OnGridValueChangedEventArgs eventArgs) => {
+                debugTextArray[eventArgs.x, eventArgs.y].text = gridArray[eventArgs.x, eventArgs.y].ToString();
+            };
         }
     }
 
