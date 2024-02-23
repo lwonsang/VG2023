@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Charizard : CharacterBase
@@ -45,6 +46,11 @@ public class Charizard : CharacterBase
 
             print("Current Health:" + (totalhealth-damage_taken));
             healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
+            
+            if(totalhealth <= damage_taken)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }  
     }
 
