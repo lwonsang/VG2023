@@ -31,7 +31,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6165328222369259}
   - {fileID: 4929705485073242287}
+  - {fileID: 8645537027362475111}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &356065375985772402
@@ -91,7 +93,87 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 599ec24c-8e33-4532-b34b-375e4ad8d462
     m_ActionName: Player/Attack[/Mouse/leftButton]
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 977366389035964423}
+        m_TargetAssemblyTypeName: PlayerOverhead, Assembly-CSharp
+        m_MethodName: Character1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3bbcd945-66ff-4d14-8fea-ffbd138f5bcc
+    m_ActionName: Player/Character_1[/Keyboard/1,/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 977366389035964423}
+        m_TargetAssemblyTypeName: PlayerOverhead, Assembly-CSharp
+        m_MethodName: Character2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 195c3923-03d5-4bfc-812b-87af5a41b2cf
+    m_ActionName: Player/Character_2[/Keyboard/2,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 977366389035964423}
+        m_TargetAssemblyTypeName: PlayerOverhead, Assembly-CSharp
+        m_MethodName: Ability1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5cdb6db3-e9c2-4a28-90a0-ab0b141e26f2
+    m_ActionName: Player/Ability1[/Keyboard/q,/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 977366389035964423}
+        m_TargetAssemblyTypeName: PlayerOverhead, Assembly-CSharp
+        m_MethodName: Ability2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e4486c8d-9367-46c6-90e6-8051ee7d4641
+    m_ActionName: Player/Ability2[/Keyboard/shift,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 977366389035964423}
+        m_TargetAssemblyTypeName: PlayerOverhead, Assembly-CSharp
+        m_MethodName: Ability3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 280b89aa-3046-41bb-84b8-d4dd80c6002e
+    m_ActionName: Player/Ability3[/Keyboard/f]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -110,9 +192,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_player_one: 1
   pressAttack: 0
+  characterswappress: 0
+  ability1press: 0
+  ability2press: 0
+  ability3press: 0
   MovementVector: {x: 0, y: 0}
   Characters: []
   activecharacter: {fileID: 0}
+  targetgroup: {fileID: 0}
+  target_for_enemies: {fileID: 2545235668843838356}
 --- !u!1 &2020579877130079344
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +389,37 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!1 &2545235668843838356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6165328222369259}
+  m_Layer: 6
+  m_Name: Target
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6165328222369259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2545235668843838356}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1145555659041961317}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2849821650833058782
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +496,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -477,7 +596,7 @@ MonoBehaviour:
   knockback: 5
   knockbackgrowth: 20
   freezeframes: 4
-  hitstun: 10
+  hitstun: 4
   reset_attacker: 0
 --- !u!58 &3203075976215545817
 CircleCollider2D:
@@ -744,7 +863,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -843,7 +962,7 @@ MonoBehaviour:
   damage: 12
   knockback: 15
   knockbackgrowth: 20
-  freezeframes: 4
+  freezeframes: 8
   hitstun: 10
   reset_attacker: 0
 --- !u!58 &6035941508856752810
@@ -1299,7 +1418,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -1399,7 +1518,7 @@ MonoBehaviour:
   knockback: 5
   knockbackgrowth: 20
   freezeframes: 4
-  hitstun: 10
+  hitstun: 4
   reset_attacker: 0
 --- !u!58 &4141289603517318471
 CircleCollider2D:
@@ -1700,7 +1819,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -1913,7 +2032,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -2434,7 +2553,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -2587,7 +2706,7 @@ GameObject:
   - component: {fileID: 1814621399911511546}
   m_Layer: 6
   m_Name: Charizard
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2706,6 +2825,7 @@ MonoBehaviour:
   gettinghit: 0
   facing: {x: 0, y: 0}
   weight: 100
+  currentVelocity: {x: 0, y: 0}
   totalhealth: 35
   damage_taken: 0
   CharacterAttacks:
@@ -3030,7 +3150,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -3129,7 +3249,7 @@ MonoBehaviour:
   damage: 12
   knockback: 15
   knockbackgrowth: 20
-  freezeframes: 4
+  freezeframes: 8
   hitstun: 10
   reset_attacker: 0
 --- !u!58 &7828985750165804030
@@ -3243,7 +3363,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -3342,7 +3462,7 @@ MonoBehaviour:
   damage: 12
   knockback: 15
   knockbackgrowth: 20
-  freezeframes: 4
+  freezeframes: 8
   hitstun: 10
   reset_attacker: 0
 --- !u!58 &2524887844524156550
@@ -3610,7 +3730,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 40
   m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
@@ -3710,7 +3830,7 @@ MonoBehaviour:
   knockback: 5
   knockbackgrowth: 20
   freezeframes: 4
-  hitstun: 10
+  hitstun: 4
   reset_attacker: 0
 --- !u!58 &2415398029146639954
 CircleCollider2D:
@@ -3747,3 +3867,69 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1001 &7604222129234495181
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1145555659041961317}
+    m_Modifications:
+    - target: {fileID: 1083580226376872918, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_Name
+      value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453572834716234616, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: player_overhead
+      value: 
+      objectReference: {fileID: 977366389035964423}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+--- !u!4 &8645537027362475111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2196773251139668650, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+  m_PrefabInstance: {fileID: 7604222129234495181}
+  m_PrefabAsset: {fileID: 0}

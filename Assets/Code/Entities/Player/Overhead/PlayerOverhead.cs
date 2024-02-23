@@ -1,8 +1,11 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerOverhead : MonoBehaviour
 {
@@ -10,12 +13,18 @@ public class PlayerOverhead : MonoBehaviour
     [Header("Define whether this is first player or not")]
     public bool is_player_one;
     public bool pressAttack;
+    public bool characterswappress;
+    public bool ability1press;
+    public bool ability2press;
+    public bool ability3press;
 
     public Vector2 MovementVector;
     //I will change this later to be called differently
 
     public List<GameObject> Characters;
     public CharacterBase activecharacter;
+    public CinemachineTargetGroup targetgroup;
+    public GameObject target_for_enemies;
 
     #endregion
 
@@ -24,11 +33,38 @@ public class PlayerOverhead : MonoBehaviour
         //sets the first character as active
         foreach(GameObject character in Characters)
         {
-            character.gameObject.SetActive(false);
+            character.gameObject.GetComponent<CharacterBase>().SetOut();
+            Debug.Log(character);
         }
-        Characters[0].SetActive(true);
         activecharacter = Characters[0].GetComponent<CharacterBase>();
+
+        if(targetgroup == null)
+        {
+            targetgroup = FindAnyObjectByType<CinemachineTargetGroup>();
+        }
+        if(activecharacter != null)
+        {
+            ChooseCharacter(0);
+            activecharacter.SetIn();
+        }
     }
+
+    #region Character_Functions
+
+    public void ChooseCharacter(int number)
+    {
+        targetgroup.RemoveMember(activecharacter.transform);
+        activecharacter.SetOut();
+        Characters[number].transform.position = activecharacter.transform.position;
+        Debug.Log(Characters[number]);
+        activecharacter = Characters[number].GetComponent<CharacterBase>();
+        activecharacter.SetIn();
+        targetgroup.AddMember(activecharacter.transform, 1, 5);
+        return;
+    }
+
+    #endregion
+
 
 
     #region InputSystem
@@ -45,6 +81,45 @@ public class PlayerOverhead : MonoBehaviour
             activecharacter.action = CharacterBase.actions_list.ATTACKING;
         }
     }
+
+    public void Character1(InputAction.CallbackContext value)
+    {
+        characterswappress = value.ReadValueAsButton();
+        if (!characterswappress)
+        {
+            return;
+        }
+        ChooseCharacter(0);
+        return;
+    }
+
+    public void Character2(InputAction.CallbackContext value)
+    {
+        characterswappress = value.ReadValueAsButton();
+        if (!characterswappress)
+        {
+            return;
+        }
+        ChooseCharacter(1);
+        Debug.Log(Characters.Count);
+        return;
+    }
+
+    public void Ability1(InputAction.CallbackContext value)
+    {
+        ability1press = value.ReadValueAsButton();
+    }
+
+    public void Ability2(InputAction.CallbackContext value)
+    {
+        ability2press = value.ReadValueAsButton();
+    }
+
+    public void Ability3(InputAction.CallbackContext value)
+    {
+        ability3press = value.ReadValueAsButton();
+    }
+
 
     #endregion
 

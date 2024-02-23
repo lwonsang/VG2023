@@ -21,10 +21,10 @@ public class Charizard : CharacterBase
 
     void Awake()
     {
-        player_overhead.Characters.Add(gameObject);
         Debug.Log(Quaternion.identity);
         Hit_Enemies = new List<GameObject>();
         player_overhead = transform.parent.gameObject.GetComponent<PlayerOverhead>();
+        player_overhead.Characters.Add(gameObject);
         if(player_overhead == null )
         {
             Destroy(gameObject);
@@ -67,7 +67,8 @@ public class Charizard : CharacterBase
             case actions_list.WALKING:
                 Walking();
                 break;
-
+            case actions_list.OUT:
+                return;
             default: 
                 break;
         }

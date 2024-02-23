@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,20 +41,31 @@ public class CharacterBase : MonoBehaviour
     public float freezeframes;
     public float hitstun;
 
-    public enum actions_list {
+
+    //cooldown logic
+    public delegate void CharacterCooldowns();
+    public CharacterCooldowns cooldown_delegate;
+
+    public enum actions_list
+    {
         IDLE,
         WALKING,
         ATTACKING,
         GETTING_HIT,
-        HITSTUN
+        HITSTUN,
+        OUT
     }
 
     public enum facing_direction
     {
         Front,
-        Back, 
+        Back,
         Left,
-        Right
+        Right,
+        Tilted_Left_Front,
+        Tilted_Right_Front,
+        Tilted_Left_Back,
+        Tilted_Right_Back,
     }
 
     public facing_direction facing_enum;
@@ -87,12 +99,12 @@ public class CharacterBase : MonoBehaviour
 
     #region Universal_Statements
 
-    public facing_direction GetDirection()
+    virtual public facing_direction GetDirection()
     {
         return facing_enum;
     }
 
-    public void SetDirection(facing_direction direction)
+    virtual public void SetDirection(facing_direction direction)
     {
         switch (direction)
         {
@@ -122,8 +134,8 @@ public class CharacterBase : MonoBehaviour
                 return;
         }
     }
-    
-    public void RotateCounterClockwise()
+
+    virtual public void RotateCounterClockwise()
     {
         switch (facing_enum)
         {
@@ -142,7 +154,7 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
-    public void RotateClockwise()
+    virtual public void RotateClockwise()
     {
         switch (facing_enum)
         {
@@ -184,7 +196,7 @@ public class CharacterBase : MonoBehaviour
             freezeframes--;
             gettinghit = false;
         }
-            
+
         else
         {
             //this should theoretically never happen but its an edge case just in case
@@ -217,6 +229,40 @@ public class CharacterBase : MonoBehaviour
     {
         Hit_Enemies = new List<GameObject>();
     }
+    #endregion
+
+    #region Character_selection_logic
+    public void SetOut()
+    {
+        action = actions_list.OUT;
+        _spriterenderer.enabled = false;
+        hitbox.enabled = false;
+        _rigidbody2D.velocity = Vector2.zero;
+    }
+
+    public void SetIn()
+    {
+        action = actions_list.IDLE;
+        _spriterenderer.enabled = true;
+        hitbox.enabled = true;
+        transform.rotation = Quaternion.identity;
+        actionable = true;
+        if (player_overhead != null)
+        {
+            Debug.Log("CHILD");
+            player_overhead.target_for_enemies.transform.SetParent(transform);
+        }
+    }
+
+    #endregion
+
+    #region Cooldown_Management
+
+    public void Cooldowns()
+    {
+        cooldown_delegate();
+    }
+
     #endregion
 
 }
