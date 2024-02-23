@@ -20,7 +20,13 @@ public class HitboxData : MonoBehaviour
     [HideInInspector] public bool reset_attacker;
     public void Awake()
     {
-        Owner = transform.parent.parent.gameObject;
+        if(Owner == null)
+            Owner = transform.parent.parent.gameObject;
+    }
+
+    public void SetOwner(GameObject newowner)
+    {
+        Owner = newowner;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
