@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
@@ -10,6 +11,7 @@ namespace Main{
     public class TankController : CharacterBase
     {
         [SerializeField] FloatingHealthBar healthBar;
+        [SerializeField] TMPController tmpcontroller;
         
         [SerializeField] private float maxY;
         private Rigidbody2D rb;
@@ -24,6 +26,7 @@ namespace Main{
         public Sprite turnDown;
         public Sprite destroyed;
         private bool defeated = false;
+        private bool temp = false;
 
         // If the target is too far from the enemy, move closer. False by default, set during update.
         // until we actually implement this mechanic, it will be set to true always
@@ -40,6 +43,7 @@ namespace Main{
             rb = GetComponent<Rigidbody2D>();
             timeBtwShots = startTimeBtwShots;
             //healthBar = GameObject.Find("TankHealthBar").GetComponentInChildren<FloatingHealthBar>();
+            tmpcontroller = GameObject.Find("Text (TMP)").GetComponentInChildren<TMPController>();
 
         }
 
@@ -90,16 +94,17 @@ namespace Main{
             }
             if (gettinghit){
                 gettinghit = false;
-                print("tank being hit");
+                // print("tank being hit");
                 damage_taken += 1;
 
-                print("Tank Current Health:" + (totalhealth-damage_taken));
+                // print("Tank Current Health:" + (totalhealth-damage_taken));
                 healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
                 if(totalhealth <= damage_taken)
                 {
                     _spriterenderer.sprite = destroyed;
                     speed = 0;
                     defeated = true;
+                    
                     gameObject.layer = 0;
                     rb.angularVelocity = 0f;
                     foreach (Transform child in transform)
@@ -108,8 +113,12 @@ namespace Main{
                     }
                     Destroy(gameObject, 10f);
                 }
-                
             } 
+            if(totalhealth <= damage_taken && temp == false)
+            {
+                tmpcontroller.onDestroyEnemy();
+                temp = true;
+            }   
             
             if(TooFarAwayFromEnemy){
                 switch(action)
