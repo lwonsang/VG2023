@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RespawnPoint : MonoBehaviour
 {
@@ -10,6 +13,8 @@ public class RespawnPoint : MonoBehaviour
     public Transform target;
     private int enemiesSpawned;
     public int maxEnemiesNumber;
+    private bool hasTrigged = false;
+    public bool autoRespawn;
 
     // Define range for random spawn position
     public Vector2 spawnRange;
@@ -22,10 +27,9 @@ public class RespawnPoint : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (target && enemiesSpawned < maxEnemiesNumber)
+        if (hasTrigged || autoRespawn)
         {
             if (timeBtwSpawns <= 0)
             {
@@ -39,6 +43,18 @@ public class RespawnPoint : MonoBehaviour
             else
             {
                 timeBtwSpawns -= Time.deltaTime;
+            }
+        }
+    }
+
+    // Update is called once per frame
+    
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.transform.parent != null)
+        {
+            if (other.transform.parent.gameObject.name == "Player" && enemiesSpawned < maxEnemiesNumber)
+            {
+                hasTrigged = true;
             }
         }
     }
