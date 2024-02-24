@@ -39,7 +39,10 @@ public class Slime: CharacterBase
         }
         player_overhead = transform.parent.gameObject.GetComponent<PlayerOverhead>();
         player_overhead.Characters.Add(gameObject);
-        
+        PlayerOverhead.CharacterUIData thing = new PlayerOverhead.CharacterUIData();
+        thing.background_color = new Color(.4f, .6f, 1f);
+        thing.icon = _spriterenderer.sprite;
+        player_overhead.Character_UIData.Add(thing);
         if (player_overhead == null )
         {
             Destroy(gameObject);
@@ -85,6 +88,7 @@ public class Slime: CharacterBase
 
     public override void FixedUpdate()
     {
+        Cooldowns();
         switch(action)
         {
             case actions_list.IDLE:
@@ -278,7 +282,6 @@ public class Slime: CharacterBase
     {
         Hit_Enemies.Clear();
     }
-    #endregion
     public void RecombineCooldown()
     {
         if(recombine_timer < recombine_total)
@@ -295,8 +298,22 @@ public class Slime: CharacterBase
     public void Recombine(float size)
     {
     }
+    #endregion
 
-    #region Override_for_directions
+    #region Override Basics
+
+    override public void SetOut()
+    {
+        foreach (GameObject obj in CharacterAttacks[0].objects)
+        {
+            obj.SetActive(false);
+            Debug.Log("snom");
+        }
+        action = actions_list.OUT;
+        _spriterenderer.enabled = false;
+        hitbox.enabled = false;
+        _rigidbody2D.velocity = Vector2.zero;
+    }
     override public facing_direction GetDirection()
     {
         return facing_enum;

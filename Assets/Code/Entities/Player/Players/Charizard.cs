@@ -25,6 +25,10 @@ public class Charizard : CharacterBase
         Hit_Enemies = new List<GameObject>();
         player_overhead = transform.parent.gameObject.GetComponent<PlayerOverhead>();
         player_overhead.Characters.Add(gameObject);
+        PlayerOverhead.CharacterUIData thing = new PlayerOverhead.CharacterUIData();
+        thing.background_color = new Color(1, .8f, .8f);
+        thing.icon = _spriterenderer.sprite;
+        player_overhead.Character_UIData.Add(thing);
         if(player_overhead == null )
         {
             Destroy(gameObject);
@@ -56,7 +60,8 @@ public class Charizard : CharacterBase
 
     public override void FixedUpdate()
     {
-        switch(action)
+        Cooldowns();
+        switch (action)
         {
             case actions_list.IDLE:
                 Idle();

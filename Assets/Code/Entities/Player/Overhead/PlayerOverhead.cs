@@ -2,10 +2,11 @@ using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.UI;
 
 public class PlayerOverhead : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class PlayerOverhead : MonoBehaviour
     public bool ability2press;
     public bool ability3press;
 
+    public float swaptime;
+    [HideInInspector] public float timer_for_swap = 0;
+
     public Vector2 MovementVector;
     //I will change this later to be called differently
 
@@ -25,6 +29,21 @@ public class PlayerOverhead : MonoBehaviour
     public CharacterBase activecharacter;
     public CinemachineTargetGroup targetgroup;
     public GameObject target_for_enemies;
+
+    [System.Serializable]
+    public struct CharacterUIGameObjects
+    {
+        public Image icon_image;
+        public Image icon_background;
+        public Slider slider;
+    }
+    public List<CharacterUIGameObjects> Icon_Gameobjects;
+    public struct CharacterUIData
+    {
+        public Sprite icon;
+        public Color background_color;
+    }
+    public List<CharacterUIData> Character_UIData = new List<CharacterUIData>();
 
     #endregion
 
@@ -35,6 +54,17 @@ public class PlayerOverhead : MonoBehaviour
         {
             character.gameObject.GetComponent<CharacterBase>().SetOut();
             Debug.Log(character);
+        }
+
+        for(int i = 0; i < Character_UIData.Count; i++)
+        {
+            if (Icon_Gameobjects.Count < i)
+                return;
+            Debug.Log(i + " " + Character_UIData[i].background_color);
+            if(Character_UIData[i].background_color != null)
+                Icon_Gameobjects[i].icon_background.color = Character_UIData[i].background_color;
+            if (Character_UIData[i].icon != null)
+                Icon_Gameobjects[i].icon_image.sprite = Character_UIData[i].icon;
         }
         activecharacter = Characters[0].GetComponent<CharacterBase>();
 
@@ -60,6 +90,7 @@ public class PlayerOverhead : MonoBehaviour
         activecharacter = Characters[number].GetComponent<CharacterBase>();
         activecharacter.SetIn();
         targetgroup.AddMember(activecharacter.transform, 1, 5);
+        timer_for_swap = 0;
         return;
     }
 
@@ -84,6 +115,8 @@ public class PlayerOverhead : MonoBehaviour
 
     public void Character1(InputAction.CallbackContext value)
     {
+        if (timer_for_swap < swaptime)
+            return;
         characterswappress = value.ReadValueAsButton();
         if (!characterswappress)
         {
@@ -95,6 +128,8 @@ public class PlayerOverhead : MonoBehaviour
 
     public void Character2(InputAction.CallbackContext value)
     {
+        if (timer_for_swap < swaptime)
+            return;
         characterswappress = value.ReadValueAsButton();
         if (!characterswappress)
         {

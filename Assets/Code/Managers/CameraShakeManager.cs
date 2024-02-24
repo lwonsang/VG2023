@@ -20,7 +20,6 @@ public class CameraShakeManager : MonoBehaviour
 
     public void ShakeCamera(float shakeStrength, float time)
     {
-        Debug.Log("snom");
         shake.m_AmplitudeGain = shakeStrength;
         if(shaketime != null )
         {

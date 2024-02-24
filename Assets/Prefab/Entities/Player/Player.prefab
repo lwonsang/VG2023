@@ -3919,10 +3919,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2822286043580274755, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: cd357d6004140e941879de69c48642fd, type: 2}
+    - target: {fileID: 3451091582101978493, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453572834716234616, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: drag
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453572834716234616, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3453572834716234616, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
       propertyPath: player_overhead
       value: 
       objectReference: {fileID: 977366389035964423}
+    - target: {fileID: 5382417235605224673, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420431956262514622, guid: ea9bb243648b6494e86d585c797b97ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

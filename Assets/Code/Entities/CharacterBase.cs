@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using UnityEngine.UIElements;
 
 public class CharacterBase : MonoBehaviour
 {
@@ -44,7 +45,7 @@ public class CharacterBase : MonoBehaviour
 
     //cooldown logic
     public delegate void CharacterCooldowns();
-    public CharacterCooldowns cooldown_delegate;
+    public CharacterCooldowns cooldown_delegate = null;
 
     public enum actions_list
     {
@@ -232,7 +233,7 @@ public class CharacterBase : MonoBehaviour
     #endregion
 
     #region Character_selection_logic
-    public void SetOut()
+    virtual public void SetOut()
     {
         action = actions_list.OUT;
         _spriterenderer.enabled = false;
@@ -240,7 +241,7 @@ public class CharacterBase : MonoBehaviour
         _rigidbody2D.velocity = Vector2.zero;
     }
 
-    public void SetIn()
+    virtual public void SetIn()
     {
         action = actions_list.IDLE;
         _spriterenderer.enabled = true;
@@ -260,8 +261,19 @@ public class CharacterBase : MonoBehaviour
 
     public void Cooldowns()
     {
-        cooldown_delegate();
+        //cooldown_delegate();
+        if(player_overhead.timer_for_swap <= player_overhead.swaptime)
+        {
+            player_overhead.timer_for_swap += 1;
+            foreach (PlayerOverhead.CharacterUIGameObjects obj in player_overhead.Icon_Gameobjects)
+            {
+                obj.slider.value = player_overhead.timer_for_swap / player_overhead.swaptime;
+                Debug.Log(player_overhead.timer_for_swap + " " + player_overhead.swaptime);
+            }
+        }
     }
+
+
 
     #endregion
 
