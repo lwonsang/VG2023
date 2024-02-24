@@ -8,7 +8,6 @@ public class CameraShakeManager : MonoBehaviour
     public static CameraShakeManager Instance { get; private set; }
 
     private CinemachineBasicMultiChannelPerlin shake;
-    private float shakeTimer;
 
     private IEnumerator shaketime;
 
@@ -20,20 +19,30 @@ public class CameraShakeManager : MonoBehaviour
 
     public void ShakeCamera(float shakeStrength, float time)
     {
-        shake.m_AmplitudeGain = shakeStrength;
-        if(shaketime != null )
+        
+        
+        if (shaketime != null )
         {
-            StopCoroutine( shaketime );
+            StopCoroutine(shaketime);
+            shaketime = null;
         }
-        shaketime = ShakeCoroutine(time);
+        if (time <= 0)
+        {
+            return;
+        }
+        if (shakeStrength == float.NaN)
+            return;
+        Debug.Log("aeiou" + shakeStrength);
+        shake.m_AmplitudeGain = shakeStrength;
+        shaketime = ShakeCoroutine(time, shakeStrength);
         StartCoroutine(shaketime);
     }
 
-    public IEnumerator ShakeCoroutine(float shakeTimer)
+    public IEnumerator ShakeCoroutine(float shakeTimer, float shakeStrength)
     {
         for(int i = 0; i < shakeTimer; i++)
         {
-            Mathf.Lerp(shake.m_AmplitudeGain, 0, i);
+            shake.m_AmplitudeGain = Mathf.Lerp(shakeStrength, 0f, i/shakeTimer);
             yield return null;
         }
         shake.m_AmplitudeGain = 0f;

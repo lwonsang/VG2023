@@ -81,7 +81,7 @@ public class HitboxData : MonoBehaviour
             opponent_script.damage_taken += damage;
             Debug.Log(opponent_script.damage_taken);
             float total_knockback = knockback + Mathf.Log(opponent_script.damage_taken, 2) * knockbackgrowth;
-            CameraShakeManager.Instance.ShakeCamera(Mathf.Log(total_knockback,3), freezeframes);
+            CameraShakeManager.Instance.ShakeCamera(Mathf.Log(Mathf.Abs(total_knockback) + 3,3) - 1, freezeframes);
             opponent_script._rigidbody2D.velocity = total_knockback * facing * 1/((100+opponent_script.weight)/200)/15;
         }
         else
