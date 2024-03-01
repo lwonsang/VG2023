@@ -10,11 +10,13 @@ public class RespawnPoint : MonoBehaviour
     public float startTimeBtwSpawns;
     private float timeBtwSpawns;
     public GameObject enemy;
-    public Transform target;
     private int enemiesSpawned;
     public int maxEnemiesNumber;
     private bool hasTrigged = false;
     public bool autoRespawn;
+    private List<GameObject> listOfTanks;
+    private bool allEnemiesDefeated = false;
+    public GameObject nextRespawnPointArrowPrefab;
 
     // Define range for random spawn position
     public Vector2 spawnRange;
@@ -24,20 +26,19 @@ public class RespawnPoint : MonoBehaviour
     {
         timeBtwSpawns = startTimeBtwSpawns;
         enemiesSpawned = 0;
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        listOfTanks = new List<GameObject>();
     }
 
     private void FixedUpdate()
     {
-        if (hasTrigged || autoRespawn)
+        if (enemiesSpawned < maxEnemiesNumber && (hasTrigged || autoRespawn))
         {
             if (timeBtwSpawns <= 0)
             {
                 // Generate random position within the spawn range
                 Vector3 randomSpawnPosition = transform.position + new Vector3(Random.Range(-spawnRange.x, spawnRange.x), Random.Range(-spawnRange.y, spawnRange.y), 0.0f);
-                Instantiate(enemy, randomSpawnPosition, Quaternion.identity);
+                listOfTanks.Add(Instantiate(enemy, randomSpawnPosition, Quaternion.identity));
                 enemiesSpawned++;
-                print(enemiesSpawned);
                 timeBtwSpawns = startTimeBtwSpawns;
             }
             else
@@ -45,17 +46,41 @@ public class RespawnPoint : MonoBehaviour
                 timeBtwSpawns -= Time.deltaTime;
             }
         }
-    }
 
-    // Update is called once per frame
+        if (enemiesSpawned >= maxEnemiesNumber && !allEnemiesDefeated)
+        {
+            allEnemiesDefeated = AllTanksDestroyedCheck();
+            if (allEnemiesDefeated)
+            {
+                Vector3 arrowPosition = transform.position + new Vector3(0, 1.25f, 0);
+                Instantiate(nextRespawnPointArrowPrefab, arrowPosition, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            
+
+        }
+    }
     
     void OnTriggerEnter2D(Collider2D other){
         if (other.transform.parent != null)
         {
-            if (other.transform.parent.gameObject.name == "Player" && enemiesSpawned < maxEnemiesNumber)
+            if (other.transform.parent.gameObject.name == "Player")
             {
                 hasTrigged = true;
             }
         }
+    }
+
+    bool AllTanksDestroyedCheck()
+    {
+        for (int i = 0; i < enemiesSpawned; ++i)
+        {
+            if (listOfTanks[i] != null)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

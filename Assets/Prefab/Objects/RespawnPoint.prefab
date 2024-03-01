@@ -46,10 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990d6c9211d5c481e8e41baea72bd793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwSpawns: 7
+  startTimeBtwSpawns: 5
   enemy: {fileID: 282768950365299238, guid: d23055b3d431c4ffc903933f7311a086, type: 3}
-  target: {fileID: 0}
-  maxEnemiesNumber: 999
+  maxEnemiesNumber: 7
+  autoRespawn: 0
+  nextRespawnPointArrowPrefab: {fileID: 395826011931784896, guid: 45860bdb09f3c4356890b31f3e2ba861, type: 3}
   spawnRange: {x: 2, y: 2}
 --- !u!58 &-8771112119730130351
 CircleCollider2D:
