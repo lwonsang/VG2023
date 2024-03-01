@@ -35,7 +35,7 @@ public class PlayerOverhead : MonoBehaviour
     {
         public Image icon_image;
         public Image icon_background;
-        public Slider slider;
+        public Image sliderimage;
     }
     public List<CharacterUIGameObjects> Icon_Gameobjects;
     public struct CharacterUIData
@@ -89,7 +89,7 @@ public class PlayerOverhead : MonoBehaviour
         Debug.Log(Characters[number]);
         activecharacter = Characters[number].GetComponent<CharacterBase>();
         activecharacter.SetIn();
-        targetgroup.AddMember(activecharacter.transform, 1, 5);
+        targetgroup.AddMember(activecharacter.transform, 1, 8);
         timer_for_swap = 0;
         return;
     }

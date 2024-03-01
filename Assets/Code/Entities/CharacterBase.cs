@@ -267,7 +267,7 @@ public class CharacterBase : MonoBehaviour
             player_overhead.timer_for_swap += 1;
             foreach (PlayerOverhead.CharacterUIGameObjects obj in player_overhead.Icon_Gameobjects)
             {
-                obj.slider.value = player_overhead.timer_for_swap / player_overhead.swaptime;
+                obj.sliderimage.fillAmount = player_overhead.timer_for_swap / player_overhead.swaptime;
                 Debug.Log(player_overhead.timer_for_swap + " " + player_overhead.swaptime);
             }
         }
