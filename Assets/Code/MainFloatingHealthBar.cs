@@ -19,7 +19,7 @@ public class MainFloatingHealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {       
-        myText.text = "35/35";
+        myText.text = "50/50";
     }
 
     // Update is called once per frame

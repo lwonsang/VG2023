@@ -24,7 +24,7 @@ public class PlayerOverhead : MonoBehaviour
 
     public Vector2 MovementVector;
     //I will change this later to be called differently
-
+    [Header("Character tracking")]
     public List<GameObject> Characters;
     public CharacterBase activecharacter;
     public CinemachineTargetGroup targetgroup;
@@ -37,6 +37,7 @@ public class PlayerOverhead : MonoBehaviour
         public Image icon_background;
         public Image sliderimage;
     }
+    [Header("UI")]
     public List<CharacterUIGameObjects> Icon_Gameobjects;
     public struct CharacterUIData
     {
@@ -44,11 +45,16 @@ public class PlayerOverhead : MonoBehaviour
         public Color background_color;
     }
     public List<CharacterUIData> Character_UIData = new List<CharacterUIData>();
-
+    public TMPController levelup;
+    public MainFloatingHealthBar Health;
+    public EvoController LevelBar;
     #endregion
 
     public void Start()
     {
+        if (levelup == null)
+            levelup = FindAnyObjectByType<TMPController>();
+
         //sets the first character as active
         foreach(GameObject character in Characters)
         {
@@ -88,6 +94,10 @@ public class PlayerOverhead : MonoBehaviour
         Characters[number].transform.position = activecharacter.transform.position;
         Debug.Log(Characters[number]);
         activecharacter = Characters[number].GetComponent<CharacterBase>();
+        if (levelup != null)
+        {
+            levelup.currentPlayer = activecharacter;
+        }
         activecharacter.SetIn();
         targetgroup.AddMember(activecharacter.transform, 1, 8);
         timer_for_swap = 0;

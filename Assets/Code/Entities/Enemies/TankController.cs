@@ -43,7 +43,7 @@ namespace Main{
             rb = GetComponent<Rigidbody2D>();
             timeBtwShots = startTimeBtwShots;
             //healthBar = GameObject.Find("TankHealthBar").GetComponentInChildren<FloatingHealthBar>();
-            tmpcontroller = GameObject.Find("Text (TMP)").GetComponentInChildren<TMPController>();
+            tmpcontroller = FindAnyObjectByType<TMPController>();
 
         }
 
@@ -111,7 +111,7 @@ namespace Main{
                     {
                         Destroy(child.gameObject);
                     }
-                    Destroy(gameObject, 10f);
+                    Destroy(gameObject, 3f);
                 }
             } 
             if(totalhealth <= damage_taken && temp == false)

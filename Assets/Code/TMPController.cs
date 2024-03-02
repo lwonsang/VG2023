@@ -9,7 +9,7 @@ public class TMPController : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI myText;
-
+    public CharacterBase currentPlayer;
     [SerializeField] EvoController evocontroller;
     int n = 0;
     int xp = 0;
@@ -25,6 +25,7 @@ public class TMPController : MonoBehaviour
         if(xp == 3){
             level++;
             xp = 0;
+            currentPlayer.LevelUp();
         }
 
         

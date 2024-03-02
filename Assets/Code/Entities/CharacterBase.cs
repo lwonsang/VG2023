@@ -103,6 +103,15 @@ public class CharacterBase : MonoBehaviour
 
     #region Universal_Statements
 
+    public void LevelUp()
+    {
+        totalhealth *= 1.2f;
+        totalhealth = MathF.Round(totalhealth * 100) / 100;
+        damage_taken -= totalhealth / 4;
+        damage_taken = MathF.Round(MathF.Max(damage_taken, 0) * 100)/100;
+        player_overhead.Health.UpdateHealthBar(totalhealth - damage_taken, totalhealth);
+    }
+
     virtual public facing_direction GetDirection()
     {
         return facing_enum;
@@ -246,6 +255,7 @@ public class CharacterBase : MonoBehaviour
 
     virtual public void SetIn()
     {
+        player_overhead.Health.UpdateHealthBar(totalhealth - damage_taken, totalhealth);
         action = actions_list.IDLE;
         _spriterenderer.enabled = true;
         hitbox.enabled = true;
