@@ -26,6 +26,7 @@ public class NextRespawnPointArrow : MonoBehaviour
         }
         else
         {
+            GetComponent<Renderer>().enabled = false;
             print("all enemies defeated");
         }
     }
