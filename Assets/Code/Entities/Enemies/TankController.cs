@@ -118,6 +118,7 @@ namespace Main{
             {
                 tmpcontroller.onDestroyEnemy();
                 temp = true;
+
             }   
             
             if(TooFarAwayFromEnemy){

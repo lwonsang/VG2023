@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 
 public class Charizard : CharacterBase
 {
-    [SerializeField] FloatingHealthBar healthBar;
+    [SerializeField] MainFloatingHealthBar healthBar;
     public enum subactions_list
     {
         Idle,
@@ -40,7 +40,7 @@ public class Charizard : CharacterBase
         GameObject healthbargameobject = GameObject.Find("HealthBar");
         if(healthbargameobject != null )
         {
-            healthBar = healthbargameobject.GetComponentInChildren<FloatingHealthBar>();
+            healthBar = healthbargameobject.GetComponentInChildren<MainFloatingHealthBar>();
         }
     }
 

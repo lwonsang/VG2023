@@ -30,6 +30,9 @@ public class CharacterBase : MonoBehaviour
     public float totalhealth;
     public float damage_taken;
 
+    // public float evoCounter;s
+    // public float evoLevel;
+
     [Header("Attack Logic")]
     public List<Attackdata> CharacterAttacks;
     public List<GameObject> Hit_Enemies;

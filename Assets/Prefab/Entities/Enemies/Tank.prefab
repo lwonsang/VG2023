@@ -175,6 +175,7 @@ MonoBehaviour:
   facing_enum: 0
   action: 0
   healthBar: {fileID: 6701749618145552813}
+  tmpcontroller: {fileID: 0}
   maxY: 0
   target: {fileID: 0}
   startTimeBtwShots: 2
@@ -254,7 +255,7 @@ GameObject:
   - component: {fileID: 5906283949319172071}
   - component: {fileID: 7054173485574233246}
   - component: {fileID: 8976302303367601792}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5818994400849458965}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +488,7 @@ GameObject:
   - component: {fileID: 8619743412021534159}
   - component: {fileID: 3192344759472380051}
   - component: {fileID: 1201011062178995725}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +563,7 @@ GameObject:
   - component: {fileID: 2355190042191963148}
   - component: {fileID: 2145719133825856590}
   - component: {fileID: 6701749618145552813}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: TankHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2145719133825856590}
+  myText: {fileID: 0}
 --- !u!1 &5873063808854437379
 GameObject:
   m_ObjectHideFlags: 0
