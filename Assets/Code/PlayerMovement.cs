@@ -12,7 +12,7 @@ namespace Main{
 
         
 
-        [SerializeField] FloatingHealthBar healthBar;
+        [SerializeField] MainFloatingHealthBar healthBar;
 
 
 
@@ -31,7 +31,7 @@ namespace Main{
         void Start()
         {
             currentHealth = maxHealth;
-            healthBar = GameObject.Find("HealthBar").GetComponentInChildren<FloatingHealthBar>();
+            healthBar = GameObject.Find("HealthBar").GetComponentInChildren<MainFloatingHealthBar>();
         }
 
         // Update is called once per frame

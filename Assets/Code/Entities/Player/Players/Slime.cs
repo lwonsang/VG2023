@@ -5,10 +5,11 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class Slime: CharacterBase
 {
-    [SerializeField] FloatingHealthBar healthBar;
+    [SerializeField] MainFloatingHealthBar healthBar;
 
     public enum subactions_list
     {
@@ -53,7 +54,7 @@ public class Slime: CharacterBase
         GameObject healthbargameobject = GameObject.Find("HealthBar");
         if(healthbargameobject != null )
         {
-            healthBar = healthbargameobject.GetComponentInChildren<FloatingHealthBar>();
+            healthBar = healthbargameobject.GetComponentInChildren<MainFloatingHealthBar>();
         }
     }
 
@@ -74,6 +75,11 @@ public class Slime: CharacterBase
 
             print("Current Health:" + (totalhealth-damage_taken));
             healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
+
+            if(totalhealth <= damage_taken)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }  
     }
 
