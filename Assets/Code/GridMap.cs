@@ -37,24 +37,21 @@ public class GridMap<TGridObject> {
         this.cellSize = cellSize;
         this.originPosition = originPosition;
 
-        gridArray = new TGridObject[width, height];
+         gridArray = new TGridObject[width, height];
+
+        for (int x = 0; x < gridArray.GetLength(0); x++) {
+            for (int y = 0; y < gridArray.GetLength(1); y++) {
+                gridArray[x, y] = createGridObject(this, x, y);
+            }
+        }
 
         bool showDebug = true;
         if (showDebug) {
             TextMesh[,] debugTextArray = new TextMesh[width, height];
 
-            // Cycle through cells
-            Debug.Log("Drawing...");
-            Debug.Log("Length: " + gridArray.GetLength(0));
-            Debug.Log("Height: " + gridArray.GetLength(1));
-            for(int x = 0; x < gridArray.GetLength(0); x++){
-                for(int y = 0; y < gridArray.GetLength(1); y++) {
-
-                    Debug.Log("Drawing...");
-                    // Create visual grid - disable later
-                    debugTextArray[x, y] = CreateWorldText(gridArray[x, y].ToString(), null, GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * .5f, 5, Color.white, TextAnchor.MiddleCenter);
-                    
-                    
+            for (int x = 0; x < gridArray.GetLength(0); x++) {
+                for (int y = 0; y < gridArray.GetLength(1); y++) {
+                    debugTextArray[x, y] = CreateWorldText(gridArray[x, y]?.ToString(), null, GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * .5f, 5, Color.white, TextAnchor.MiddleCenter);
                     Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
                     Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
                 }
@@ -63,7 +60,7 @@ public class GridMap<TGridObject> {
             Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
 
             OnGridObjectChanged += (object sender, OnGridObjectChangedEventArgs eventArgs) => {
-                debugTextArray[eventArgs.x, eventArgs.y].text = gridArray[eventArgs.x, eventArgs.y].ToString();
+                debugTextArray[eventArgs.x, eventArgs.y].text = gridArray[eventArgs.x, eventArgs.y]?.ToString();
             };
         }
     }

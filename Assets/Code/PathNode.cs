@@ -19,6 +19,7 @@ public class PathNode
         this.grid = grid;
         this.x = x;
         this.y = y;
+        isWalkable = true;
     }
 
     
