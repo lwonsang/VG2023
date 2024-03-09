@@ -24,6 +24,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Alternate_Attack",
+                    "type": "Button",
+                    "id": "b4f4042a-ea8f-456c-93e2-0bc3e306fcea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Character_1",
                     "type": "Button",
                     "id": "3bbcd945-66ff-4d14-8fea-ffbd138f5bcc",
@@ -276,6 +285,39 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Ability3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "40ab4a70-fb41-4993-8e1f-57c4ea71ffde",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Alternate_Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea61364e-ee9f-4773-992d-77965127bcab",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Alternate_Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f20762eb-d5c2-4a55-aec6-258882188618",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Alternate_Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

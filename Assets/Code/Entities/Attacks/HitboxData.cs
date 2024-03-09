@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class HitboxData : MonoBehaviour
 {
-    [HideInInspector] public GameObject Owner;
+    public GameObject Owner;
     [HideInInspector] public GameObject Opponent;
 
     public float attackangle;

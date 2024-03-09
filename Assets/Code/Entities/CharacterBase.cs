@@ -103,6 +103,14 @@ public class CharacterBase : MonoBehaviour
 
     #region Universal_Statements
 
+    public IEnumerator DeactivateObjectAfterTime(GameObject something, float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        something.SetActive(false);
+
+    }
+
     public void LevelUp()
     {
         totalhealth *= 1.2f;
@@ -115,6 +123,48 @@ public class CharacterBase : MonoBehaviour
     virtual public facing_direction GetDirection()
     {
         return facing_enum;
+    }
+
+    virtual public void SetAnglebyMouse(GameObject thingy)
+    {
+        Vector3 disttomouse = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float mouseposangle = Mathf.Atan2(disttomouse.y, disttomouse.x)*Mathf.Rad2Deg;
+
+        thingy.transform.rotation = Quaternion.Euler(0, 0, mouseposangle);
+    }
+
+    virtual public void SetFacingDirectionByMouse()
+    {
+        Vector3 disttomouse = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float mouseposangle = Mathf.Atan2(disttomouse.y, disttomouse.x) * Mathf.Rad2Deg;
+
+        if(mouseposangle < 0)
+        {
+            mouseposangle += 360;
+        }
+
+        switch(mouseposangle)
+        {
+            case float angle when (mouseposangle > -45 && mouseposangle <= 45) || (mouseposangle > 315 && mouseposangle <= 405):
+                animator.SetInteger("Turn", 1);
+                _spriterenderer.flipX = true;
+                facing_enum = facing_direction.Right;
+                break;
+            case float angle when mouseposangle > 45 && mouseposangle <= 135:
+                animator.SetInteger("Turn", -1);
+                facing_enum = facing_direction.Back;
+                break;
+            case float angle when mouseposangle > 135 && mouseposangle <= 225:
+                animator.SetInteger("Turn", 1);
+                _spriterenderer.flipX = false;
+                facing_enum = facing_direction.Left;
+                break;
+            case float angle when mouseposangle > 225 && mouseposangle <= 315:
+                animator.SetInteger("Turn", 0);
+                facing_enum = facing_direction.Front;
+                break;
+
+        }
     }
 
     virtual public void SetDirection(facing_direction direction)
@@ -272,6 +322,10 @@ public class CharacterBase : MonoBehaviour
 
     #region Cooldown_Management
 
+    public delegate void cooldownDelegate();
+    cooldownDelegate cd_Delegate;
+
+
     public void Cooldowns()
     {
         //cooldown_delegate();
@@ -284,6 +338,14 @@ public class CharacterBase : MonoBehaviour
                 Debug.Log(player_overhead.timer_for_swap + " " + player_overhead.swaptime);
             }
         }
+        if (cd_Delegate == null)
+            return;
+        cd_Delegate();
+    }
+
+    void temp_delegate()
+    {
+
     }
 
 

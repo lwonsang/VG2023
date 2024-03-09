@@ -14,6 +14,7 @@ public class PlayerOverhead : MonoBehaviour
     [Header("Define whether this is first player or not")]
     public bool is_player_one;
     public bool pressAttack;
+    public bool pressAltAttack;
     public bool characterswappress;
     public bool ability1press;
     public bool ability2press;
@@ -118,6 +119,14 @@ public class PlayerOverhead : MonoBehaviour
     {
         pressAttack = value.ReadValueAsButton();
         if (pressAttack)
+        {
+            activecharacter.action = CharacterBase.actions_list.ATTACKING;
+        }
+    }
+    public void Attack2(InputAction.CallbackContext value)
+    {
+        pressAltAttack = value.ReadValueAsButton();
+        if (pressAltAttack)
         {
             activecharacter.action = CharacterBase.actions_list.ATTACKING;
         }

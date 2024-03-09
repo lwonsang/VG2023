@@ -15,10 +15,10 @@ public class Charizard : CharacterBase
         Idle,
         Claw_Swipe1,
         Claw_Swipe2,
-        Claw_Swipe3
+        Claw_Swipe3,
+        Flamethrower
     }
     public subactions_list subaction;
-
     void Awake()
     {
         Debug.Log(Quaternion.identity);
@@ -89,20 +89,36 @@ public class Charizard : CharacterBase
     {
         if(actionable)
         {
-            Hit_Enemies = new List<GameObject>();
-            player_overhead.pressAttack = false;
-            findTurnDirection();
-            //this is where you'd call moves
-            //animator.Play("Claw_swipe");
-            subaction = subactions_list.Claw_Swipe1;
-            //print(MathF.Atan2(facing.y, facing.x));
-            transform.LeanRotateZ(-45, .1f);
-            _rigidbody2D.velocity = Vector2.zero;
-            _rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - facing.normalized*8;
-            attack_time_total = CharacterAttacks[0].attack_length;
-            attack_time_counter = 0;
-            actionable = false;
-            return;
+            if(player_overhead.pressAttack)
+            {
+                Hit_Enemies = new List<GameObject>();
+                player_overhead.pressAttack = false;
+                findTurnDirection();
+                //this is where you'd call moves
+                //animator.Play("Claw_swipe");
+                subaction = subactions_list.Claw_Swipe1;
+                //print(MathF.Atan2(facing.y, facing.x));
+                transform.LeanRotateZ(-45, .1f);
+                _rigidbody2D.velocity = Vector2.zero;
+                _rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - facing.normalized*8;
+                attack_time_total = CharacterAttacks[0].attack_length;
+                attack_time_counter = 0;
+                actionable = false;
+                return;
+            }
+            if(player_overhead.pressAltAttack)
+            {
+                Hit_Enemies = new List<GameObject>();
+                actionable = false;
+                subaction = subactions_list.Flamethrower;
+                _rigidbody2D.velocity = (_rigidbody2D.velocity + player_overhead.MovementVector * speed) * drag * Time.deltaTime * .6f;
+                CharacterAttacks[3].objects[0].SetActive(true);
+                CharacterAttacks[3].objects[1].SetActive(true);
+                CharacterAttacks[3].objects[0].GetComponent<ParticleSystem>().Play();
+                attack_time_total = CharacterAttacks[3].attack_length;
+                SetAnglebyMouse(CharacterAttacks[3].objects[0]);
+                SetFacingDirectionByMouse();
+            }
         }
         else
         {
@@ -240,6 +256,40 @@ public class Charizard : CharacterBase
                             break;
                     }
                     break;
+                case subactions_list.Flamethrower:
+                    if(!player_overhead.pressAltAttack)
+                    {
+                        //set states
+                        action = actions_list.IDLE;
+                        subaction = subactions_list.Idle;
+                        transform.LeanRotateZ(0, .1f);
+                        actionable = true;
+
+                        //set specific objects inactive
+                        CharacterAttacks[3].objects[0].GetComponent<ParticleSystem>().Stop();
+                        CharacterAttacks[3].objects[1].SetActive(false);
+                        DeactivateObjectAfterTime(CharacterAttacks[3].objects[0], 2);
+                        return;
+                    }
+                    else
+                    {
+                        //refresh hit
+                        if(attack_time_counter >= attack_time_total)
+                        {
+                            attack_time_counter = 0;
+                            Hit_Enemies = new List<GameObject>();
+                            CharacterAttacks[3].objects[1].SetActive(false);
+                        }
+                        if(attack_time_counter == 0)
+                        {
+                            CharacterAttacks[3].objects[1].SetActive(true);
+                        }
+                        attack_time_counter++;
+                        SetAnglebyMouse(CharacterAttacks[3].objects[0]);
+                        SetFacingDirectionByMouse();
+                    }
+                    _rigidbody2D.velocity = (_rigidbody2D.velocity + player_overhead.MovementVector * speed) * drag * Time.deltaTime * .6f;
+                    return;
             }
             attack_time_counter++;
 
@@ -278,7 +328,6 @@ public class Charizard : CharacterBase
             }
         }
     }
-
     public void Setactiveobj(GameObject obj)
     {
         print(obj);
@@ -332,5 +381,13 @@ public class Charizard : CharacterBase
         }
         return true;
     }
+
+    #region Flamethrower_cooldown_logic
+    
+    
+    
+    
+    #endregion
+
 
 }
