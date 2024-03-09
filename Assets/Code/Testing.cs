@@ -1,49 +1,90 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Testing : MonoBehaviour
 
 
 {
-    private GridMap grid;
-    // Start is called before the first frame update
-
-    // Where you want the path map grid to start.
-
-    private float mouseMoveTimer;
-    private float mouseMoveTimerMax = .01f;
-    Vector3 originalPosition = new Vector3(-25, -25);
-    void Start()
-    {
-        grid = new GridMap(100, 100, 1f, originalPosition);
+    
+    private Pathfinding pathfinding;
+     Vector3 originalPosition = new Vector3(0, 0);
+    private void Start(){
+        Debug.Log("Pathfinding Started");
+        pathfinding = new Pathfinding(50, 50, originalPosition);
     }
 
-    // Update is called once per frame
-private void Update() {
-        //HandleClickToModifyGrid();
-        // HandleHeatMapMouseMove();
+    private void Update(){
         if (Input.GetMouseButtonDown(0)) {
-            grid.SetValue(GetMouseWorldPosition(), 1);
+            
+            Vector3 mouseWorldPosition = GetMouseWorldPosition();
+            pathfinding.GetGrid().GetXY(mouseWorldPosition, out int x, out int y);
+            Debug.Log("Mouse X: " + x + " Mouse Y: " + y);
+            List<PathNode> path = pathfinding.FindPath(0, 0, x, y);
+            if (path != null) {
+                Debug.Log("Path Coords:");
+                for (int i=0; i<path.Count - 1; i++) {
+                    Debug.Log(path[i].x + ", " + path[i].y + " to " + path[i+1].x + ", " + path[i+1].y);
+                    // Debug.DrawLine(new Vector3(path[i].x, path[i].y) * 1f + Vector3.one * 5f, new Vector3(path[i+1].x, path[i+1].y) * 1f + Vector3.one * 5f, Color.green, 5f);
+                    
+                    // coord * cellsize + offset of half of cell size
+                    Debug.DrawLine(new Vector3(path[i].x, path[i].y) * 1f + Vector3.one * 0.5f, new Vector3(path[i+1].x, path[i+1].y) * 1f + Vector3.one * 0.5f, Color.green, 10f);
+
+                    Debug.Log("Path Drawn");
+                }
+            }
+            else{
+                Debug.Log("Path Not Working");
+            }
+            // characterPathfinding.SetTargetPosition(mouseWorldPosition);
         }
+
         if (Input.GetMouseButtonDown(1)) {
-            Debug.Log(grid.GetValue(GetMouseWorldPosition()));
+            Vector3 mouseWorldPosition = GetMouseWorldPosition();
+            pathfinding.GetGrid().GetXY(mouseWorldPosition, out int x, out int y);
+            pathfinding.GetNode(x, y).SetIsWalkable(!pathfinding.GetNode(x, y).isWalkable);
         }
     }
+//     private GridMap grid;
+//     // Start is called before the first frame update
 
-    private void HandleClickToModifyGrid() {
+//     // Where you want the path map grid to start.
+
+//     private float mouseMoveTimer;
+//     private float mouseMoveTimerMax = .01f;
+//     // x, y
+//     Vector3 originalPosition = new Vector3(-20, -10);
+//     void Start()
+//     {
+//         grid = new GridMap(50, 50, 1f, originalPosition);
+//     }
+
+//     // Update is called once per frame
+// private void Update() {
+//         //HandleClickToModifyGrid();
+//         // HandleHeatMapMouseMove();
+//         if (Input.GetMouseButtonDown(0)) {
+//             grid.SetValue(GetMouseWorldPosition(), 1);
+//         }
+//         if (Input.GetMouseButtonDown(1)) {
+//             Debug.Log(grid.GetValue(GetMouseWorldPosition()));
+//         }
+//     }
+
+//     private void HandleClickToModifyGrid() {
         
-    }
+//     }
 
-    private void HandleHeatMapMouseMove() {
-        mouseMoveTimer -= Time.deltaTime;
-        if (mouseMoveTimer < 0f) {
-            mouseMoveTimer += mouseMoveTimerMax;
-            int gridValue = grid.GetValue(GetMouseWorldPosition());
-            grid.SetValue(GetMouseWorldPosition(), gridValue + 1);
-        }
-    }
+//     private void HandleHeatMapMouseMove() {
+//         mouseMoveTimer -= Time.deltaTime;
+//         if (mouseMoveTimer < 0f) {
+//             mouseMoveTimer += mouseMoveTimerMax;
+//             int gridValue = grid.GetValue(GetMouseWorldPosition());
+//             grid.SetValue(GetMouseWorldPosition(), gridValue + 1);
+//         }
+//     }
 
         // Get Mouse World Position for testing
     public static Vector3 GetMouseWorldPosition(){
@@ -62,7 +103,7 @@ private void Update() {
         return worldPosition;
     }
 
-
+// DON"T UNCOMMENT THIS
     // private class HeatMapVisual {
 
     //     private GridMap grid;
