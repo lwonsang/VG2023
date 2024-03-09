@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class Slime: CharacterBase
 {
+    public GameManagerScript gameManager;
+    private bool isDead;
     [SerializeField] MainFloatingHealthBar healthBar;
 
     public enum subactions_list
@@ -73,12 +75,14 @@ public class Slime: CharacterBase
         if (other.gameObject.GetComponent<EnemyProjectile>()){
             damage_taken += 1;
 
-            print("Current Health:" + (totalhealth-damage_taken));
+            // print("Current Health:" + (totalhealth-damage_taken));
             healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
 
-            if(totalhealth <= damage_taken)
+            if(totalhealth <= damage_taken && !isDead)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                isDead = true;
+                gameManager.gameOver();
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }  
     }

@@ -11,9 +11,19 @@ public class MainFloatingHealthBar : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private TextMeshProUGUI myText;
 
+    // public GameObject player;
+
     public void UpdateHealthBar(float currentValue, float maxValue){
         slider.value = currentValue / maxValue;
-        myText.text = currentValue + "/" + maxValue;
+        if(slider.value <= 0){
+            myText.text = 0 + "/" + maxValue;
+            // gameObject.SetActive(false);
+        }
+        else{
+            myText.text = currentValue + "/" + maxValue;
+        }
+        
+
     }
 
     // Start is called before the first frame update
