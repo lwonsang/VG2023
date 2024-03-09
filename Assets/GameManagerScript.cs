@@ -23,6 +23,7 @@ public class GameManagerScript : MonoBehaviour
     }
 
     public void restart(){
+        //TODO: decide what scene to build and with what character
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void quit(){
