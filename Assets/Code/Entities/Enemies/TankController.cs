@@ -12,7 +12,7 @@ namespace Main{
     {
         [SerializeField] FloatingHealthBar healthBar;
         [SerializeField] TMPController tmpcontroller;
-        
+        [SerializeField] private float maxDistanceFromEnemy;
         [SerializeField] private float maxY;
         private Rigidbody2D rb;
         public Transform target;
@@ -27,14 +27,7 @@ namespace Main{
         public Sprite destroyed;
         private bool defeated = false;
         private bool temp = false;
-
-        // If the target is too far from the enemy, move closer. False by default, set during update.
-        // until we actually implement this mechanic, it will be set to true always
-        private Boolean TooFarAwayFromEnemy = true;
-        
-                
-        
-        
+        private float distance;
         
         // Start is called before the first frame update
         void Start()
@@ -55,20 +48,17 @@ namespace Main{
             {
                 Vector3 direction = (target.position - transform.position).normalized;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
-                // rb.rotation = angle + 180;
                 moveDirection = direction;
                 
                 Sprite newSprite = null;
                 if (angle >= -45 && angle < 45)
-                    newSprite = turnRight; // Left sprite
+                    newSprite = turnRight;
                 else if (angle >= 45 && angle < 135)
-                    newSprite = turnUp; // Up sprite
+                    newSprite = turnUp; 
                 else if (angle >= 135 && angle < 225)
-                    newSprite = turnLeft; // Right sprite
+                    newSprite = turnLeft; 
                 else
-                    newSprite = turnDown; // Down sprite
-
-                // Set the new sprite
+                    newSprite = turnDown; 
                 _spriterenderer.sprite = newSprite;
                 
                 if (direction.x > 0)
@@ -94,10 +84,8 @@ namespace Main{
             }
             if (gettinghit){
                 gettinghit = false;
-                // print("tank being hit");
                 damage_taken += 1;
-
-                // print("Tank Current Health:" + (totalhealth-damage_taken));
+                
                 healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
                 if(totalhealth <= damage_taken)
                 {
@@ -121,7 +109,8 @@ namespace Main{
 
             }   
             
-            if(TooFarAwayFromEnemy){
+            distance = Vector3.Distance(transform.position, target.transform.position);
+            if(distance >= maxDistanceFromEnemy){
                 switch(action)
                 {
                     case actions_list.GETTING_HIT:

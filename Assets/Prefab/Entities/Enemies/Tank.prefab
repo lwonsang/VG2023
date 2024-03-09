@@ -185,6 +185,7 @@ MonoBehaviour:
   turnUp: {fileID: 417341582, guid: 97016739c034d44288074e88130601fa, type: 3}
   turnDown: {fileID: 2021438923, guid: 97016739c034d44288074e88130601fa, type: 3}
   destroyed: {fileID: 1973778375, guid: 0e969ea99237a894fb472704745784d4, type: 3}
+  maxDistanceFromEnemy: 2
 --- !u!50 &3646605883990339146
 Rigidbody2D:
   serializedVersion: 4
@@ -655,7 +656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2145719133825856590}
-  myText: {fileID: 0}
 --- !u!1 &5873063808854437379
 GameObject:
   m_ObjectHideFlags: 0
