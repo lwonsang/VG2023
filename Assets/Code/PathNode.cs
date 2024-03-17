@@ -12,6 +12,8 @@ public class PathNode
     public int gCost;
     public int hCost;
     public int fCost;
+    public String prevDirection;
+    public String currDirection;
     // Refers to previous node in path
     public PathNode cameFromNode;
     public bool isWalkable;
@@ -24,6 +26,21 @@ public class PathNode
 
     
     public void CalculateFCost() {
+        if (cameFromNode != null){
+            fCost = gCost + hCost;
+            if (prevDirection == currDirection){
+                // Prioritize same direction rather than diagonal
+                fCost = fCost/80;
+            }
+        }
+        else{
+            fCost = gCost + hCost;
+        }
+        
+    }
+
+     public void CalculateFCost(bool sameDirection) {
+
         fCost = gCost + hCost;
     }
 

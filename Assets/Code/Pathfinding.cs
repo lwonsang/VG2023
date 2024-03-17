@@ -101,6 +101,7 @@ public class Pathfinding
                 int tentativeGCost = currentNode.gCost + CalculateDistanceCost(currentNode, neighbourNode);
                 if (tentativeGCost < neighbourNode.gCost) {
                     neighbourNode.cameFromNode = currentNode;
+                    neighbourNode.prevDirection = currentNode.currDirection;
                     neighbourNode.gCost = tentativeGCost;
                     neighbourNode.hCost = CalculateDistanceCost(neighbourNode, endNode);
                     neighbourNode.CalculateFCost();
@@ -153,17 +154,21 @@ public class Pathfinding
         if (currentNode.x - 1 >= 0) {
             // Left
             neighbourList.Add(GetNode(currentNode.x - 1, currentNode.y));
+            currentNode.currDirection = "Left";
            
         }
         if (currentNode.x + 1 < grid.GetWidth()) {
             // Right
             neighbourList.Add(GetNode(currentNode.x + 1, currentNode.y));
+            currentNode.currDirection = "Right";
             
         }
         // Down
         if (currentNode.y - 1 >= 0) neighbourList.Add(GetNode(currentNode.x, currentNode.y - 1));
+        currentNode.currDirection = "Down";
         // Up
         if (currentNode.y + 1 < grid.GetHeight()) neighbourList.Add(GetNode(currentNode.x, currentNode.y + 1));
+        currentNode.currDirection = "Up";
 
         return neighbourList;
     }
