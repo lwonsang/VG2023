@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Main;
 using UnityEngine;
 
 public class CheckpointFlag : MonoBehaviour
 {
     private RespawnPoint[] allRespawnPoints;
+    private TankController[] allEnemies;
     public Animator _animator;
-    public Animation animation;
 
     private void Start()
     {
@@ -20,26 +21,16 @@ public class CheckpointFlag : MonoBehaviour
     void FixedUpdate()
     {
         allRespawnPoints = FindObjectsOfType<RespawnPoint>();
-        
+        allEnemies = FindObjectsOfType<TankController>();
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        print("fdas");
-        if (other.transform.parent.name == "Player" && allRespawnPoints.Length==0)
+        if (other.transform.parent.name == "Player" && allRespawnPoints.Length==0 && allEnemies.Length == 0)
         {
             print("Reached checkpoint with all enemies defeated");
-            // _animator.SetTrigger("CheckpointClearedWave");
-        }
-        else if(allRespawnPoints.Length!=0)
-        {
-            print("respawnpoints failed");
-            print(allRespawnPoints);
-        }
-        else if (other.transform.parent.name != "Player")
-        {
-            print(other.transform.parent.name);
-            print("playertag failed");
+            _animator.SetTrigger("CheckpointClearedWave");
         }
     }
 }
