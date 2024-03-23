@@ -84,18 +84,29 @@ public class Charizard : CharacterBase
                 break;
         }
     }
-
+    public override void LevelUp()
+    {
+        totalhealth *= 1.2f;
+        totalhealth = MathF.Round(totalhealth * 100) / 100;
+        damage_taken -= totalhealth / 4;
+        damage_taken = MathF.Round(MathF.Max(damage_taken, 0) * 100) / 100;
+        player_overhead.Health.UpdateHealthBar(totalhealth - damage_taken, totalhealth);
+        gameObject.transform.LeanScale(gameObject.transform.localScale + Vector3.one * .15f, 1f);
+        particlesystems[0].particle.Play();
+    }
     public void Idle()
     {
         //idle as in idle animation
+        animator.SetBool("idle", true);
         action = actions_list.WALKING;
         subaction = subactions_list.Idle;
     }
     public void Attacking()
     {
-        if(actionable)
+        if (actionable)
         {
-            if(player_overhead.pressAttack)
+            animator.SetBool("idle", false);
+            if (player_overhead.pressAttack)
             {
                 Hit_Enemies = new List<GameObject>();
                 player_overhead.pressAttack = false;
@@ -344,8 +355,8 @@ public class Charizard : CharacterBase
     {
         Vector2 newspeed = (_rigidbody2D.velocity + player_overhead.MovementVector * speed) * drag * Time.deltaTime;
         _rigidbody2D.velocity = newspeed;
-
-        if(!findTurnDirection())
+        animator.SetBool("idle", false);
+        if (!findTurnDirection())
         {
             action = actions_list.IDLE;
             subaction = subactions_list.Idle;

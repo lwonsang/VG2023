@@ -81,6 +81,15 @@ public class CharacterBase : MonoBehaviour
         public List<GameObject> objects;
         public float attack_length;
     }
+
+    [System.Serializable]
+    public struct Particles
+    {
+        public ParticleSystem particle;
+        public Transform particleposition;
+    }
+    public List<Particles> particlesystems;
+
     /*
         //this is a template
         public enum subactions_list
@@ -111,13 +120,15 @@ public class CharacterBase : MonoBehaviour
 
     }
 
-    public void LevelUp()
+    virtual public void LevelUp()
     {
         totalhealth *= 1.2f;
         totalhealth = MathF.Round(totalhealth * 100) / 100;
         damage_taken -= totalhealth / 4;
         damage_taken = MathF.Round(MathF.Max(damage_taken, 0) * 100)/100;
         player_overhead.Health.UpdateHealthBar(totalhealth - damage_taken, totalhealth);
+        particlesystems[0].particle.Play();
+
     }
 
     virtual public facing_direction GetDirection()
