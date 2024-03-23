@@ -22,9 +22,15 @@ public class GameManagerScript : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
+    
+
     public void restart(){
         //TODO: decide what scene to build and with what character
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void mainMenu(){
+        SceneManager.LoadScene("MainMenu");
     }
     public void quit(){
         Application.Quit();
