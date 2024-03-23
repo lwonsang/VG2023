@@ -22,6 +22,13 @@ public class PathNode
         this.x = x;
         this.y = y;
         isWalkable = true;
+        int[] unwalkableXnodes = {3,4,5,6,6,5,4,3,3,4,5,6,6,5,4,3,12,13,14,15,12,13,14,15,15,14,13,12,12,13,14,15};
+        int[] unwalkableYnodes = {7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,8,8,8,8,9,9,9,9,10,10,10,10,11,11,11,11};
+        for(int i = 0; i < 32; i++){
+            if (this.x == unwalkableXnodes[i] && this.y == unwalkableYnodes[i]){
+                isWalkable = false;
+            }
+        }
     }
 
     
@@ -30,7 +37,7 @@ public class PathNode
             fCost = gCost + hCost;
             if (prevDirection == currDirection){
                 // Prioritize same direction rather than diagonal
-                fCost = fCost/80;
+                fCost = fCost/500;
             }
         }
         else{

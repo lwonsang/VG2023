@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Pathfinding
 {
-        private const int MOVE_STRAIGHT_COST = 10;
+    private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
 
     public static Pathfinding Instance { get; private set; }
@@ -16,7 +16,7 @@ public class Pathfinding
 
     public Pathfinding(int width, int height, Vector3 originPosition) {
         Instance = this;
-        Debug.Log("Create Grid");
+        // Debug.Log("Create Grid");
         grid = new GridMap<PathNode>(width, height, 1f, originPosition, (GridMap<PathNode> g, int x, int y) => new PathNode(g, x, y));
     }
 
@@ -25,13 +25,13 @@ public class Pathfinding
     }
 
     public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition) {
-        Debug.Log("Running FindPath...");
+        // Debug.Log("Running FindPath...");
         grid.GetXY(startWorldPosition, out int startX, out int startY);
         grid.GetXY(endWorldPosition, out int endX, out int endY);
 
         List<PathNode> path = FindPath(startX, startY, endX, endY);
         if (path == null) {
-            Debug.Log("Path is Null");
+            // Debug.Log("Path is Null");
             return null;
         } else {
             List<Vector3> vectorPath = new List<Vector3>();
@@ -43,12 +43,12 @@ public class Pathfinding
     }
 
     public List<PathNode> FindPath(int startX, int startY, int endX, int endY) {
-        Debug.Log("Starting FindPath...");
+        // Debug.Log("Starting FindPath...");
         PathNode startNode = grid.GetGridObject(startX, startY);
         PathNode endNode = grid.GetGridObject(endX, endY);
 
         if (startNode == null || endNode == null) {
-            Debug.Log("Start or End is Null");
+            // Debug.Log("Start or End is Null");
             // Invalid Path
             return null;
         }
@@ -73,13 +73,13 @@ public class Pathfinding
         // PathfindingDebugStepVisual.Instance.TakeSnapshot(grid, startNode, openList, closedList);
 
         while (openList.Count > 0) {
-            Debug.Log("Got node");
+            // Debug.Log("Got node");
             PathNode currentNode = GetLowestFCostNode(openList);
             if (currentNode == endNode) {
                 // Reached final node
                 // PathfindingDebugStepVisual.Instance.TakeSnapshot(grid, currentNode, openList, closedList);
                 // PathfindingDebugStepVisual.Instance.TakeSnapshotFinalPath(grid, CalculatePath(endNode));
-                Debug.Log("Found Path!");
+                // Debug.Log("Found Path!");
                 return CalculatePath(endNode);
             }
 
@@ -87,17 +87,17 @@ public class Pathfinding
             closedList.Add(currentNode);
 
             foreach (PathNode neighbourNode in GetNeighbourList(currentNode)) {
-                Debug.Log("Checked Neighbor");
+                // Debug.Log("Checked Neighbor");
                 if (closedList.Contains(neighbourNode)){
-                    Debug.Log("Neighbor is in ClosedList");
+                    // Debug.Log("Neighbor is in ClosedList");
                     continue;
                 } 
                 if (!neighbourNode.isWalkable) {
-                    Debug.Log("Neighbor Not Walkable");
+                    // Debug.Log("Neighbor Not Walkable");
                     closedList.Add(neighbourNode);
                     continue;
                 }
-                Debug.Log("Neighbor Viable");
+                // Debug.Log("Neighbor Viable");
                 int tentativeGCost = currentNode.gCost + CalculateDistanceCost(currentNode, neighbourNode);
                 if (tentativeGCost < neighbourNode.gCost) {
                     neighbourNode.cameFromNode = currentNode;
@@ -115,7 +115,7 @@ public class Pathfinding
         }
 
         // Out of nodes on the openList
-        Debug.Log("Out of Nodes on List");
+        // Debug.Log("Out of Nodes on List");
         return null;
     }
 
@@ -193,7 +193,8 @@ public class Pathfinding
         int xDistance = Mathf.Abs(a.x - b.x);
         int yDistance = Mathf.Abs(a.y - b.y);
         int remaining = Mathf.Abs(xDistance - yDistance);
-        return MOVE_DIAGONAL_COST * Mathf.Min(xDistance, yDistance) + MOVE_STRAIGHT_COST * remaining;
+        // return MOVE_DIAGONAL_COST * Mathf.Min(xDistance, yDistance) + MOVE_STRAIGHT_COST * remaining;
+        return MOVE_STRAIGHT_COST * remaining;
     }
 
     private PathNode GetLowestFCostNode(List<PathNode> pathNodeList) {
