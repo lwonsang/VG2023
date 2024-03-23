@@ -19,7 +19,7 @@ public class TMPController : MonoBehaviour
         // print("on destroy called");
         n++;
         // print("n = " + n);
-        myText.text = "Enemies killed: " + n;
+        myText.text = "Score: " + n;
         xp++;
 
         if(xp == 3){
@@ -30,6 +30,10 @@ public class TMPController : MonoBehaviour
 
         
         evocontroller.UpdateEvoBar(xp, level);
+    }
+
+    public int getScore(){
+        return n;
     }
 
 }
