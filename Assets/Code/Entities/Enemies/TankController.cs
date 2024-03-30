@@ -74,6 +74,8 @@ namespace Main{
                 {
                     Vector3 offset = new Vector3(-.1f, 0.5f, 0.0f);
                     Instantiate(enemyProjectile, transform.position + offset, Quaternion.identity);
+                    
+                    SoundManager.instance.PlaySoundEnemy1Attack();
                     timeBtwShots = startTimeBtwShots;
                 }
                 else

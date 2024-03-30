@@ -58,6 +58,7 @@ public class Charizard : CharacterBase
             if(totalhealth <= damage_taken && !isDead)
             {
                 isDead = true;
+                SoundManager.instance.PlaySoundGameOver();
                 gameManager.gameOver();
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
@@ -92,6 +93,7 @@ public class Charizard : CharacterBase
         damage_taken = MathF.Round(MathF.Max(damage_taken, 0) * 100) / 100;
         player_overhead.Health.UpdateHealthBar(totalhealth - damage_taken, totalhealth);
         gameObject.transform.LeanScale(gameObject.transform.localScale + Vector3.one * .15f, 1f);
+        SoundManager.instance.PlaySoundLevelUp();
         particlesystems[0].particle.Play();
     }
     public void Idle()
@@ -179,6 +181,7 @@ public class Charizard : CharacterBase
                                 _rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - facing.normalized * 5;
                                 attack_time_total = CharacterAttacks[1].attack_length;
                                 attack_time_counter = 0;
+                                SoundManager.instance.PlaySoundChar1LeftClick();
                             }
                             if(attack_time_counter == 11)
                                 RotateCounterClockwise();
@@ -222,6 +225,7 @@ public class Charizard : CharacterBase
                                 _rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - facing.normalized * 12;
                                 attack_time_total = CharacterAttacks[2].attack_length;
                                 attack_time_counter = 0;
+                                //SoundManager.instance.PlaySoundChar1LeftClick();
                             }
                                 if(attack_time_counter==11)
                                     RotateClockwise();
@@ -230,6 +234,7 @@ public class Charizard : CharacterBase
                     break;
                 case subactions_list.Claw_Swipe3:
                     _rigidbody2D.velocity = (_rigidbody2D.velocity) * drag * Time.deltaTime;
+                    //SoundManager.instance.PlaySoundChar1LeftClick();
                     switch (attack_time_counter)
                     {
                         case < 5:
