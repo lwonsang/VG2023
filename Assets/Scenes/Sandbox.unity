@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 379665645}
   - component: {fileID: 379665646}
   - component: {fileID: 379665647}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: buildings_16x16_by_ruurule_de17f9t-pre_64
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,17 +325,65 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank(Testing)
       objectReference: {fileID: 0}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: drag
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: turnUp
+      value: 
+      objectReference: {fileID: 417341582, guid: 97016739c034d44288074e88130601fa, type: 3}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: weight
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: turnDown
+      value: 
+      objectReference: {fileID: 2021438923, guid: 97016739c034d44288074e88130601fa, type: 3}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: turnLeft
+      value: 
+      objectReference: {fileID: -916880048, guid: 97016739c034d44288074e88130601fa, type: 3}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: destroyed
+      value: 
+      objectReference: {fileID: 1973778375, guid: 0e969ea99237a894fb472704745784d4, type: 3}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: turnRight
+      value: 
+      objectReference: {fileID: -1779360111, guid: 97016739c034d44288074e88130601fa, type: 3}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: _spriterenderer
+      value: 
+      objectReference: {fileID: 2128872702}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: enemyProjectile
+      value: 
+      objectReference: {fileID: 4005685655194788086, guid: a5ec720c527854447b8e6b156c4788c8, type: 3}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: startTimeBtwShots
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: maxDistanceFromEnemy
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7229424340390310547, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.01
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 7229424340390310547, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.21
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7229424340390310547, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.048774824
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7229424340390310547, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
       propertyPath: m_LocalRotation.w
@@ -422,7 +470,7 @@ GameObject:
   - component: {fileID: 1194622983}
   - component: {fileID: 1194622982}
   - component: {fileID: 1194622984}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: buildings_16x16_by_ruurule_de17f9t-pre_119
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,6 +752,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2128872702 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 885992274070026106, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+  m_PrefabInstance: {fileID: 847490902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
