@@ -16,6 +16,13 @@ public class ChangeScene : MonoBehaviour
     {
         
     }
+    public void showMainMenu(){
+        SceneManager.LoadScene("MainMenu");
+    }
+    
+    public void showInstructions(){
+        SceneManager.LoadScene("Instructions");
+    }
     public void startGame(){
         SceneManager.LoadScene("Player_and_Enemy");
     }

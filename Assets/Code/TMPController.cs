@@ -18,6 +18,7 @@ public class TMPController : MonoBehaviour
     public void onDestroyEnemy(){
         // print("on destroy called");
         n++;
+        // PlayerPrefs.SetInt("Score", n); //set high score
         // print("n = " + n);
         myText.text = "Score: " + n;
         xp++;
@@ -35,5 +36,9 @@ public class TMPController : MonoBehaviour
     public int getScore(){
         return n;
     }
+
+    // void Start() {
+    //     n = PlayerPrefs.GetInt("Score");
+    // }
 
 }
