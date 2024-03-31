@@ -127,6 +127,7 @@ public class CharacterBase : MonoBehaviour
         damage_taken -= totalhealth / 4;
         damage_taken = MathF.Round(MathF.Max(damage_taken, 0) * 100)/100;
         player_overhead.Health.UpdateHealthBar(totalhealth - damage_taken, totalhealth);
+        SoundManager.instance.PlaySoundLevelUp();
         particlesystems[0].particle.Play();
 
     }

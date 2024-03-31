@@ -81,6 +81,7 @@ public class Slime: CharacterBase
             if(totalhealth <= damage_taken && !isDead)
             {
                 isDead = true;
+                SoundManager.instance.PlaySoundGameOver();
                 gameManager.gameOver();
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
