@@ -519,13 +519,17 @@ MonoBehaviour:
   hitstun: 0
   facing_enum: 0
   action: 0
+  particlesystems: []
+  gameManager: {fileID: 0}
   healthBar: {fileID: 0}
   subaction: 0
   children_slime: []
   father_slime: {fileID: 0}
+  child_prefab: {fileID: 1083580226376872918}
+  father_slime_script: {fileID: 0}
   isChild: 1
-  recombine_timer: 1000
-  recombine_total: 0
+  recombine_timer: 0
+  recombine_total: 600
   recombinable: 0
   current_scale: 0
 --- !u!50 &2822286043580274755
@@ -982,7 +986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7546728955220105186
 Transform:
   m_ObjectHideFlags: 0
@@ -2057,7 +2061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6461762892565439248
 Transform:
   m_ObjectHideFlags: 0
@@ -2090,7 +2094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6498209939196185669
 Transform:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using static Slime;
 
 public class Slime: CharacterBase
 {
@@ -17,13 +18,15 @@ public class Slime: CharacterBase
     {
         Idle,
         Slime_tornado,
-        Silme_split
+        Slime_split
     }
     public subactions_list subaction;
 
     private float tornadotimer = 0;
-    public List<GameObject> children_slime;
+    public List<Slime> children_slime;
     public GameObject father_slime;
+    public GameObject child_prefab;
+    public Slime father_slime_script;
     public bool isChild;
     public float recombine_timer;
     public float recombine_total;
@@ -35,11 +38,13 @@ public class Slime: CharacterBase
         Hit_Enemies = new List<GameObject>();
         action = actions_list.IDLE;
         actionable = true;
-        current_scale = transform.localScale.z;
         if (isChild)
         {
+            walk_delegate += ChildWalk;
             return;
         }
+        current_scale = transform.localScale.z;
+        walk_delegate += Fatherwalk;
         player_overhead = transform.parent.gameObject.GetComponent<PlayerOverhead>();
         player_overhead.Characters.Add(gameObject);
         PlayerOverhead.CharacterUIData thing = new PlayerOverhead.CharacterUIData();
@@ -66,23 +71,24 @@ public class Slime: CharacterBase
         {
             recombine_timer = 0;
             recombinable = false;
-            cooldown_delegate += RecombineCooldown;
-            current_scale = transform.localScale.z;
+            Invoke("AddSelftoList", .5f);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other){        
+    void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.GetComponent<EnemyProjectile>()){
             damage_taken += 1;
 
             // print("Current Health:" + (totalhealth-damage_taken));
-            healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
+            if (!isChild)
+                healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
 
             if(totalhealth <= damage_taken && !isDead)
             {
                 isDead = true;
                 SoundManager.instance.PlaySoundGameOver();
-                gameManager.gameOver();
+                if(gameManager != null)
+                    gameManager.gameOver();
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }  
@@ -127,13 +133,41 @@ public class Slime: CharacterBase
     {
         if(actionable)
         {
-            Hit_Enemies = new List<GameObject>();
-            findTurnDirection();
-            subaction = subactions_list.Slime_tornado;
-            SoundManager.instance.PlaySoundChar2LeftClick();
-            tornadotimer = 0;
-            attack_time_total = CharacterAttacks[0].attack_length;
-            attack_time_counter = 0;
+            if(isChild)
+            {
+                subaction = subactions_list.Slime_tornado;
+                tornadotimer = 0;
+                attack_time_counter = 0;
+                attack_time_total = CharacterAttacks[0].attack_length;
+                SoundManager.instance.PlaySoundChar2LeftClick();
+            }
+            else
+            {
+                Hit_Enemies = new List<GameObject>();
+                findTurnDirection();
+                if (player_overhead.ability1press)
+                {
+                    subaction = subactions_list.Slime_split;
+                    attack_time_counter = 0;
+                    attack_time_total = 30;
+                }
+                if (player_overhead.pressAttack)
+                {
+                    subaction = subactions_list.Slime_tornado;
+                    tornadotimer = 0;
+                    attack_time_counter = 0;
+                    attack_time_total = CharacterAttacks[0].attack_length;
+                    SoundManager.instance.PlaySoundChar2LeftClick();
+                    foreach(Slime child in children_slime)
+                    {
+                        child.action = actions_list.ATTACKING;
+                        child.subaction = subactions_list.Slime_tornado;
+                        child.tornadotimer = 0;
+                        child.attack_time_counter = 0;
+                        child.attack_time_total = CharacterAttacks[0].attack_length;
+                    }
+                }
+            }
             actionable = false;
             return;
         }
@@ -143,7 +177,12 @@ public class Slime: CharacterBase
             switch (subaction)
             {
                 case subactions_list.Slime_tornado:
-                    _rigidbody2D.velocity = (_rigidbody2D.velocity + player_overhead.MovementVector * .45f * speed) * drag * Time.deltaTime;
+                    if(!isChild)
+                        _rigidbody2D.velocity = (_rigidbody2D.velocity + player_overhead.MovementVector * .45f * speed) * drag * Time.deltaTime;
+                    else
+                    {
+                        walk_delegate();
+                    }
                     switch(attack_time_counter)
                     {
                         case 5:
@@ -179,6 +218,8 @@ public class Slime: CharacterBase
                         };
                         gameObject.LeanDelayedCall(Time.deltaTime, action);
                     }
+                    if (isChild)
+                        return;
                     if (!player_overhead.pressAttack)
                     {
                         foreach (GameObject obj in CharacterAttacks[0].objects)
@@ -191,24 +232,47 @@ public class Slime: CharacterBase
                         subaction = subactions_list.Idle;
                         transform.LeanRotateZ(0, .1f);
                         actionable = true;
+
+                        foreach(Slime child in children_slime)
+                        {
+                            foreach (GameObject obj in child.CharacterAttacks[0].objects)
+                            {
+                                obj.SetActive(false);
+                                obj.transform.rotation = Quaternion.identity;
+                            }
+                            child.action = actions_list.IDLE;
+                            child.subaction = subactions_list.Idle;
+                            child.transform.LeanRotateZ(0, .1f);
+                            child.actionable = true;
+                        }
                         return;
                     }
                     return;
+                case subactions_list.Slime_split:
+                    _rigidbody2D.velocity = _rigidbody2D.velocity * drag * Time.deltaTime * .5f;
+                    switch (attack_time_counter)
+                    {
+                        case 6:
+                            Split();
+                            if(!isChild)
+                                foreach(Slime baby in children_slime)
+                                {
+                                    if(baby != null)
+                                    {
+                                        if(baby.recombine_timer > 30)
+                                        {
+                                            baby.Split();
+                                        }
+                                    }
+                                }
+                            break;
+                    }
+                    break;
             }
             attack_time_counter++;
             //check if the move is over here
             if (attack_time_counter > attack_time_total)
             {
-                switch(subaction)
-                {
-                    case subactions_list.Silme_split:
-                        foreach (GameObject obj in CharacterAttacks[1].objects)
-                        {
-                            obj.SetActive(false);
-                            obj.transform.rotation = Quaternion.identity;
-                        }
-                        break;
-                }
                 action = actions_list.IDLE;
                 subaction = subactions_list.Idle;
                 transform.LeanRotateZ(0, .1f);
@@ -216,6 +280,32 @@ public class Slime: CharacterBase
                 return;
             }
         }
+    }
+
+    public void Split()
+    {
+        if(current_scale < .25f)
+        {
+            return;
+        }
+        GameObject child = Instantiate(child_prefab, transform);
+        Slime childscript = child.GetComponent<Slime>();
+        childscript.father_slime = father_slime_script.gameObject;
+        childscript._rigidbody2D.velocity = father_slime_script.player_overhead.MovementVector.normalized * 40;
+        childscript.father_slime_script = father_slime_script;
+        childscript.player_overhead = father_slime_script.player_overhead;
+        child.transform.SetParent(father_slime.transform.parent);
+        current_scale /= 2f;
+        child.transform.LeanScale(Vector3.one * current_scale, .3f);
+        transform.LeanScale(Vector3.one * current_scale, .3f);
+        childscript.current_scale = current_scale;
+
+
+    }
+
+    public void AddSelftoList()
+    {
+        father_slime_script.children_slime.Add(this);
     }
 
     public void Setactiveobj(GameObject obj)
@@ -226,15 +316,52 @@ public class Slime: CharacterBase
 
     public void Walking()
     {
+        if(walk_delegate != null)
+        {
+            walk_delegate();
+        }
+    }
+
+    public void ChildWalk()
+    {
+        Debug.Log("aeiou");
+        Vector3 distance = father_slime.transform.position - transform.position;
+
+        if(action.Equals(actions_list.ATTACKING))
+        {
+            _rigidbody2D.velocity = distance.normalized * Vector2.one + .4f * _rigidbody2D.velocity;
+        }
+        else
+        {
+            _rigidbody2D.velocity = distance.normalized * Vector2.one + .8f * _rigidbody2D.velocity;
+        }
+        
+
+        recombine_timer++;
+
+        if (distance.magnitude > 3f)
+            return;
+
+        if (recombine_timer > recombine_total)
+        {
+            Recombine();
+        }
+    }
+
+    public void Fatherwalk()
+    {
         Vector2 newspeed = (_rigidbody2D.velocity + player_overhead.MovementVector * speed) * drag * Time.deltaTime;
         _rigidbody2D.velocity = newspeed;
 
-        if(!findTurnDirection())
+        if (!findTurnDirection())
         {
             action = actions_list.IDLE;
             subaction = subactions_list.Idle;
         }
     }
+
+    public delegate void walkdelegate();
+    cooldownDelegate walk_delegate;
 
     public bool findTurnDirection()
     {
@@ -295,21 +422,16 @@ public class Slime: CharacterBase
     {
         Hit_Enemies.Clear();
     }
-    public void RecombineCooldown()
-    {
-        if(recombine_timer < recombine_total)
-        {
-            return;
-        }
-        else
-        {
-            recombinable = true;
-            cooldown_delegate -= RecombineCooldown;
-        }
-    }
 
-    public void Recombine(float size)
+    public void Recombine()
     {
+        if(father_slime_script.actionable)
+        {
+            father_slime_script.current_scale += current_scale;
+            father_slime.transform.LeanScale(Vector3.one * father_slime_script.current_scale, .4f);
+            father_slime_script.children_slime.Remove(this);
+            Destroy(gameObject);
+        }
     }
     #endregion
 

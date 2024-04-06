@@ -162,6 +162,10 @@ public class PlayerOverhead : MonoBehaviour
     public void Ability1(InputAction.CallbackContext value)
     {
         ability1press = value.ReadValueAsButton();
+        if (ability1press)
+        {
+            activecharacter.action = CharacterBase.actions_list.ATTACKING;
+        }
     }
 
     public void Ability2(InputAction.CallbackContext value)
