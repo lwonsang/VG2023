@@ -130,6 +130,7 @@ public class Charizard : CharacterBase
                 Hit_Enemies = new List<GameObject>();
                 actionable = false;
                 subaction = subactions_list.Flamethrower;
+                SoundManager.instance.PlaySoundChar1RightClick();
                 _rigidbody2D.velocity = (_rigidbody2D.velocity + player_overhead.MovementVector * speed) * drag * Time.deltaTime * .6f;
                 CharacterAttacks[3].objects[0].SetActive(true);
                 CharacterAttacks[3].objects[1].SetActive(true);
@@ -181,7 +182,7 @@ public class Charizard : CharacterBase
                                 _rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - facing.normalized * 5;
                                 attack_time_total = CharacterAttacks[1].attack_length;
                                 attack_time_counter = 0;
-                                SoundManager.instance.PlaySoundChar1LeftClick();
+                                SoundManager.instance.PlaySoundChar1LeftClick(1);
                             }
                             if(attack_time_counter == 11)
                                 RotateCounterClockwise();
@@ -225,7 +226,7 @@ public class Charizard : CharacterBase
                                 _rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime - facing.normalized * 12;
                                 attack_time_total = CharacterAttacks[2].attack_length;
                                 attack_time_counter = 0;
-                                //SoundManager.instance.PlaySoundChar1LeftClick();
+                                SoundManager.instance.PlaySoundChar1LeftClick(2);
                             }
                                 if(attack_time_counter==11)
                                     RotateClockwise();
@@ -234,7 +235,6 @@ public class Charizard : CharacterBase
                     break;
                 case subactions_list.Claw_Swipe3:
                     _rigidbody2D.velocity = (_rigidbody2D.velocity) * drag * Time.deltaTime;
-                    //SoundManager.instance.PlaySoundChar1LeftClick();
                     switch (attack_time_counter)
                     {
                         case < 5:
@@ -275,6 +275,7 @@ public class Charizard : CharacterBase
                             break;
                         case 14:
                             _rigidbody2D.velocity = (_rigidbody2D.velocity * speed) * drag * Time.deltaTime + facing.normalized * 30;
+                            SoundManager.instance.PlaySoundChar1LeftClick(3);
                             break;
                     }
                     break;
@@ -286,6 +287,7 @@ public class Charizard : CharacterBase
                         subaction = subactions_list.Idle;
                         transform.LeanRotateZ(0, .1f);
                         actionable = true;
+                        SoundManager.instance.stopSoundLoop();
 
                         //set specific objects inactive
                         CharacterAttacks[3].objects[0].GetComponent<ParticleSystem>().Stop();

@@ -130,6 +130,7 @@ public class Slime: CharacterBase
             Hit_Enemies = new List<GameObject>();
             findTurnDirection();
             subaction = subactions_list.Slime_tornado;
+            SoundManager.instance.PlaySoundChar2LeftClick();
             tornadotimer = 0;
             attack_time_total = CharacterAttacks[0].attack_length;
             attack_time_counter = 0;
@@ -185,6 +186,7 @@ public class Slime: CharacterBase
                             obj.SetActive(false);
                             obj.transform.rotation = Quaternion.identity;
                         }
+                        SoundManager.instance.stopSoundLoop();
                         action = actions_list.IDLE;
                         subaction = subactions_list.Idle;
                         transform.LeanRotateZ(0, .1f);

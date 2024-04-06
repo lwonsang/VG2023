@@ -54,6 +54,7 @@ public class RespawnPoint : MonoBehaviour
             {
                 Vector3 arrowPosition = transform.position + new Vector3(0, 1.25f, 0);
                 Instantiate(nextRespawnPointArrowPrefab, arrowPosition, Quaternion.identity);
+                SoundManager.instance.PlayRespawnDefeated();
                 Destroy(gameObject);
             }
             
