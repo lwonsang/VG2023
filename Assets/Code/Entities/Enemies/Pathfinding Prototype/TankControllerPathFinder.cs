@@ -57,14 +57,15 @@ namespace Main{
                 target = mouseWorldPosition;
                 Debug.Log("Mouse X: " + mouseWorldPosition.x + " Mouse Y: " + mouseWorldPosition.y);
                 rb.velocity = Vector3.zero;
-                pathListIndex = 1;
+                
                 pathList = null;
-                pathList = Pathfinding.Instance.FindPath(transform.position, mouseWorldPosition);
+                // pathList = Pathfinding.Instance.FindPath(transform.position, mouseWorldPosition);
 
                 
                 distance = Vector3.Distance(transform.position, target);
                 if(distance >= 5){
-                    pathList = Pathfinding.Instance.FindPath(transform.position, mouseWorldPosition);
+                    Debug.Log("Pathfinding...");
+                    Pathfinding.Instance.FindPath(transform.position, mouseWorldPosition);
                 }
                 else{
                     // x distance closer than y distance - back up in the x axis
@@ -95,6 +96,12 @@ namespace Main{
                 }
                 // Debug.Log("PathList:");
                 // for(int i = 0; i < PathList)
+
+                if (pathList != null){
+                    if (pathList.Count > 0){
+                        pathListIndex = 1;
+                    }
+                }
             }
             
             if (pathListIndex > 0)

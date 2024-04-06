@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 1194622983}
   - component: {fileID: 1194622982}
   - component: {fileID: 1194622984}
+  - component: {fileID: 1194622985}
   m_Layer: 11
   m_Name: buildings_16x16_by_ruurule_de17f9t-pre_119
   m_TagString: Untagged
@@ -616,6 +617,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1194622985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194622980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a314665057b5294aa0a33146428aa5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1368922539
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +721,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1907627415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907627416}
+  - component: {fileID: 1907627417}
+  m_Layer: 0
+  m_Name: Pathfinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1907627416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907627415}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1930993, y: 1.7623324, z: -0.15225181}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1907627417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907627415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256500b401d4d2d40b4a2282975fbbce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PathList: []
 --- !u!1 &2040797404
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +775,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2040797406}
-  - component: {fileID: 2040797405}
   m_Layer: 0
   m_Name: Pathfinding Grid
   m_TagString: Untagged
@@ -725,18 +782,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2040797405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040797404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9781d8b0dabb614dad553b468db7d52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2040797406
 Transform:
   m_ObjectHideFlags: 0
@@ -766,3 +811,4 @@ SceneRoots:
   - {fileID: 1185954253}
   - {fileID: 847490902}
   - {fileID: 2040797406}
+  - {fileID: 1907627416}

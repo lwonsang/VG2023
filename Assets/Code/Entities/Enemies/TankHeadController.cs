@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,13 @@ public class TankHeadController :  CharacterBase
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        try{
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        catch(Exception e){
+            target = null;
+        }
+        
         rb = GetComponent<Rigidbody2D>();
     }
 

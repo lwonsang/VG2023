@@ -1,20 +1,24 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Mathematics;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Burst;
+// using CodeMonkey.Utils;
 
-public class Pathfinding
+public class PathfindingOld
 {
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
 
-    public static Pathfinding Instance { get; private set; }
+    public static PathfindingOld Instance { get; private set; }
 
     private GridMap<PathNode> grid;
     private List<PathNode> openList;
     private List<PathNode> closedList;
 
-    public Pathfinding(int width, int height, Vector3 originPosition) {
+    public PathfindingOld(int width, int height, Vector3 originPosition) {
         Instance = this;
         // Debug.Log("Create Grid");
         grid = new GridMap<PathNode>(width, height, 1f, originPosition, (GridMap<PathNode> g, int x, int y) => new PathNode(g, x, y));
