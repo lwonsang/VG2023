@@ -341,6 +341,8 @@ public class CharacterBase : MonoBehaviour
     public void Cooldowns()
     {
         //cooldown_delegate();
+        if (player_overhead == null)
+            return;
         if(player_overhead.timer_for_swap <= player_overhead.swaptime)
         {
             player_overhead.timer_for_swap += 1;
