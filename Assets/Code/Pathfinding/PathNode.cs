@@ -16,19 +16,19 @@ public class PathNode
     public String currDirection;
     // Refers to previous node in path
     public PathNode cameFromNode;
-    public bool isWalkable;
+    public bool isWalkable = true;
     public PathNode(GridMap<PathNode> grid, int x, int y){
         this.grid = grid;
         this.x = x;
         this.y = y;
-        isWalkable = true;
-        int[] unwalkableXnodes = {3,4,5,6,6,5,4,3,3,4,5,6,6,5,4,3,12,13,14,15,12,13,14,15,15,14,13,12,12,13,14,15};
-        int[] unwalkableYnodes = {7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,8,8,8,8,9,9,9,9,10,10,10,10,11,11,11,11};
-        for(int i = 0; i < 32; i++){
-            if (this.x == unwalkableXnodes[i] && this.y == unwalkableYnodes[i]){
-                isWalkable = false;
-            }
-        }
+        // isWalkable = true;
+        // int[] unwalkableXnodes = {3,4,5,6,6,5,4,3,3,4,5,6,6,5,4,3,12,13,14,15,12,13,14,15,15,14,13,12,12,13,14,15};
+        // int[] unwalkableYnodes = {7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,8,8,8,8,9,9,9,9,10,10,10,10,11,11,11,11};
+        // for(int i = 0; i < 32; i++){
+        //     if (this.x == unwalkableXnodes[i] && this.y == unwalkableYnodes[i]){
+        //         isWalkable = false;
+        //     }
+        // }
     }
 
     

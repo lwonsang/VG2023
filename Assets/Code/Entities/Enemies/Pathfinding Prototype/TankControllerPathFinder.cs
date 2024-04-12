@@ -59,13 +59,14 @@ namespace Main{
                 rb.velocity = Vector3.zero;
                 
                 pathList = null;
-                // pathList = Pathfinding.Instance.FindPath(transform.position, mouseWorldPosition);
+                PathfindingOld.Instance.BlahBlahBlahTest();
+                pathList = PathfindingOld.Instance.FindPath(transform.position, mouseWorldPosition);
 
                 
                 distance = Vector3.Distance(transform.position, target);
                 if(distance >= 5){
                     Debug.Log("Pathfinding...");
-                    Pathfinding.Instance.FindPath(transform.position, mouseWorldPosition);
+                    PathfindingOld.Instance.FindPath(transform.position, mouseWorldPosition);
                 }
                 else{
                     // x distance closer than y distance - back up in the x axis
@@ -73,24 +74,24 @@ namespace Main{
                         // if target x is larger, back up in the -x direction
                         if(target.x > transform.position.x){
                             target.x = transform.position.x - 5;
-                            pathList = Pathfinding.Instance.FindPath(transform.position, target);
+                            pathList = PathfindingOld.Instance.FindPath(transform.position, target);
                         }
                         // if target x is smaller, back up in the +x direction
                         else if(target.x < transform.position.x){
                             target.x = transform.position.x + 5;
-                            pathList = Pathfinding.Instance.FindPath(transform.position, target);
+                            pathList = PathfindingOld.Instance.FindPath(transform.position, target);
                         }
                     }
                     else{
                         // if target y is larger, back up in the -y direction
                         if(target.y > transform.position.y){
                             target.y = transform.position.y - 5;
-                            pathList = Pathfinding.Instance.FindPath(transform.position, target);
+                            pathList = PathfindingOld.Instance.FindPath(transform.position, target);
                         }
                         // if target x is smaller, back up in the +x direction
                         else if(target.y < transform.position.y){
                             target.y = transform.position.y + 5;
-                            pathList = Pathfinding.Instance.FindPath(transform.position, target);
+                            pathList = PathfindingOld.Instance.FindPath(transform.position, target);
                         }
                     }
                 }

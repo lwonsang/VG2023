@@ -45,6 +45,7 @@ public class Pathfinding : MonoBehaviour {
         Debug.Log("Activated");
         List<Vector3> pathList = null;
         NativeList<int2> paths = new NativeList<int2>(Allocator.TempJob);
+        NativeList<int> test = new NativeList<int>(Allocator.TempJob);
         
 
 
@@ -54,13 +55,16 @@ public class Pathfinding : MonoBehaviour {
         FindPathJob findPathJob = new FindPathJob { 
                 startPosition = new int2((int) startPosition.x, (int) startPosition.y), 
                 endPosition = new int2((int) endPosition.x, (int) endPosition.y),
-                paths = paths // output paths
-                
+                paths = paths, // output paths
+                test = test
             };
 
             
         JobHandle jobHandle = findPathJob.Schedule();
         jobHandle.Complete();
+
+        Debug.Log("Test: " + test.Length);
+        Debug.Log("Paths size: " + paths.Length);
 
         if(paths.Length != 0){
             Debug.Log("paths not empty");
@@ -75,6 +79,7 @@ public class Pathfinding : MonoBehaviour {
         }
         
         paths.Dispose();
+        test.Dispose();
                 
         
         // JobHandle.CompleteAll(jobHandleArray);
@@ -90,8 +95,10 @@ public class Pathfinding : MonoBehaviour {
         public int2 startPosition;
         public int2 endPosition;
         public NativeList<int2> paths;
+        public NativeList<int> test;
 
         public void Execute() {
+            test[0] = 100;
             int2 gridSize = new int2(100, 100);
 
             NativeArray<PathNode> pathNodeArray = new NativeArray<PathNode>(gridSize.x * gridSize.y, Allocator.Temp);

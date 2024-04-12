@@ -5,49 +5,73 @@ using Unity.Mathematics;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Burst;
-// using CodeMonkey.Utils;
+using Unity.Mathematics;
 
-public class PathfindingOld
+public class PathfindingOld: MonoBehaviour
 {
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
 
-    public static PathfindingOld Instance { get; private set; }
+    public static PathfindingOld Instance;
 
     private GridMap<PathNode> grid;
     private List<PathNode> openList;
     private List<PathNode> closedList;
+    Vector3 OriginalPositionCoord;
+
+
 
     public PathfindingOld(int width, int height, Vector3 originPosition) {
         Instance = this;
         // Debug.Log("Create Grid");
         grid = new GridMap<PathNode>(width, height, 1f, originPosition, (GridMap<PathNode> g, int x, int y) => new PathNode(g, x, y));
+        OriginalPositionCoord = originPosition;
+        
+    }
+
+    public void setUnwalkableNodes(List<int2> boundcoords){
+        // Set unwalkable nodes
+        Debug.Log("Unwalkable Node Count: " + boundcoords.Count);
+        
+        //  = BoundaryManager.Instance.GlobalBoundaryCoords;
+        for(int i = 0; i < boundcoords.Count; i++){
+            int xcoord = boundcoords[i].x - (int)OriginalPositionCoord.x;
+            int ycoord = boundcoords[i].y - (int)OriginalPositionCoord.y;
+            print("original coord: " + boundcoords[i].x + ", " + boundcoords[i].y + " adjusted cell coords: "+ xcoord + ", " + ycoord);
+            GetNode(xcoord, ycoord).SetIsWalkable(false);
+        }
     }
 
     public GridMap<PathNode> GetGrid() {
         return grid;
     }
 
+    public void BlahBlahBlahTest(){
+        Debug.Log("Blah blah blah test");
+    }
+
     public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition) {
-        // Debug.Log("Running FindPath...");
+        
         grid.GetXY(startWorldPosition, out int startX, out int startY);
         grid.GetXY(endWorldPosition, out int endX, out int endY);
-
+        Debug.Log("Running FindPath...");
         List<PathNode> path = FindPath(startX, startY, endX, endY);
+        Debug.Log("FindPath Completed");
         if (path == null) {
-            // Debug.Log("Path is Null");
+            Debug.Log("Path is Null");
             return null;
         } else {
             List<Vector3> vectorPath = new List<Vector3>();
             foreach (PathNode pathNode in path) {
                 vectorPath.Add(new Vector3(pathNode.x, pathNode.y) * grid.GetCellSize() + Vector3.one * grid.GetCellSize() * .5f);
             }
+            Debug.Log("Ready to return");
             return vectorPath;
         }
     }
 
     public List<PathNode> FindPath(int startX, int startY, int endX, int endY) {
-        // Debug.Log("Starting FindPath...");
+        Debug.Log("Starting FisndPath...");
         PathNode startNode = grid.GetGridObject(startX, startY);
         PathNode endNode = grid.GetGridObject(endX, endY);
 
