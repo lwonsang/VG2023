@@ -8,6 +8,7 @@ using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using UnityEngine.U2D;
+// using Random;
 
 namespace Main{
     public class TankControllerPathFinder : CharacterBase
@@ -33,6 +34,9 @@ namespace Main{
         private bool moving = false;
        List<Vector3> pathList;
         private int pathListIndex;
+
+        private bool traveling = false;
+        private int shouldmove = 0;
 
         Vector3 originalPosition = new Vector3(-10, -10);
         
@@ -102,92 +106,112 @@ namespace Main{
                         pathListIndex = 1;
                     }
                 }
+                else{
+                    pathListIndex = -1;
+                }
             }
+            if(traveling){
+
             
-            if (pathListIndex > 0)
-            {
-                Debug.Log("PathList index: " + pathListIndex);
-                // Debug.Log("index is larger than 0: " + (pathListIndex > 0));
-                Vector3 nextcoord = pathList[pathListIndex];
-                nextcoord.x += originalPosition.x;
-                nextcoord.y += originalPosition.y;
-                // nextcoord.x = (int) nextcoord.x;
-                // nextcoord.y = (int) nextcoord.y;
-                // if same location, increment the pathListIndex and continue
-                Debug.Log("Current Coord X: " + transform.position.x + " CurrentCoord Y: "+ transform.position.y);
-                Debug.Log("NextCoord X: " + nextcoord.x + " NextCoord Y: " + nextcoord.y);
-                // pathListIndex = 1;
-                while ((int) nextcoord.x == (int) transform.position.x && (int) nextcoord.y == (int) transform.position.y && pathListIndex < pathList.Count&& pathList.Count > 1){
-                    
-                    Debug.Log("Path same, updating nextcoord");
-                    
-                    pathListIndex++;
-                    nextcoord = pathList[pathListIndex];
+                
+                
+                if (pathListIndex > 0)
+                {
+                    Debug.Log("PathList index: " + pathListIndex);
+                    // Debug.Log("index is larger than 0: " + (pathListIndex > 0));
+                    Vector3 nextcoord = pathList[pathListIndex];
                     nextcoord.x += originalPosition.x;
                     nextcoord.y += originalPosition.y;
                     // nextcoord.x = (int) nextcoord.x;
                     // nextcoord.y = (int) nextcoord.y;
+                    // if same location, increment the pathListIndex and continue
+                    Debug.Log("Current Coord X: " + transform.position.x + " CurrentCoord Y: "+ transform.position.y);
                     Debug.Log("NextCoord X: " + nextcoord.x + " NextCoord Y: " + nextcoord.y);
-                }
-                
-                Vector3 direction = (nextcoord - transform.position).normalized;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
-                Debug.Log("angle: " + angle);
-                moveDirection = direction;
-                
-                Sprite newSprite = null;
-                if (angle >= -45 && angle < 45)
-                    newSprite = turnRight;
-                else if (angle >= 45 && angle < 135)
-                    newSprite = turnUp; 
-                else if (angle >= 135 && angle < 225)
-                    newSprite = turnLeft; 
-                else
-                    newSprite = turnDown; 
-                _spriterenderer.sprite = newSprite;
-                
-                if (direction.x > 0)
-                {
-                    transform.localScale = new Vector3(1, -1, 1);
-                }
-                else
-                {
-                    transform.localScale = new Vector3(1, 1, 1);
-                }
-
-                if (timeBtwShots <= 0)
-                {
-                    Vector3 offset = new Vector3(-.1f, 0.5f, 0.0f);
-                    Instantiate(enemyProjectile, transform.position + offset, Quaternion.identity);
-                    timeBtwShots = startTimeBtwShots;
-                }
-                else
-                {
-                    timeBtwShots -= Time.deltaTime;
-                }
-
-                distance = Vector3.Distance(transform.position, target);
-                if(distance >= maxDistanceFromEnemy){
-                    switch(action)
-                    {
-                        case actions_list.GETTING_HIT:
-                            Freezeframes();
-                            break;
-                        case actions_list.HITSTUN:
-                            Hitstun();
-                            break;
-                        default:
-                            Debug.Log("Moving...");
-                            Debug.Log("Speed: " + speed);
-                            currentVelocity = rb.velocity;
-                            rb.velocity = (currentVelocity + moveDirection * speed) * drag * Time.deltaTime;
-                            break;
+                    // pathListIndex = 1;
+                    while ((int) nextcoord.x == (int) transform.position.x && (int) nextcoord.y == (int) transform.position.y && pathListIndex < pathList.Count&& pathList.Count > 1){
+                        
+                        Debug.Log("Path same, updating nextcoord");
+                        
+                        pathListIndex++;
+                        nextcoord = pathList[pathListIndex];
+                        nextcoord.x += originalPosition.x;
+                        nextcoord.y += originalPosition.y;
+                        // nextcoord.x = (int) nextcoord.x;
+                        // nextcoord.y = (int) nextcoord.y;
+                        Debug.Log("NextCoord X: " + nextcoord.x + " NextCoord Y: " + nextcoord.y);
                     }
-                    //rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
+                    
+                    Vector3 direction = (nextcoord - transform.position).normalized;
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
+                    Debug.Log("angle: " + angle);
+                    moveDirection = direction;
+                    
+                    Sprite newSprite = null;
+                    if (angle >= -45 && angle < 45)
+                        newSprite = turnRight;
+                    else if (angle >= 45 && angle < 135)
+                        newSprite = turnUp; 
+                    else if (angle >= 135 && angle < 225)
+                        newSprite = turnLeft; 
+                    else
+                        newSprite = turnDown; 
+                    _spriterenderer.sprite = newSprite;
+                    
+                    if (direction.x > 0)
+                    {
+                        transform.localScale = new Vector3(1, -1, 1);
+                    }
+                    else
+                    {
+                        transform.localScale = new Vector3(1, 1, 1);
+                    }
+
+                    if (timeBtwShots <= 0)
+                    {
+                        Vector3 offset = new Vector3(-.1f, 0.5f, 0.0f);
+                        Instantiate(enemyProjectile, transform.position + offset, Quaternion.identity);
+                        timeBtwShots = startTimeBtwShots;
+                    }
+                    else
+                    {
+                        timeBtwShots -= Time.deltaTime;
+                    }
+
+                    distance = Vector3.Distance(transform.position, target);
+                    if(distance >= maxDistanceFromEnemy){
+                        switch(action)
+                        {
+                            case actions_list.GETTING_HIT:
+                                Freezeframes();
+                                break;
+                            case actions_list.HITSTUN:
+                                Hitstun();
+                                break;
+                            default:
+                                Debug.Log("Moving...");
+                                Debug.Log("Speed: " + speed);
+                                currentVelocity = rb.velocity;
+                                rb.velocity = (currentVelocity + moveDirection * speed) * drag * Time.deltaTime;
+                                break;
+                        }
+                        //rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
+                    }
+                    else{
+                        rb.velocity = Vector3.zero;
+                        pathListIndex = -1;
+                        traveling = false;
+                        shouldmove = 0;
+                    }
                 }
-                else{
-                    rb.velocity = Vector3.zero;
-                    pathListIndex = -1;
+            }
+            else{
+                // Wait a bit before moving
+                int xcount = UnityEngine.Random.Range(1, 10);
+                if(xcount > 2){
+                    shouldmove++;
+                }
+                if(shouldmove == 3){
+                    traveling = true;
                 }
             }
             // if (gettinghit){

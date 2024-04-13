@@ -11,7 +11,7 @@ public class PathfindingManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start(){
         Debug.Log("Pathfinding Started");
-        pathfinding = new PathfindingOld(20, 20, originalPosition);
+        pathfinding = new PathfindingOld(100, 100, originalPosition);
         offsetX = (int) originalPosition.x;
         offsetY = (int) originalPosition.y;
     }

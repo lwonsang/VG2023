@@ -17,10 +17,16 @@ public class GetSelfBoundaries : MonoBehaviour
     {
         _collider = GetComponent<BoxCollider2D>();
         Bounds boxBounds = _collider.bounds;
-        int2 topRight = new int2(((int) Mathf.Ceil(boxBounds.center.x + boxBounds.extents.x)) + 1, ((int) Mathf.Ceil(boxBounds.center.y + boxBounds.extents.y)) + 1);
-        int2 bottomRight = new int2((int) Mathf.Ceil(boxBounds.center.x + boxBounds.extents.x) + 1, ((int) Mathf.Floor(boxBounds.center.y - boxBounds.extents.y)) - 1);
-        int2 topLeft = new int2((int) Mathf.Floor(boxBounds.center.x - boxBounds.extents.x) - 1, ((int) Mathf.Ceil(boxBounds.center.y + boxBounds.extents.y)) + 1);
-        int2 bottomLeft = new int2((int) Mathf.Floor(boxBounds.center.x - boxBounds.extents.x) - 1, ((int) Mathf.Floor(boxBounds.center.y - boxBounds.extents.y)) - 1);
+        // int2 topRight = new int2(((int) Mathf.Ceil(boxBounds.center.x + boxBounds.extents.x)) + 1, ((int) Mathf.Ceil(boxBounds.center.y + boxBounds.extents.y)) + 1);
+        // int2 bottomRight = new int2((int) Mathf.Ceil(boxBounds.center.x + boxBounds.extents.x) + 1, ((int) Mathf.Floor(boxBounds.center.y - boxBounds.extents.y)) - 1);
+        // int2 topLeft = new int2((int) Mathf.Floor(boxBounds.center.x - boxBounds.extents.x) - 1, ((int) Mathf.Ceil(boxBounds.center.y + boxBounds.extents.y)) + 1);
+        // int2 bottomLeft = new int2((int) Mathf.Floor(boxBounds.center.x - boxBounds.extents.x) - 1, ((int) Mathf.Floor(boxBounds.center.y - boxBounds.extents.y)) - 1);
+        // Debug.Log("Top right: " + topRight + " Top left: " + topLeft + " bottomRight: " + bottomRight + " bottomLeft: " + bottomLeft);
+
+        int2 topRight = new int2(((int) Mathf.Ceil(boxBounds.center.x + boxBounds.extents.x)), ((int) Mathf.Ceil(boxBounds.center.y + boxBounds.extents.y)));
+        int2 bottomRight = new int2((int) Mathf.Ceil(boxBounds.center.x + boxBounds.extents.x), ((int) Mathf.Floor(boxBounds.center.y - boxBounds.extents.y)));
+        int2 topLeft = new int2((int) Mathf.Floor(boxBounds.center.x - boxBounds.extents.x), ((int) Mathf.Ceil(boxBounds.center.y + boxBounds.extents.y)));
+        int2 bottomLeft = new int2((int) Mathf.Floor(boxBounds.center.x - boxBounds.extents.x), ((int) Mathf.Floor(boxBounds.center.y - boxBounds.extents.y)));
         Debug.Log("Top right: " + topRight + " Top left: " + topLeft + " bottomRight: " + bottomRight + " bottomLeft: " + bottomLeft);
 
         boundcoords = new List<int2>

@@ -382,6 +382,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank(Testing)
       objectReference: {fileID: 0}
+    - target: {fileID: 282768950365299238, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 804986496226468795, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1715433575501670284, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725069792065392348, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754919031162363254, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168854056099633677, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4542504812459749537, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
       propertyPath: drag
       value: 40
@@ -428,7 +456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5763983146663278665, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
       propertyPath: maxDistanceFromEnemy
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5873063808854437379, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7229424340390310547, guid: f6dd3016d66ccc847bb91663c4a95747, type: 3}
       propertyPath: m_LocalPosition.x
