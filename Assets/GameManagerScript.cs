@@ -29,6 +29,7 @@ public class GameManagerScript : MonoBehaviour
         
     }
     public void gameOver(){
+        Time.timeScale = 0;
         if (gameOverFromEscape)
         {
             myText.text = "RESUME";
@@ -39,6 +40,7 @@ public class GameManagerScript : MonoBehaviour
         }
         // InputSystem.DisableDevice(Keyboard.current);
         gameOverUI.SetActive(true);
+        gameOverFromEscape = false;
     }
 
     public void restart(){
