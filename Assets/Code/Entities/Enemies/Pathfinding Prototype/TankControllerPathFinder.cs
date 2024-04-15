@@ -38,6 +38,8 @@ namespace Main{
         private bool traveling = false;
         private int shouldmove = 0;
 
+        private bool tooClose = false;
+
         Vector3 originalPosition = new Vector3(-10, -10);
         
         // Start is called before the first frame update
@@ -62,26 +64,30 @@ namespace Main{
                 rb.velocity = Vector3.zero;
                 
                 pathList = null;
-                PathfindingOld.Instance.BlahBlahBlahTest();
-                pathList = PathfindingOld.Instance.FindPath(transform.position, mouseWorldPosition);
+                // PathfindingOld.Instance.BlahBlahBlahTest();
 
                 
                 distance = Vector3.Distance(transform.position, target);
                 if(distance >= 5){
+                    tooClose = false;
                     Debug.Log("Pathfinding...");
-                    PathfindingOld.Instance.FindPath(transform.position, mouseWorldPosition);
+                    pathList = PathfindingOld.Instance.FindPath(transform.position, mouseWorldPosition);
                 }
                 else{
+                    Debug.Log("Too Close!");
+                    tooClose = true;
                     // x distance closer than y distance - back up in the x axis
                     if(Math.Abs(target.x - transform.position.x) < Math.Abs(target.y - transform.position.y)){
                         // if target x is larger, back up in the -x direction
                         if(target.x > transform.position.x){
                             target.x = transform.position.x - 5;
+                            target.y = transform.position.y;
                             pathList = PathfindingOld.Instance.FindPath(transform.position, target);
                         }
                         // if target x is smaller, back up in the +x direction
                         else if(target.x < transform.position.x){
                             target.x = transform.position.x + 5;
+                            target.y = transform.position.y;
                             pathList = PathfindingOld.Instance.FindPath(transform.position, target);
                         }
                     }
@@ -89,11 +95,13 @@ namespace Main{
                         // if target y is larger, back up in the -y direction
                         if(target.y > transform.position.y){
                             target.y = transform.position.y - 5;
+                            target.x = transform.position.x;
                             pathList = PathfindingOld.Instance.FindPath(transform.position, target);
                         }
-                        // if target x is smaller, back up in the +x direction
+                        // if target y is smaller, back up in the +y direction
                         else if(target.y < transform.position.y){
                             target.y = transform.position.y + 5;
+                            target.x = transform.position.x;
                             pathList = PathfindingOld.Instance.FindPath(transform.position, target);
                         }
                     }
@@ -178,36 +186,67 @@ namespace Main{
                     }
 
                     distance = Vector3.Distance(transform.position, target);
-                    if(distance >= maxDistanceFromEnemy){
-                        switch(action)
-                        {
-                            case actions_list.GETTING_HIT:
-                                Freezeframes();
-                                break;
-                            case actions_list.HITSTUN:
-                                Hitstun();
-                                break;
-                            default:
-                                Debug.Log("Moving...");
-                                Debug.Log("Speed: " + speed);
-                                currentVelocity = rb.velocity;
-                                rb.velocity = (currentVelocity + moveDirection * speed) * drag * Time.deltaTime;
-                                break;
+                    // tooClose overrides maxDistanceFromEnemy, basically since the tank wants to get away from the enemy.
+                    if(!tooClose){
+                        if(distance >= maxDistanceFromEnemy){
+                            switch(action)
+                            {
+                                case actions_list.GETTING_HIT:
+                                    Freezeframes();
+                                    break;
+                                case actions_list.HITSTUN:
+                                    Hitstun();
+                                    break;
+                                default:
+                                    Debug.Log("Moving...");
+                                    Debug.Log("Speed: " + speed);
+                                    currentVelocity = rb.velocity;
+                                    rb.velocity = (currentVelocity + moveDirection * speed) * drag * Time.deltaTime;
+                                    break;
+                            }
+                            //rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
                         }
-                        //rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
+                        else{
+                            rb.velocity = Vector3.zero;
+                            pathListIndex = -1;
+                            traveling = false;
+                            shouldmove = 0;
+                        }
                     }
                     else{
-                        rb.velocity = Vector3.zero;
-                        pathListIndex = -1;
-                        traveling = false;
-                        shouldmove = 0;
+                        if(distance >= 1){
+                            switch(action)
+                            {
+                                case actions_list.GETTING_HIT:
+                                    Freezeframes();
+                                    break;
+                                case actions_list.HITSTUN:
+                                    Hitstun();
+                                    break;
+                                default:
+                                    Debug.Log("Moving...");
+                                    Debug.Log("Speed: " + speed);
+                                    currentVelocity = rb.velocity;
+                                    rb.velocity = (currentVelocity + moveDirection * speed) * drag * Time.deltaTime;
+                                    break;
+                            }
+                            //rb.MovePosition((Vector2)transform.position + (speed * Time.deltaTime * moveDirection));
+                        }
+                        else{
+                            rb.velocity = Vector3.zero;
+                            pathListIndex = -1;
+                            traveling = false;
+                            shouldmove = 0;
+                            tooClose = false;
+                        }
                     }
+                    
                 }
             }
             else{
                 // Wait a bit before moving
-                int xcount = UnityEngine.Random.Range(1, 10);
-                if(xcount > 2){
+                int xcount = UnityEngine.Random.Range(1, 1000);
+                if(xcount > 960){
                     shouldmove++;
                 }
                 if(shouldmove == 3){
