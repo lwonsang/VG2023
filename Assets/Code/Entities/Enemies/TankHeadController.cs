@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TankHeadController :  CharacterBase
 {
-    private Rigidbody2D rb;
     public Transform target;
     public Transform aimPivot;
     // Start is called before the first frame update
@@ -17,8 +16,6 @@ public class TankHeadController :  CharacterBase
         catch(Exception e){
             target = null;
         }
-        
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
