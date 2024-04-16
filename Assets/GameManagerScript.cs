@@ -8,6 +8,12 @@ public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;
     [SerializeField] private TextMeshProUGUI myText;
+
+    [SerializeField] AudioSource menuAudioSource;
+    [SerializeField] AudioSource backgroundAudioSource;
+    [SerializeField] AudioClip deathAudio;
+    [SerializeField] AudioClip menuMusic;
+
     // Start is called before the first frame update
     private bool gameOverFromEscape = false;
 
@@ -20,23 +26,32 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.Escape)){
-            print("ESCAPE PRESSED");
             gameOverFromEscape = true;
             gameOver();
             
             Time.timeScale = 0;
+
+            
         }
         
     }
     public void gameOver(){
         Time.timeScale = 0;
+
+        //stop background music
+        backgroundAudioSource.Pause();
+        
         if (gameOverFromEscape)
         {
             myText.text = "RESUME";
+            //play regular menu music
+            menuAudioSource.PlayOneShot(menuMusic);
         }
         else
         {
             myText.text = "RESTART";
+            //play death/gameover music
+            menuAudioSource.PlayOneShot(deathAudio);
         }
         // InputSystem.DisableDevice(Keyboard.current);
         gameOverUI.SetActive(true);
@@ -44,6 +59,8 @@ public class GameManagerScript : MonoBehaviour
     }
 
     public void restart(){
+        //stop any audio
+        menuAudioSource.Stop();
         if (myText.text == "RESTART")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -53,6 +70,10 @@ public class GameManagerScript : MonoBehaviour
         {
             gameOverUI.SetActive(false);
             Time.timeScale = 1;
+
+            //prob resume audio here
+            backgroundAudioSource.Play();
+            backgroundAudioSource.loop = true;
         }
         
     }
