@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using static Slime;
+using UnityEngine.Tilemaps;
 
 public class Slime: CharacterBase
 {
@@ -121,6 +122,7 @@ public class Slime: CharacterBase
             default: 
                 break;
         }
+
     }
 
     public void Idle()
@@ -249,7 +251,7 @@ public class Slime: CharacterBase
                     }
                     return;
                 case subactions_list.Slime_split:
-                    _rigidbody2D.velocity = _rigidbody2D.velocity * drag * Time.deltaTime * .5f;
+                    _rigidbody2D.velocity = _rigidbody2D.velocity * drag * Time.deltaTime * .8f;
                     switch (attack_time_counter)
                     {
                         case 6:
