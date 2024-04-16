@@ -5,7 +5,9 @@ using TMPro;
 
 public class setScore : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI myText;
+    [SerializeField] private TextMeshProUGUI currRunText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
+
     [SerializeField] TMPController tmpcontroller;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,12 @@ public class setScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myText.text = "Score: " + tmpcontroller.getScore();
+        currRunText.text = "Score: " + tmpcontroller.getScore();
+        if (tmpcontroller.getScore() > PlayerPrefs.GetInt("highScore")){
+            PlayerPrefs.SetInt("highScore", tmpcontroller.getScore());
+        }
+    
+        highScoreText.text = "High Score: " + PlayerPrefs.GetInt("highScore");
     }
 
 }
