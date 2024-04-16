@@ -106,9 +106,9 @@ public class RespawnPoint : MonoBehaviour
         {
             sTimeBtwSpawns = startTimeBtwSpawns*60f/slime.totalhealth;
         }
-        if (sTimeBtwSpawns < startTimeBtwSpawns/2)
+        if (sTimeBtwSpawns < startTimeBtwSpawns/3)
         {
-            sTimeBtwSpawns = startTimeBtwSpawns/2;
+            sTimeBtwSpawns = startTimeBtwSpawns/3;
         }
     }
 }

@@ -8,12 +8,14 @@ public class NextRespawnPointArrow : MonoBehaviour
     private RespawnPoint nextRespawn;
     private RespawnPoint[] allRespawnPoints;
     public Transform aimPivot;
+    private CheckpointFlag _checkpointFlag;
     
 
     private void Start()
     {
         
         allRespawnPoints = FindObjectsOfType<RespawnPoint>();
+        _checkpointFlag = FindObjectOfType<CheckpointFlag>();
         FindClosestRespawnPoint();
         if (nextRespawn != null)
         {
@@ -26,8 +28,9 @@ public class NextRespawnPointArrow : MonoBehaviour
         }
         else
         {
-            GetComponent<Renderer>().enabled = false;
-            print("all enemies defeated");
+            Vector3 direction = (_checkpointFlag.transform.position - transform.position);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            aimPivot.rotation = Quaternion.Euler(0,0, angle);
         }
     }
 
