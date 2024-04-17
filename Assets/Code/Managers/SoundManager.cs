@@ -23,6 +23,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoundChar1LeftClick(int attackNum)
     {
+        audioSource.volume = audioVolume;
         if (attackNum == 3)
         {
             audioSource.pitch = 0.75f;
@@ -38,18 +39,21 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoundLevelUp()
     {
+        audioSource.volume = audioVolume; 
         audioSource.pitch = 1f;
         audioSource.PlayOneShot(allSounds[1]);
     }
 
     public void PlaySoundGameOver()
     {
+        audioSource.volume = audioVolume;
         audioSource.pitch = 1f;
         audioSource.PlayOneShot(allSounds[3]);
     }
 
     public void PlaySoundChar1RightClick()
     {
+        audioSource.volume = audioVolume;
         audioSource.pitch = 1f;
         audioSource.clip = allSounds[2];
         audioSource.loop = true;
@@ -68,13 +72,15 @@ public class SoundManager : MonoBehaviour
     public void stopSoundLoop()
     {
         audioSource.Stop();
+        audioSource.volume = audioVolume;
     }
 
     public void PlayRespawnDefeated()
     {
+        audioSource.pitch = 1f;
+        audioSource.volume = audioVolume;
         audioSource.PlayOneShot(allSounds[6]);
     }
-    
     
     
     

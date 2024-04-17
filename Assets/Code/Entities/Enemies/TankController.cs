@@ -28,10 +28,14 @@ namespace Main{
         private bool defeated = false;
         private bool temp = false;
         private float distance;
+        private AudioSource _audioSource;
+        public AudioClip _audio;
+        private bool playedSound = false;
         
         // Start is called before the first frame update
         void Start()
         {
+            _audioSource = GetComponent<AudioSource>();
             target = GameObject.FindGameObjectWithTag("Player").transform;
             rb = GetComponent<Rigidbody2D>();
             timeBtwShots = startTimeBtwShots;
@@ -90,6 +94,12 @@ namespace Main{
                 if(totalhealth <= damage_taken)
                 {
                     _spriterenderer.sprite = destroyed;
+                    if (!playedSound)
+                    {
+                        _audioSource.PlayOneShot(_audio);
+                        playedSound = true;
+                    }
+                   
                     speed = 0;
                     defeated = true;
                     
