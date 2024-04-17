@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ChangeScene : MonoBehaviour
 {
+
+    [SerializeField] private TextMeshProUGUI resetScoreText;
     // public AudioSource audioSource;
     // public AudioClip buttonClick;
     // Start is called before the first frame update
@@ -26,17 +29,23 @@ public class ChangeScene : MonoBehaviour
     // }
 
     public void showMainMenu(){
-        // PlayButtonClick();
         SceneManager.LoadScene("MainMenu");
     }
     
     public void showInstructions(){
-        // PlayButtonClick();
-        
         SceneManager.LoadScene("Instructions");
     }
     public void startGame(){
-        // PlayButtonClick();
         SceneManager.LoadScene("Player_and_Enemy");
+    }
+
+
+    public void showCredits(){
+        SceneManager.LoadScene("Credits");
+    }
+    
+    public void resetScore(){
+        PlayerPrefs.DeleteKey("highScore");
+        resetScoreText.text = "Score Reset!";
     }
 }
