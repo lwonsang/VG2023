@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -9,6 +10,7 @@ public class BoundaryManager : MonoBehaviour
     // Start is called before the first frame update
     public static BoundaryManager Instance;
     public List<int2> GlobalBoundaryCoords;
+    public Boolean instantiated = false;
     void Awake(){
         Instance = this;
     }
@@ -20,7 +22,13 @@ public class BoundaryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // if(instantiated == false){
+        //     if(PathfindingOld.Instance != null){
+        //         Debug.Log("Pathfinding instance ready to go");
+        //         updateWalkable();
+        //         instantiated = true;
+        //     }
+        // }
     }
     void OnDrawGizmos()
     {
@@ -33,6 +41,19 @@ public class BoundaryManager : MonoBehaviour
         }
     }
     public void updateWalkable(){
-        PathfindingOld.Instance.setUnwalkableNodes(GlobalBoundaryCoords);
+        Debug.Log("UpdateWalkeable called");
+        if(PathfindingOld.Instance == null){
+            Debug.Log("UpdateWalkeable failed");
+            instantiated = false;
+        }
+        else{
+            Debug.Log("UpdateWalkeable succeeded");
+            if(instantiated == false){
+                PathfindingOld.Instance.setUnwalkableNodes(GlobalBoundaryCoords);
+                instantiated = true;
+            }
+            
+        }
+            
     }
 }

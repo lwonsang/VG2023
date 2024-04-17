@@ -57,9 +57,9 @@ public class GetSelfBoundaries : MonoBehaviour
             int2 newcoord = new int2(bottomLeft.x, i);
             boundcoords.Add(newcoord);
         }
-        
-        BoundaryManager.Instance.GlobalBoundaryCoords.AddRange(boundcoords);
-        BoundaryManager.Instance.updateWalkable();
+        PathfindingOld.Instance.GlobalBoundaryCoords.AddRange(boundcoords);
+        // BoundaryManager.Instance.GlobalBoundaryCoords.AddRange(boundcoords);
+        // BoundaryManager.Instance.updateWalkable();
     }
     
 

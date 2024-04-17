@@ -6,6 +6,7 @@ using Unity.Collections;
 using Unity.Jobs;
 using Unity.Burst;
 using Unity.Mathematics;
+using System;
 
 public class PathfindingOld: MonoBehaviour
 {
@@ -14,31 +15,57 @@ public class PathfindingOld: MonoBehaviour
 
     public static PathfindingOld Instance;
 
-    private GridMap<PathNode> grid;
+    public GridMap<PathNode> grid;
     private List<PathNode> openList;
     private List<PathNode> closedList;
-    Vector3 OriginalPositionCoord;
+    public Vector3 OriginalPositionCoord;
+    public List<int2> GlobalBoundaryCoords;
+
+    Boolean instantiated = false;
 
 
 
-    public PathfindingOld(int width, int height, Vector3 originPosition) {
+    // public PathfindingOld(int width, int height, Vector3 originPosition) {
+        
+    //     // 
+    //     grid = new GridMap<PathNode>(width, height, 1f, originPosition, (GridMap<PathNode> g, int x, int y) => new PathNode(g, x, y));
+    //     OriginalPositionCoord = originPosition;
+    //     Debug.Log("OriginalPosition: " + OriginalPositionCoord);
+        
+    // }
+
+    private PathfindingOld(){
+
+    }
+
+    void Awake(){
         Instance = this;
-        // Debug.Log("Create Grid");
+    }
+
+    public void createGrid(int width, int height, Vector3 originPosition){
         grid = new GridMap<PathNode>(width, height, 1f, originPosition, (GridMap<PathNode> g, int x, int y) => new PathNode(g, x, y));
         OriginalPositionCoord = originPosition;
-        
+        // debug.log.Log("OriginalPosition: " + OriginalPositionCoord);
     }
 
     public void setUnwalkableNodes(List<int2> boundcoords){
         // Set unwalkable nodes
-        Debug.Log("Unwalkable Node Count: " + boundcoords.Count);
+        // debug.log.Log("Unwalkable Node Count: " + boundcoords.Count);
         
         //  = BoundaryManager.Instance.GlobalBoundaryCoords;
         for(int i = 0; i < boundcoords.Count; i++){
-            int xcoord = boundcoords[i].x - (int)OriginalPositionCoord.x;
-            int ycoord = boundcoords[i].y - (int)OriginalPositionCoord.y;
-            print("original coord: " + boundcoords[i].x + ", " + boundcoords[i].y + " adjusted cell coords: "+ xcoord + ", " + ycoord);
-            GetNode(xcoord, ycoord).SetIsWalkable(false);
+            // int xcoord = boundcoords[i].x - (int)OriginalPositionCoord.x;
+            // Debug.Log("Original Position coordinates: " + OriginalPositionCoord.x + ", " + OriginalPositionCoord.y);
+            // int ycoord = boundcoords[i].y - (int)OriginalPositionCoord.y;
+            int xcoord = boundcoords[i].x + 35;
+            // debug.log.Log("Original Position coordinates: " + OriginalPositionCoord.x + ", " + OriginalPositionCoord.y);
+            int ycoord = boundcoords[i].y + 18;
+            // print("original coord: " + boundcoords[i].x + ", " + boundcoords[i].y + " adjusted cell coords: "+ xcoord + ", " + ycoord);
+            // Sometimes the boundaries go off the pathfinding grid, just ignore if that's the case.
+            if(xcoord >= 0 && ycoord >= 0 && xcoord < 168 && ycoord < 87){
+                GetNode(xcoord, ycoord).SetIsWalkable(false);
+            }
+            
         }
     }
 
@@ -47,36 +74,39 @@ public class PathfindingOld: MonoBehaviour
     }
 
     public void BlahBlahBlahTest(){
-        Debug.Log("Blah blah blah test");
+        // debug.log.Log("Blah blah blah test");
     }
 
     public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition) {
-        
+        if(!instantiated){
+            setUnwalkableNodes(GlobalBoundaryCoords);
+            instantiated = true;
+        }
         grid.GetXY(startWorldPosition, out int startX, out int startY);
         grid.GetXY(endWorldPosition, out int endX, out int endY);
-        Debug.Log("Running FindPath...");
+        // debug.log.Log("Running FindPath...");
         List<PathNode> path = FindPath(startX, startY, endX, endY);
-        Debug.Log("FindPath Completed");
+        // debug.log.Log("FindPath Completed");
         if (path == null) {
-            Debug.Log("Path is Null");
+            // debug.log.Log("Path is Null");
             return null;
         } else {
             List<Vector3> vectorPath = new List<Vector3>();
             foreach (PathNode pathNode in path) {
                 vectorPath.Add(new Vector3(pathNode.x, pathNode.y) * grid.GetCellSize() + Vector3.one * grid.GetCellSize() * .5f);
             }
-            Debug.Log("Ready to return");
+            // debug.log.Log("Ready to return");
             return vectorPath;
         }
     }
 
     public List<PathNode> FindPath(int startX, int startY, int endX, int endY) {
-        Debug.Log("Starting FisndPath...");
+        // debug.log.Log("Starting FisndPath...");
         PathNode startNode = grid.GetGridObject(startX, startY);
         PathNode endNode = grid.GetGridObject(endX, endY);
 
         if (startNode == null || endNode == null) {
-            // Debug.Log("Start or End is Null");
+            // // debug.log.Log("Start or End is Null");
             // Invalid Path
             return null;
         }
@@ -202,6 +232,7 @@ public class PathfindingOld: MonoBehaviour
     }
 
     public PathNode GetNode(int x, int y) {
+
         return grid.GetGridObject(x, y);
     }
 
@@ -235,3 +266,154 @@ public class PathfindingOld: MonoBehaviour
         return lowestFCostNode;
     }
 }
+
+// public class GridMap<TGridObject> {
+
+//     public event EventHandler<OnGridObjectChangedEventArgs> OnGridObjectChanged;
+//     public class OnGridObjectChangedEventArgs : EventArgs {
+//         public int x;
+//         public int y;
+//     }
+
+//     private int width;
+//     private int height;
+//     private float cellSize;  // Used for calculation of GetWorldPosition
+//     private Vector3 originPosition;
+//     private TGridObject[,] gridArray;
+//     public const int sortingOrderDefault = 5000;
+
+//     public GridMap(int width, int height, float cellSize, Vector3 originPosition, Func<GridMap<TGridObject>, int, int, TGridObject> createGridObject) {
+//         this.width = width;
+//         this.height = height;
+//         this.cellSize = cellSize;
+//         this.originPosition = originPosition;
+
+//          gridArray = new TGridObject[width, height];
+
+//         for (int x = 0; x < gridArray.GetLength(0); x++) {
+//             for (int y = 0; y < gridArray.GetLength(1); y++) {
+//                 gridArray[x, y] = createGridObject(this, x, y);
+//             }
+//         }
+
+//         bool showDebug = false;
+//         if (showDebug) {
+//             TextMesh[,] debugTextArray = new TextMesh[width, height];
+
+//             for (int x = 0; x < gridArray.GetLength(0); x++) {
+//                 for (int y = 0; y < gridArray.GetLength(1); y++) {
+//                     // debugTextArray[x, y] = CreateWorldText(gridArray[x, y]?.ToString(), null, GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * .5f, 5, Color.white, TextAnchor.MiddleCenter);
+//                     // Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
+//                     // Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
+//                 }
+//             }
+//             // Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
+//             // Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
+
+//             OnGridObjectChanged += (object sender, OnGridObjectChangedEventArgs eventArgs) => {
+//                 // debugTextArray[eventArgs.x, eventArgs.y].text = gridArray[eventArgs.x, eventArgs.y]?.ToString();
+//             };
+//         }
+//     }
+
+//     public int GetWidth() {
+//         return width;
+//     }
+
+//     public int GetHeight() {
+//         return height;
+//     }
+
+//     public float GetCellSize() {
+//         return cellSize;
+//     }
+
+//     public Vector3 GetWorldPosition(int x, int y) {
+//         return new Vector3(x, y) * cellSize + originPosition;
+//     }
+
+//     public void GetXY(Vector3 worldPosition, out int x, out int y) {
+//         x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
+//         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
+//     }
+
+//     public void SetGridObject(int x, int y, TGridObject value) {
+//         if (x >= 0 && y >= 0 && x < width && y < height) {
+//             gridArray[x, y] = value;
+//             if (OnGridObjectChanged != null) OnGridObjectChanged(this, new OnGridObjectChangedEventArgs { x = x, y = y });
+//         }
+//     }
+
+//     public void TriggerGridObjectChanged(int x, int y) {
+//         if (OnGridObjectChanged != null) OnGridObjectChanged(this, new OnGridObjectChangedEventArgs { x = x, y = y });
+//     }
+
+//     public void SetGridObject(Vector3 worldPosition, TGridObject value) {
+//         int x, y;
+//         GetXY(worldPosition, out x, out y);
+//         SetGridObject(x, y, value);
+//     }
+
+//     public TGridObject GetGridObject(int x, int y) {
+//         if (x >= 0 && y >= 0 && x < width && y < height) {
+//             return gridArray[x, y];
+//         } else {
+//             return default(TGridObject);
+//         }
+//     }
+
+//     public TGridObject GetGridObject(Vector3 worldPosition) {
+//         int x, y;
+//         GetXY(worldPosition, out x, out y);
+//         return GetGridObject(x, y);
+//     }
+
+//     // public void SetValue(int x, int y, int value) {
+//     //     if (x >= 0 && y >= 0 && x < width && y < height) {
+//     //         gridArray[x, y] = value;
+//     //         if (OnGridValueChanged != null) OnGridValueChanged(this, new OnGridValueChangedEventArgs { x = x, y = y });
+//     //     }
+//     // }
+
+//     // public void SetValue(Vector3 worldPosition, int value) {
+//     //     int x, y;
+//     //     GetXY(worldPosition, out x, out y);
+//     //     SetValue(x, y, value);
+//     // }
+
+//     // public int GetValue(int x, int y) {
+//     //     if (x >= 0 && y >= 0 && x < width && y < height) {
+//     //         return gridArray[x, y];
+//     //     } else {
+//     //         return 0;
+//     //     }
+//     // }
+
+//     // public int GetValue(Vector3 worldPosition) {
+//     //     int x, y;
+//     //     GetXY(worldPosition, out x, out y);
+//     //     return GetValue(x, y);
+//     // }
+
+    
+//     public static TextMesh CreateWorldText(string text, Transform parent = null, Vector3 localPosition = default(Vector3), int fontSize = 5, Color? color = null, TextAnchor textAnchor = TextAnchor.UpperLeft, TextAlignment textAlignment = TextAlignment.Left, int sortingOrder = sortingOrderDefault) {
+//         if (color == null) color = Color.white;
+//         return CreateWorldText(parent, text, localPosition, fontSize, (Color)color, textAnchor, textAlignment, sortingOrder);
+//     }
+    
+//     // Create Text in the World
+//     public static TextMesh CreateWorldText(Transform parent, string text, Vector3 localPosition, int fontSize, Color color, TextAnchor textAnchor, TextAlignment textAlignment, int sortingOrder) {
+//         GameObject gameObject = new GameObject("World_Text", typeof(TextMesh));
+//         Transform transform = gameObject.transform;
+//         transform.SetParent(parent, false);
+//         transform.localPosition = localPosition;
+//         TextMesh textMesh = gameObject.GetComponent<TextMesh>();
+//         textMesh.anchor = textAnchor;
+//         textMesh.alignment = textAlignment;
+//         textMesh.text = text;
+//         textMesh.fontSize = fontSize;
+//         textMesh.color = color;
+//         textMesh.GetComponent<MeshRenderer>().sortingOrder = sortingOrder;
+//         return textMesh;
+//     }
+// }

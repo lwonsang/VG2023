@@ -5,13 +5,14 @@ using UnityEngine;
 public class PathfindingManager : MonoBehaviour
 {
      private PathfindingOld pathfinding;
-     Vector3 originalPosition = new Vector3(-10, -10);
+     Vector3 originalPosition = new Vector3(-35, -18);
      int offsetX;
      int offsetY;
     // Start is called before the first frame update
     private void Start(){
         Debug.Log("Pathfinding Started");
-        pathfinding = new PathfindingOld(100, 100, originalPosition);
+        // pathfinding = new PathfindingOld(168, 85, originalPosition);
+        PathfindingOld.Instance.createGrid(168, 87, originalPosition);
         offsetX = (int) originalPosition.x;
         offsetY = (int) originalPosition.y;
     }
