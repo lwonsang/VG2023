@@ -30,11 +30,9 @@ namespace Main{
         private bool defeated = false;
         private bool temp = false;
         private float distance;
-<<<<<<< Updated upstream
         private AudioSource _audioSource;
         public AudioClip _audio;
         private bool playedSound = false;
-=======
 
         public Vector3 target;
         
@@ -50,17 +48,13 @@ namespace Main{
         float randomTimeFrame1;
 
         Vector3 originalPosition = new Vector3(-35, -18);
->>>>>>> Stashed changes
         
         // Start is called before the first frame update
         void Start()
         {
-<<<<<<< Updated upstream
             _audioSource = GetComponent<AudioSource>();
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-=======
             // target = GameObject.FindGameObjectWithTag("Player").transform;
->>>>>>> Stashed changes
+            // target = GameObject.FindGameObjectWithTag("Player").transform;
             rb = GetComponent<Rigidbody2D>();
             timeBtwShots = startTimeBtwShots;
             //healthBar = GameObject.Find("TankHealthBar").GetComponentInChildren<FloatingHealthBar>();
@@ -161,27 +155,25 @@ namespace Main{
                     timeBtwShots -= Time.deltaTime;
                 }
                 
-<<<<<<< Updated upstream
-                healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
-                if(totalhealth <= damage_taken)
-                {
-                    _spriterenderer.sprite = destroyed;
-                    if (!playedSound)
-                    {
-                        _audioSource.PlayOneShot(_audio);
-                        playedSound = true;
-                    }
+                // healthBar.UpdateHealthBar(totalhealth-damage_taken, totalhealth);
+                // if(totalhealth <= damage_taken)
+                // {
+                //     _spriterenderer.sprite = destroyed;
+                //     if (!playedSound)
+                //     {
+                //         _audioSource.PlayOneShot(_audio);
+                //         playedSound = true;
+                //     }
                    
-                    speed = 0;
-                    defeated = true;
+                //     speed = 0;
+                //     defeated = true;
                     
-                    gameObject.layer = 0;
-                    rb.angularVelocity = 0f;
-                    foreach (Transform child in transform)
-=======
+                //     gameObject.layer = 0;
+                //     rb.angularVelocity = 0f;
+                //     foreach (Transform child in transform)
+
                 if (traveling){
                     if (pathListIndex > 0)
->>>>>>> Stashed changes
                     {
                         // Debug.Log("PathList index: " + pathListIndex);
                         // Debug.Log("index is larger than 0: " + (pathListIndex > 0));
