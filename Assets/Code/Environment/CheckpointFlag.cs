@@ -17,7 +17,7 @@ public class CheckpointFlag : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _animator.SetTrigger("CheckpointFlagWave");
+        // _animator.SetTrigger("CheckpointFlagWave");
         _AudioSource = GetComponent<AudioSource>();
     }
 

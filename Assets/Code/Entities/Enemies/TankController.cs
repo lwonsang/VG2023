@@ -314,6 +314,11 @@ namespace Main{
                             _spriterenderer.sprite = destroyed;
                             speed = 0;
                             defeated = true;
+                            if (!playedSound)
+                            {
+                                _audioSource.PlayOneShot(_audio);
+                                playedSound = true;
+                            }
                             
                             gameObject.layer = 0;
                             rb.angularVelocity = 0f;
